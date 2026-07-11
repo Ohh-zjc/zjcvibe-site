@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "name": "（占位：城陵矶水文站退休职工）",
+    "identity": "城陵矶水文站退休职工",
+    "summary": "守护长江水文数据四十余载，见证了洞庭湖入江口的每一次潮起潮落。",
+    "quote": "以前看数据，现在看变化——江水确实在变好。",
+    "photo": "/img/placeholder-person.jpg",
+    "audio": null,
+    "audio_segments": [],
+    "transcript": "完整采访文字稿将在实地调研后填入。此处为占位文本，预计单篇采访转写稿约2000-5000字。",
+    "photos": ["/img/placeholder-person.jpg"],
+    "timeline": [
+      { "year": "1980", "event": "（待填）" },
+      { "year": "2003", "event": "（待填：三峡工程蓄水）" },
+      { "year": "2015", "event": "（待填）" },
+      { "year": "2021", "event": "（待填：长江十年禁渔启动）" }
+    ],
+    "waveform": null,
+    "sentiment": null,
+    "keywords": ["水文", "城陵矶", "水位"]
+  },
+  {
+    "id": 2,
+    "name": "（占位：东洞庭湖湿地巡护员）",
+    "identity": "东洞庭湖自然保护区巡护员",
+    "summary": "每天行走在湿地保护区，用脚步丈量洞庭湖的生态变化。",
+    "quote": "鸟越来越多了，说明水质在变好。",
+    "photo": "/img/placeholder-person.jpg",
+    "audio": null,
+    "audio_segments": [],
+    "transcript": "完整采访文字稿将在实地调研后填入。",
+    "photos": ["/img/placeholder-person.jpg"],
+    "timeline": [
+      { "year": "2010", "event": "（待填：开始巡护工作）" },
+      { "year": "2018", "event": "（待填：洞庭湖环境整治）" },
+      { "year": "2024", "event": "（待填）" }
+    ],
+    "waveform": null,
+    "sentiment": null,
+    "keywords": ["湿地", "候鸟", "巡护"]
+  },
+  {
+    "id": 3,
+    "name": "（占位：退捕渔民）",
+    "identity": "退捕渔民 · 江豚保护志愿者",
+    "summary": "从捕鱼人到护鱼人，在长江禁渔后投身江豚保护。",
+    "quote": "以前打鱼，现在护鱼——江里的江豚就是我的新收成。",
+    "photo": "/img/placeholder-person.jpg",
+    "audio": null,
+    "audio_segments": [],
+    "transcript": "完整采访文字稿将在实地调研后填入。",
+    "photos": ["/img/placeholder-person.jpg"],
+    "timeline": [
+      { "year": "1995", "event": "（待填：开始打鱼）" },
+      { "year": "2020", "event": "（待填：响应禁渔政策上岸）" },
+      { "year": "2021", "event": "（待填：加入江豚保护协会）" }
+    ],
+    "waveform": null,
+    "sentiment": null,
+    "keywords": ["退捕", "江豚", "禁渔"]
+  },
+  {
+    "id": 4,
+    "name": "（占位：沿江社区居民）",
+    "identity": "岳阳沿江社区居民",
+    "summary": "居住在洞庭湖畔数十年，亲历了岸线从荒芜到公园的变迁。",
+    "quote": "以前江边都是砂石码头，现在变成了散步的公园。",
+    "photo": "/img/placeholder-person.jpg",
+    "audio": null,
+    "audio_segments": [],
+    "transcript": "完整采访文字稿将在实地调研后填入。",
+    "photos": ["/img/placeholder-person.jpg"],
+    "timeline": [
+      { "year": "2000", "event": "（待填）" },
+      { "year": "2016", "event": "（待填：共抓大保护提出）" },
+      { "year": "2025", "event": "（待填）" }
+    ],
+    "waveform": null,
+    "sentiment": null,
+    "keywords": ["社区", "岸线", "变迁"]
+  },
+  {
+    "id": 5,
+    "name": "（占位：渔政执法人员）",
+    "identity": "岳阳县渔政执法局工作人员",
+    "summary": "常年巡护在洞庭湖水域一线，打击非法捕捞，守护水域生态。",
+    "quote": "现在每天巡护，非法捕捞越来越少，鱼类资源在恢复。",
+    "photo": "/img/placeholder-person.jpg",
+    "audio": null,
+    "audio_segments": [],
+    "transcript": "完整采访文字稿将在实地调研后填入。",
+    "photos": ["/img/placeholder-person.jpg"],
+    "timeline": [
+      { "year": "2019", "event": "（待填）" },
+      { "year": "2021", "event": "（待填）" },
+      { "year": "2024", "event": "（待填）" }
+    ],
+    "waveform": null,
+    "sentiment": null,
+    "keywords": ["渔政", "执法", "巡护"]
+  }
+]

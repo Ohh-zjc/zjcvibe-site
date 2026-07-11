@@ -1,0 +1,26 @@
+{
+  "water_quality": {
+    "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+    "chl_a": [18.5, 17.2, 16.8, 15.9, 14.3, 13.7, 12.1, 11.5, 10.8, 10.2, 9.6],
+    "turbidity": [85, 82, 78, 75, 71, 68, 65, 60, 58, 55, 52]
+  },
+  "vegetation": {
+    "hualong": 0.72,
+    "dongting": 0.85
+  },
+  "cleanup": {
+    "hualong": { "plastic": 0, "net": 0, "foam": 0, "other": 0 },
+    "fishery": { "plastic": 0, "net": 0, "foam": 0, "other": 0 }
+  },
+  "patrol": {
+    "distance_km": 0,
+    "duration_h": 0,
+    "area_km2": 0
+  },
+  "finless_porpoise": [],
+  "ndvi": {
+    "years": [2016, 2022, 2026],
+    "hualong": [0.35, 0.58, 0.72],
+    "dongting": [0.62, 0.78, 0.85]
+  }
+}

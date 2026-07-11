@@ -1,0 +1,42 @@
+{
+  "points": [
+    {
+      "id": "hualong",
+      "name": "华龙码头（江豚湾）",
+      "lat": 29.38,
+      "lng": 113.00,
+      "beforeImg": "/img/hualong-2016.jpg",
+      "afterImg": "/img/hualong-2026.jpg",
+      "description": "华龙码头曾是长江岸线上的砂石集散地，2016年整治后转型为江豚观测点，2026年已成为岳阳市民亲水休闲的生态公园。"
+    },
+    {
+      "id": "chenglingji",
+      "name": "城陵矶水文站",
+      "lat": 29.43,
+      "lng": 113.14,
+      "beforeImg": "/img/chenglingji-2016.jpg",
+      "afterImg": "/img/chenglingji-2026.jpg",
+      "description": "城陵矶是洞庭湖汇入长江的唯一出口，水位数据对长江中下游防汛至关重要。"
+    },
+    {
+      "id": "dongting-wetland",
+      "name": "东洞庭湖湿地",
+      "lat": 29.32,
+      "lng": 112.98,
+      "beforeImg": "/img/wetland-2016.jpg",
+      "afterImg": "/img/wetland-2026.jpg",
+      "description": "东洞庭湖国家级自然保护区，国际重要湿地，每年冬季吸引数十万只候鸟越冬。"
+    },
+    {
+      "id": "fishery",
+      "name": "渔政巡护水域",
+      "lat": 29.35,
+      "lng": 113.08,
+      "beforeImg": null,
+      "afterImg": "/img/fishery-2026.jpg",
+      "description": "岳阳县渔政执法船日常巡护水域，长江十年禁渔成效显著。"
+    }
+  ],
+  "fishermen_points": [],
+  "patrol_track": []
+}
