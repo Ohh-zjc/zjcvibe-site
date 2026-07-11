@@ -8,7 +8,8 @@
     const params = new URLSearchParams(window.location.search);
     const target = params.get('to');
     if (target) {
-      window.location.href = '/dongtinghu/' + target;
+      const basePath = window.location.pathname.replace(/\/[^/]*$/, '/');
+      window.location.href = basePath + target;
     }
   </script>
 </body>
