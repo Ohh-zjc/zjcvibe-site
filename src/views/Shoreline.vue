@@ -27,9 +27,16 @@
         <div class="compare-slider">
           <div class="compare-pane">
             <div class="compare-label">2016 卫星影像</div>
-            <div class="compare-img placeholder-img">
+            <div v-if="hasImage(selectedPoint.beforeImg)" class="compare-img image-frame">
+              <img
+                :src="mediaUrl(selectedPoint.beforeImg)"
+                :alt="`${selectedPoint.name} 2016 年卫星影像`"
+                @error="markImageUnavailable(selectedPoint.beforeImg)"
+              />
+            </div>
+            <div v-else class="compare-img placeholder-img">
               <el-icon :size="36"><PictureFilled /></el-icon>
-              <span>2016 卫星图</span>
+              <span>2016 卫星影像待补充</span>
             </div>
           </div>
           <div class="compare-divider">
@@ -39,9 +46,16 @@
           </div>
           <div class="compare-pane">
             <div class="compare-label">2026 无人机航拍</div>
-            <div class="compare-img placeholder-img">
+            <div v-if="hasImage(selectedPoint.afterImg)" class="compare-img image-frame">
+              <img
+                :src="mediaUrl(selectedPoint.afterImg)"
+                :alt="`${selectedPoint.name} 2026 年航拍影像`"
+                @error="markImageUnavailable(selectedPoint.afterImg)"
+              />
+            </div>
+            <div v-else class="compare-img placeholder-img">
               <el-icon :size="36"><PictureFilled /></el-icon>
-              <span>2026 航拍图</span>
+              <span>2026 航拍影像待补充</span>
             </div>
           </div>
         </div>
@@ -73,7 +87,7 @@
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { PictureFilled, DArrowLeft, DArrowRight, VideoPlay, Guide } from '@element-plus/icons-vue'
+import { PictureFilled, DArrowLeft, DArrowRight, Guide } from '@element-plus/icons-vue'
 import VChart from 'vue-echarts'
 import { use } from 'echarts/core'
 import { BarChart } from 'echarts/charts'
@@ -86,7 +100,39 @@ use([BarChart, GridComponent, TooltipComponent, LegendComponent, CanvasRenderer]
 const dataStore = useDataStore()
 const selectedPoint = ref(null)
 const mapError = ref(false)
+const unavailableImages = ref(new Set())
 let map = null
+
+const pointMarkerMeta = {
+  hualong: { icon: '⚓', type: 'wharf', label: '华龙码头' },
+  chenglingji: { icon: '💧', type: 'hydrology', label: '城陵矶水文站' },
+  'dongting-wetland': { icon: '🌿', type: 'wetland', label: '东洞庭湖湿地' },
+  fishery: { icon: '🛥', type: 'fishery', label: '渔政巡护水域' },
+}
+
+function markerIconFor(point) {
+  const meta = pointMarkerMeta[point.id] || { icon: '📍', type: 'default', label: point.name }
+  return L.divIcon({
+    className: 'shoreline-marker-shell',
+    html: `<span class="shoreline-marker shoreline-marker--${meta.type}" title="${meta.label}"><i>${meta.icon}</i></span>`,
+    iconSize: [42, 42],
+    iconAnchor: [21, 40],
+    popupAnchor: [0, -38],
+  })
+}
+
+function mediaUrl(path) {
+  if (!path || /^(https?:|data:|blob:)/.test(path)) return path || ''
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+}
+
+function hasImage(path) {
+  return Boolean(path) && !unavailableImages.value.has(path)
+}
+
+function markImageUnavailable(path) {
+  unavailableImages.value = new Set([...unavailableImages.value, path])
+}
 
 function initMap() {
   try {
@@ -109,7 +155,7 @@ function initMap() {
     const pts = dataStore.geo?.points || []
     console.log('📍 Points:', pts.length)
     pts.forEach(point => {
-      L.marker([point.lat, point.lng])
+      L.marker([point.lat, point.lng], { icon: markerIconFor(point) })
         .addTo(map)
         .bindPopup(`<b>${point.name}</b>`)
         .on('click', () => { selectedPoint.value = point })
@@ -158,6 +204,36 @@ onUnmounted(() => {
 #shoreline-map .leaflet-container {
   height: 100% !important;
 }
+
+.shoreline-marker-shell {
+  background: transparent;
+  border: 0;
+}
+
+.shoreline-marker {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 3px 9px rgba(25, 62, 82, 0.28);
+  color: #fff;
+  font-size: 19px;
+  line-height: 1;
+  transform: rotate(-45deg);
+}
+
+.shoreline-marker i {
+  font-style: normal;
+  transform: rotate(45deg);
+}
+
+.shoreline-marker--wharf { background: #d97706; }
+.shoreline-marker--hydrology { background: #1683c7; }
+.shoreline-marker--wetland { background: #2f9e61; }
+.shoreline-marker--fishery { background: #6b5cc5; }
+.shoreline-marker--default { background: #2e86ab; }
 </style>
 
 <style scoped>
@@ -206,6 +282,8 @@ onUnmounted(() => {
 .compare-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; text-align: center; }
 .compare-img { aspect-ratio: 16/9; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 13px; }
 .placeholder-img { background: var(--bg-light); border: 2px dashed var(--border); color: var(--text-muted); }
+.image-frame { overflow: hidden; background: var(--bg-light); border: 1px solid var(--border); }
+.image-frame img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .compare-divider { display: flex; flex-direction: column; align-items: center; gap: 4px; color: var(--text-muted); font-weight: 700; font-size: 14px; white-space: nowrap; }
 .compare-desc { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
 
