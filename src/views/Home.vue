@@ -33,14 +33,19 @@
           </div>
         </div>
       </div>
-      <div class="hero-scroll">
+      <button
+        type="button"
+        class="hero-scroll"
+        aria-label="向下滚动到探索数据平台"
+        @click="scrollToModules"
+      >
         <span>向下探索</span>
         <el-icon><ArrowDown /></el-icon>
-      </div>
+      </button>
     </section>
 
     <!-- 模块入口卡片 -->
-    <section class="modules-section">
+    <section ref="modulesSection" class="modules-section">
       <div class="page-container">
         <h2 class="section-title">探索数据平台</h2>
         <p class="section-subtitle">四个模块，从口述史到卫星遥感，全方位展现洞庭湖生态</p>
@@ -116,7 +121,18 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { ArrowDown, PictureFilled } from '@element-plus/icons-vue'
+
+const modulesSection = ref(null)
+
+function scrollToModules() {
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  modulesSection.value?.scrollIntoView({
+    behavior: reducedMotion ? 'auto' : 'smooth',
+    block: 'start',
+  })
+}
 
 const galleryItems = [
   { label: '城陵矶', caption: '城陵矶水文站——洞庭入江口' },
@@ -229,7 +245,22 @@ const timeline = [
   gap: 6px;
   color: rgba(255,255,255,0.5);
   font-size: 13px;
+  font-family: inherit;
+  background: transparent;
+  border: 0;
+  padding: 8px 12px;
+  cursor: pointer;
   animation: bounce 2s infinite;
+}
+
+.hero-scroll:hover {
+  color: #fff;
+}
+
+.hero-scroll:focus-visible {
+  color: #fff;
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 3px;
 }
 
 @keyframes bounce {
@@ -241,6 +272,11 @@ const timeline = [
 .modules-section {
   background: var(--bg-white);
   padding: 60px 0;
+  scroll-margin-top: 64px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll { animation: none; }
 }
 
 .module-cards {
