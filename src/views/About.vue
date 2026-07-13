@@ -85,9 +85,8 @@
     </section>
 
     <!-- 二维码 -->
-    <section class="about-section qr-section">
-      <h3>扫码访问</h3>
-      <div class="qr-card data-card">
+    <section class="about-section qr-section" aria-label="网站访问二维码">
+      <div class="qr-card">
         <a
           class="qr-image-link"
           :href="siteUrl"
@@ -95,10 +94,8 @@
           rel="noopener noreferrer"
           aria-label="扫码或点击访问智护碧水·数绘洞庭平台"
         >
-          <img class="qr-image" :src="qrCodeSrc" alt="访问 zjcvibe.xyz 的二维码" />
+          <img class="qr-image" :src="qrCodeSrc" alt="访问智护碧水·数绘洞庭平台的二维码" />
         </a>
-        <p>扫描二维码即可访问本平台</p>
-        <a class="qr-url" :href="siteUrl" target="_blank" rel="noopener noreferrer">zjcvibe.xyz</a>
       </div>
     </section>
   </div>
@@ -304,23 +301,29 @@ const thanks = [
 .advisor-card p { font-size: 14px; color: var(--text-secondary); }
 
 /* 二维码 */
-.qr-section { text-align: center; }
+.qr-section {
+  margin-top: 8px;
+  text-align: center;
+}
 
 .qr-card {
   display: inline-block;
-  padding: 32px 48px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.72);
+  box-shadow: 0 2px 10px rgba(46,134,171,0.06);
   text-align: center;
 }
 
 .qr-image-link {
   display: block;
   width: max-content;
-  margin: 0 auto 12px;
+  margin: 0 auto;
 }
 
 .qr-image {
-  width: 184px;
-  height: 184px;
+  width: 172px;
+  height: 172px;
   display: block;
   padding: 8px;
   border: 1px solid var(--border);
@@ -331,18 +334,6 @@ const thanks = [
 .qr-image-link:focus-visible {
   outline: 3px solid rgba(46, 134, 171, 0.4);
   outline-offset: 4px;
-}
-
-.qr-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-.qr-url {
-  display: inline-block;
-  margin-top: 5px;
-  font-size: 13px;
-  font-weight: 600;
 }
 
 @media (max-width: 768px) {

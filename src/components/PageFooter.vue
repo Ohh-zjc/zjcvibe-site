@@ -41,8 +41,7 @@
           rel="noopener noreferrer"
           aria-label="扫码或点击访问智护碧水·数绘洞庭平台"
         >
-          <img class="footer-qr-image" :src="qrCodeSrc" alt="访问 zjcvibe.xyz 的二维码" />
-          <span>扫码访问</span>
+          <img class="footer-qr-image" :src="qrCodeSrc" alt="访问智护碧水·数绘洞庭平台的二维码" />
         </a>
       </div>
       <p>&copy; 2026 湖北大学计算机学院 · 智护碧水小分队</p>
@@ -128,12 +127,7 @@ const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
 }
 
 .footer-qr-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  color: rgba(255,255,255,0.72);
-  font-size: 11px;
+  display: block;
   text-decoration: none;
 }
 
@@ -145,11 +139,6 @@ const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
   background: #fff;
   border: 1px solid rgba(255,255,255,0.45);
   image-rendering: pixelated;
-}
-
-.footer-qr-link:hover,
-.footer-qr-link:focus-visible {
-  color: #fff;
 }
 
 .footer-qr-link:focus-visible {
