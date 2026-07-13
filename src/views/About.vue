@@ -88,18 +88,27 @@
     <section class="about-section qr-section">
       <h3>扫码访问</h3>
       <div class="qr-card data-card">
-        <div class="qr-placeholder-big">
-          <el-icon :size="60"><FullScreen /></el-icon>
-          <span>部署后生成二维码</span>
-        </div>
+        <a
+          class="qr-image-link"
+          :href="siteUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="扫码或点击访问智护碧水·数绘洞庭平台"
+        >
+          <img class="qr-image" :src="qrCodeSrc" alt="访问 zjcvibe.xyz 的二维码" />
+        </a>
         <p>扫描二维码即可访问本平台</p>
+        <a class="qr-url" :href="siteUrl" target="_blank" rel="noopener noreferrer">zjcvibe.xyz</a>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { UserFilled, PictureFilled, FullScreen } from '@element-plus/icons-vue'
+import { UserFilled, PictureFilled } from '@element-plus/icons-vue'
+
+const siteUrl = 'https://zjcvibe.xyz/'
+const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
 
 const members = [
   { name: '（前端A · 待填）', role: '前端开发', task: 'Vue 3 + Vite 脚手架、组件开发、ECharts 图表' },
@@ -303,24 +312,37 @@ const thanks = [
   text-align: center;
 }
 
-.qr-placeholder-big {
-  width: 140px;
-  height: 140px;
-  border: 3px dashed var(--border);
-  border-radius: 16px;
+.qr-image-link {
+  display: block;
+  width: max-content;
   margin: 0 auto 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-size: 13px;
+}
+
+.qr-image {
+  width: 184px;
+  height: 184px;
+  display: block;
+  padding: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  image-rendering: pixelated;
+}
+
+.qr-image-link:focus-visible {
+  outline: 3px solid rgba(46, 134, 171, 0.4);
+  outline-offset: 4px;
 }
 
 .qr-card p {
   font-size: 14px;
   color: var(--text-secondary);
+}
+
+.qr-url {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

@@ -34,18 +34,26 @@
     
     <div class="footer-bottom">
       <div class="footer-qr">
-        <div class="qr-placeholder">
-          <el-icon :size="48"><FullScreen /></el-icon>
+        <a
+          class="footer-qr-link"
+          :href="siteUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="扫码或点击访问智护碧水·数绘洞庭平台"
+        >
+          <img class="footer-qr-image" :src="qrCodeSrc" alt="访问 zjcvibe.xyz 的二维码" />
           <span>扫码访问</span>
-        </div>
+        </a>
       </div>
       <p>&copy; 2026 湖北大学计算机学院 · 智护碧水小分队</p>
-      <p class="footer-deploy">部署于 GitHub Pages</p>
+      <p class="footer-deploy">部署于 Cloudflare Pages</p>
     </div>
   </footer>
 </template>
 
 <script setup>
+const siteUrl = 'https://zjcvibe.xyz/'
+const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
 </script>
 
 <style scoped>
@@ -119,18 +127,34 @@
   margin-bottom: 16px;
 }
 
-.qr-placeholder {
-  width: 80px;
-  height: 80px;
-  border: 2px dashed rgba(255,255,255,0.3);
-  border-radius: 8px;
+.footer-qr-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
+  gap: 6px;
+  color: rgba(255,255,255,0.72);
   font-size: 11px;
-  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+}
+
+.footer-qr-image {
+  width: 104px;
+  height: 104px;
+  display: block;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid rgba(255,255,255,0.45);
+  image-rendering: pixelated;
+}
+
+.footer-qr-link:hover,
+.footer-qr-link:focus-visible {
+  color: #fff;
+}
+
+.footer-qr-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
 }
 
 .footer-bottom p {
