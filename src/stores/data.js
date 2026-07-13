@@ -56,15 +56,22 @@ export const useDataStore = defineStore('data', () => {
 
       // geo points + patrol
       if (results[1].data?.length) {
-        geo.value.points = results[1].data.map(p => ({
-          id: p.id,
-          name: p.name,
-          lat: p.lat,
-          lng: p.lng,
-          description: p.description || '',
-          beforeImg: p.before_img || '',
-          afterImg: p.after_img || '',
-        }))
+        const fallbackPoints = new Map(geoJson.points.map(point => [point.id, point]))
+        geo.value.points = results[1].data.map(p => {
+          const fallback = fallbackPoints.get(p.id) || {}
+          return {
+            ...fallback,
+            id: p.id,
+            name: p.name,
+            lat: p.lat ?? fallback.lat,
+            lng: p.lng ?? fallback.lng,
+            displayLat: p.lat ?? fallback.displayLat,
+            displayLng: p.lng ?? fallback.displayLng,
+            description: p.description || fallback.description || '',
+            beforeImg: p.before_img || fallback.beforeImg || '',
+            afterImg: p.after_img || fallback.afterImg || '',
+          }
+        })
       }
       if (results[2].data) {
         geo.value.patrol_track = results[2].data.track || []
