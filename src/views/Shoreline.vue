@@ -125,10 +125,10 @@ const markerById = new Map()
 let map = null
 
 const pointMarkerMeta = {
-  hualong: { icon: '⚓', type: 'wharf', label: '华龙码头' },
-  chenglingji: { icon: '💧', type: 'hydrology', label: '城陵矶水文站' },
+  hualong: { icon: '⚓', type: 'wharf', label: '华龙码头（江豚湾）' },
+  'dongting-scenic': { icon: '🌊', type: 'scenic', label: '洞庭湖景区' },
   'dongting-wetland': { icon: '🌿', type: 'wetland', label: '东洞庭湖湿地' },
-  fishery: { icon: '🛥', type: 'fishery', label: '渔政巡护水域' },
+  fishery: { icon: '🛥', type: 'fishery', label: '渔政监督管理局' },
 }
 
 const activeHistoricalEntry = computed(() => {
@@ -189,7 +189,7 @@ function initMap() {
     const el = document.getElementById('shoreline-map')
     if (!el || map) return
 
-    map = L.map(el).setView([29.38, 113.02], 11)
+    map = L.map(el).setView([29.40, 113.00], 10)
     L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
       subdomains: ['1', '2', '3', '4'],
       maxZoom: 18,
@@ -197,13 +197,27 @@ function initMap() {
     }).addTo(map)
 
     const points = dataStore.geo?.points || []
+    const markerPositions = []
     points.forEach(point => {
-      const marker = L.marker([point.displayLat ?? point.lat, point.displayLng ?? point.lng], { icon: markerIconFor(point) })
+      const position = [point.displayLat ?? point.lat, point.displayLng ?? point.lng]
+      const labelOnLeft = position[1] >= 113.09
+      markerPositions.push(position)
+      const marker = L.marker(position, { icon: markerIconFor(point) })
         .addTo(map)
-        .bindPopup(`<b>${point.name}</b><br/>点击查看历史影像时间轴`)
+        .bindTooltip(point.name, {
+          permanent: true,
+          direction: labelOnLeft ? 'left' : 'top',
+          offset: labelOnLeft ? [-28, 0] : [0, -38],
+          className: 'shoreline-marker-label',
+        })
+        .bindPopup(`<b>${point.name}</b><br/>${point.address || '地址待现场核验'}<br/>点击查看历史影像时间轴`)
         .on('click', () => selectPoint(point, true))
       markerById.set(point.id, marker)
     })
+
+    if (markerPositions.length) {
+      map.fitBounds(L.latLngBounds(markerPositions), { padding: [72, 72], maxZoom: 11 })
+    }
 
     updateMarkerSelection()
     setTimeout(() => map?.invalidateSize(), 300)
@@ -269,11 +283,27 @@ onUnmounted(() => {
 
 .shoreline-marker i { font-style: normal; transform: rotate(45deg); }
 .shoreline-marker--wharf { background: #d97706; }
-.shoreline-marker--hydrology { background: #1683c7; }
+.shoreline-marker--scenic { background: #1683c7; }
 .shoreline-marker--wetland { background: #2f9e61; }
 .shoreline-marker--fishery { background: #6b5cc5; }
 .shoreline-marker--default { background: #2e86ab; }
 .shoreline-marker-shell.is-selected .shoreline-marker { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9), 0 0 0 8px rgba(46, 134, 171, 0.45); transform: rotate(-45deg) scale(1.14); }
+
+.shoreline-marker-label {
+  padding: 4px 7px;
+  border: 1px solid rgba(33, 62, 78, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 2px 6px rgba(20, 48, 64, 0.16);
+  color: #203847;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.leaflet-tooltip-top.shoreline-marker-label::before {
+  border-top-color: rgba(255, 255, 255, 0.94);
+}
 </style>
 
 <style scoped>

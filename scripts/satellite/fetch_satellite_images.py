@@ -27,9 +27,13 @@ CATALOG_SEARCH_URL = "https://planetarycomputer.microsoft.com/api/stac/v1/search
 DATA_API_URL = "https://planetarycomputer.microsoft.com/api/data/v1"
 COLLECTION = "sentinel-2-l2a"
 YEARS = range(2016, 2022)
-AUTUMN_WINDOW = ("09-01", "12-15")
+DEFAULT_AUTUMN_WINDOW = ("09-01", "12-15")
+YEAR_WINDOWS = {2020: ("09-01", "09-30")}
 OUTPUT_SIZE = (1400, 800)
+QUALITY_SIZE = (280, 160)
 BBOX_HALF_HEIGHT = 0.012
+MAX_QUALITY_CANDIDATES = 20
+OBSCURED_SCL_CLASSES = {3, 8, 9, 10, 11}
 
 
 def load_geo() -> dict:
@@ -48,13 +52,18 @@ def point_bbox(point: dict) -> list[float]:
     return [lng - half_width, lat - BBOX_HALF_HEIGHT, lng + half_width, lat + BBOX_HALF_HEIGHT]
 
 
+def search_window(year: int) -> tuple[str, str]:
+    return YEAR_WINDOWS.get(year, DEFAULT_AUTUMN_WINDOW)
+
+
 def find_candidates(session: requests.Session, bbox: list[float], year: int) -> list[dict]:
+    start_date, end_date = search_window(year)
     response = session.post(
         CATALOG_SEARCH_URL,
         json={
             "collections": [COLLECTION],
             "bbox": bbox,
-            "datetime": f"{year}-{AUTUMN_WINDOW[0]}/{year}-{AUTUMN_WINDOW[1]}",
+            "datetime": f"{year}-{start_date}/{year}-{end_date}",
             "limit": 100,
         },
         timeout=45,
@@ -96,7 +105,58 @@ def render_image(session: requests.Session, item: dict, bbox: list[float]) -> by
     return response.content
 
 
-def entry_from_item(item: dict, image_path: str) -> dict:
+def local_obscured_cover(session: requests.Session, item: dict, bbox: list[float]) -> float:
+    coords = ",".join(f"{value:.7f}" for value in bbox)
+    width, height = QUALITY_SIZE
+    url = f"{DATA_API_URL}/item/bbox/{coords}/{width}x{height}.png"
+    params = [
+        ("collection", COLLECTION),
+        ("item", item["id"]),
+        ("assets", "SCL"),
+        ("rescale", "0,11"),
+        ("resampling", "nearest"),
+    ]
+    response = session.get(url, params=params, timeout=90)
+    response.raise_for_status()
+    if response.headers.get("content-type", "").split(";")[0] != "image/png":
+        raise RuntimeError(f"Unexpected SCL response for {item['id']}")
+
+    image = Image.open(BytesIO(response.content)).convert("L")
+    image.load()
+    if image.size != QUALITY_SIZE:
+        raise RuntimeError(f"Unexpected SCL size {image.size} for {item['id']}")
+
+    pixels = image.get_flattened_data() if hasattr(image, "get_flattened_data") else image.getdata()
+    classes = [round(value * 11 / 255) for value in pixels]
+    nodata_ratio = sum(1 for value in classes if value == 0) / len(classes)
+    if nodata_ratio > 0.001:
+        raise RuntimeError(f"SCL crop contains no-data pixels for {item['id']}")
+    valid_classes = [value for value in classes if value != 0]
+    obscured = sum(1 for value in valid_classes if value in OBSCURED_SCL_CLASSES)
+    return obscured / len(valid_classes) * 100
+
+
+def ranked_local_candidates(
+    session: requests.Session,
+    candidates: list[dict],
+    bbox: list[float],
+) -> tuple[list[dict], dict[str, float], list[dict]]:
+    scored = []
+    rejected = []
+    for candidate in candidates[:MAX_QUALITY_CANDIDATES]:
+        try:
+            local_cover = local_obscured_cover(session, candidate, bbox)
+            scored.append((local_cover, candidate))
+        except (requests.RequestException, RuntimeError) as error:
+            rejected.append({"productId": candidate["id"], "stage": "SCL quality check", "reason": str(error)})
+    if not scored:
+        return candidates, {}, rejected
+    scored.sort(key=lambda result: (result[0], result[1].get("properties", {}).get("eo:cloud_cover", 100)))
+    scores = {candidate["id"]: score for score, candidate in scored}
+    return [candidate for _, candidate in scored], scores, rejected
+
+
+def entry_from_item(item: dict, image_path: str, local_cover: float | None) -> dict:
     properties = item.get("properties", {})
     acquired = properties.get("datetime", "")
     return {
@@ -107,28 +167,43 @@ def entry_from_item(item: dict, image_path: str) -> dict:
         "source": "Sentinel-2 L2A",
         "productId": item["id"],
         "cloudCover": properties.get("eo:cloud_cover"),
+        "localObscuredCover": round(local_cover, 6) if local_cover is not None else None,
         "processing": "单景真彩色，固定 0-3000 反射率拉伸",
         "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
         "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-        "note": "影像按秋季窗口和场景云量筛选；可见变化仍需结合水文资料和实地调查判断。",
+        "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。",
     }
 
 
-def update_timeline(point: dict, entries: dict[int, dict]) -> None:
+def update_timeline(point: dict, entries: dict[int, dict], reset_existing: bool, requested_years: set[int]) -> None:
     existing_by_year = {entry["year"]: entry for entry in point.get("timeline", [])}
-    point["timeline"] = [entries.get(year, existing_by_year.get(year, {"year": year})) for year in YEARS]
+    point["timeline"] = [
+        entries.get(
+            year,
+            {"year": year} if reset_existing and year in requested_years else existing_by_year.get(year, {"year": year}),
+        )
+        for year in YEARS
+    ]
 
 
-def process_point(session: requests.Session, point: dict, dry_run: bool) -> list[dict]:
+def process_point(
+    session: requests.Session,
+    point: dict,
+    years: list[int],
+    dry_run: bool,
+    reset_existing: bool,
+) -> list[dict]:
     bbox = point_bbox(point)
     downloaded = {}
     report_rows = []
 
-    for year in YEARS:
+    for year in years:
+        start_date, end_date = search_window(year)
+        search_range = f"{year}-{start_date}/{year}-{end_date}"
         candidates = find_candidates(session, bbox, year)
         if not candidates:
             print(f"{point['id']} {year}: no candidate")
-            report_rows.append({"point": point["id"], "year": year, "status": "missing", "bbox": bbox})
+            report_rows.append({"point": point["id"], "year": year, "status": "missing", "bbox": bbox, "searchWindow": search_range})
             continue
 
         if dry_run:
@@ -140,6 +215,7 @@ def process_point(session: requests.Session, point: dict, dry_run: bool) -> list
                 "year": year,
                 "status": "candidate",
                 "bbox": bbox,
+                "searchWindow": search_range,
                 "productId": item["id"],
                 "date": properties.get("datetime", "")[:10],
                 "cloudCover": properties.get("eo:cloud_cover"),
@@ -149,35 +225,37 @@ def process_point(session: requests.Session, point: dict, dry_run: bool) -> list
         output_path = ROOT / "public" / "img" / "satellite" / point["id"] / f"{year}.webp"
         item = None
         image_bytes = None
-        rejected = []
-        for candidate in candidates:
+        ranked_candidates, local_scores, rejected = ranked_local_candidates(session, candidates, bbox)
+        for candidate in ranked_candidates:
             try:
                 image_bytes = render_image(session, candidate, bbox)
                 item = candidate
                 break
             except (requests.RequestException, RuntimeError) as error:
-                rejected.append({"productId": candidate["id"], "reason": str(error)})
+                rejected.append({"productId": candidate["id"], "stage": "RGB render", "reason": str(error)})
         if item is None or image_bytes is None:
             print(f"{point['id']} {year}: no complete crop")
-            report_rows.append({"point": point["id"], "year": year, "status": "missing", "bbox": bbox, "rejected": rejected})
+            report_rows.append({"point": point["id"], "year": year, "status": "missing", "bbox": bbox, "searchWindow": search_range, "rejected": rejected})
             continue
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_bytes(image_bytes)
         image_path = f"/img/satellite/{point['id']}/{year}.webp"
-        downloaded[year] = entry_from_item(item, image_path)
-        print(f"{point['id']} {year}: wrote {output_path.relative_to(ROOT)}")
+        local_cover = local_scores.get(item["id"])
+        downloaded[year] = entry_from_item(item, image_path, local_cover)
+        print(f"{point['id']} {year}: wrote {output_path.relative_to(ROOT)} local-obscured={local_cover}")
         report_rows.append({
             "point": point["id"],
             "year": year,
             "status": "downloaded",
             "bbox": bbox,
+            "searchWindow": search_range,
             "rejectedCandidates": rejected,
             **downloaded[year],
         })
 
     if not dry_run:
-        update_timeline(point, downloaded)
+        update_timeline(point, downloaded, reset_existing, set(years))
     return report_rows
 
 
@@ -204,8 +282,10 @@ def complete_manifest(geo: dict, latest_rows: list[dict]) -> list[dict]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch Sentinel-2 history for shoreline points.")
     parser.add_argument("--point", action="append", dest="point_ids", help="Point id to process; repeat for more than one point.")
+    parser.add_argument("--year", action="append", dest="years", type=int, help="Year to process; repeat for more than one year.")
     parser.add_argument("--dry-run", action="store_true", help="Search candidates only; do not download or change geo.json.")
     parser.add_argument("--manifest-only", action="store_true", help="Rebuild the complete manifest from geo.json without network access.")
+    parser.add_argument("--reset-existing", action="store_true", help="Do not retain old timeline entries when a replacement download is missing.")
     args = parser.parse_args()
 
     geo = load_geo()
@@ -213,13 +293,17 @@ def main() -> None:
     points = [point for point in geo["points"] if point["id"] in requested]
     if not points:
         raise SystemExit("No matching point id found.")
+    years = sorted(set(args.years or YEARS))
+    invalid_years = [year for year in years if year not in YEARS]
+    if invalid_years:
+        raise SystemExit(f"Unsupported year(s): {', '.join(map(str, invalid_years))}")
 
     report = []
     if not args.manifest_only:
         with requests.Session() as session:
             session.headers.update({"User-Agent": "dongtinghu-social-practice/1.0"})
             for point in points:
-                report.extend(process_point(session, point, args.dry_run))
+                report.extend(process_point(session, point, years, args.dry_run, args.reset_existing))
 
     if not args.dry_run:
         GEO_PATH.write_text(json.dumps(geo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

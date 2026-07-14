@@ -22,7 +22,11 @@ python scripts/satellite/fetch_satellite_images.py --point hualong --dry-run
 python scripts/satellite/fetch_satellite_images.py --point hualong
 ```
 
-The script searches each year from September 1 to December 15, ranks available Sentinel-2 L2A scenes by `eo:cloud_cover`, exports the same 16:9 WGS84 ground footprint for every year of a point and writes WebP files to `public/img/satellite/<point-id>/`. It also updates that point's `timeline` metadata in `src/data/geo.json` and writes a generated manifest under `docs/`.
+The script searches each year from September 1 to December 15, except 2020 which is intentionally restricted to September 1-30 for seasonal consistency. It takes up to 20 candidates ordered by STAC `eo:cloud_cover`, measures cloud and shadow classes in the point crop using the Sentinel-2 SCL asset, and renders the clearest local candidate. It exports the same 16:9 WGS84 ground footprint for every year of a point and writes WebP files to `public/img/satellite/<point-id>/`. It also updates that point's `timeline` metadata in `src/data/geo.json` and writes a generated manifest under `docs/`.
+
+Use `--reset-existing` when point coordinates have changed and every historical image must be rebuilt. If a replacement cannot be downloaded, that year stays empty instead of silently retaining imagery from the old location.
+
+Use `--year 2020` to rebuild a specific year without touching the other timeline entries. The option can be repeated for multiple years.
 
 Rebuild the complete manifest without making a network request:
 

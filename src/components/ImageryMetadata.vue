@@ -17,8 +17,8 @@
       <dd>{{ entry.productId || '待补充' }}</dd>
     </div>
     <div>
-      <dt>云量</dt>
-      <dd>{{ entry.cloudCover === null || entry.cloudCover === undefined ? '待补充' : `${entry.cloudCover}%` }}</dd>
+      <dt>{{ entry.localObscuredCover === null || entry.localObscuredCover === undefined ? '场景云量' : '点位云/阴影' }}</dt>
+      <dd>{{ displayedCloudCover }}</dd>
     </div>
     <div>
       <dt>处理方式</dt>
@@ -38,8 +38,17 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   entry: { type: Object, required: true },
+})
+
+const displayedCloudCover = computed(() => {
+  const value = props.entry.localObscuredCover ?? props.entry.cloudCover
+  if (value === null || value === undefined) return '待补充'
+  const numericValue = Number(value)
+  return Number.isFinite(numericValue) ? `${numericValue.toFixed(2)}%` : '待补充'
 })
 </script>
 
