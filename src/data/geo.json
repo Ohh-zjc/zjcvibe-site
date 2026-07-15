@@ -438,10 +438,11 @@
       ],
       "current": {
         "year": 2026,
-        "image": null,
-        "date": "",
+        "image": "/img/field/fishery/2026-shoreline-residents.webp",
+        "date": "2026-07-15",
         "source": "实践队无人机航拍",
-        "note": "2026 年实地航拍将在社会实践期间补充。"
+        "processing": "视频连续帧特征对齐拼接，16:9 无黑边裁剪",
+        "note": "由 00:20-00:44 湖岸段与 01:15-01:39 居民区段的真实连续帧拼接，展示洞庭湖水面、岸线与居民建筑的空间分界。"
       }
     }
   ],
