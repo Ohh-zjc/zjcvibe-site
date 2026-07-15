@@ -28,7 +28,10 @@ DATA_API_URL = "https://planetarycomputer.microsoft.com/api/data/v1"
 COLLECTION = "sentinel-2-l2a"
 YEARS = range(2016, 2022)
 DEFAULT_AUTUMN_WINDOW = ("09-01", "12-15")
-YEAR_WINDOWS = {2020: ("09-01", "09-30")}
+YEAR_WINDOWS = {
+    2020: ("09-01", "09-30"),
+    2021: ("09-01", "09-30"),
+}
 OUTPUT_SIZE = (1400, 800)
 QUALITY_SIZE = (280, 160)
 BBOX_HALF_HEIGHT = 0.012
@@ -269,11 +272,13 @@ def complete_manifest(geo: dict, latest_rows: list[dict]) -> list[dict]:
             if key in latest_by_key:
                 manifest.append(latest_by_key[key])
                 continue
+            start_date, end_date = search_window(entry["year"])
             manifest.append({
                 "point": point["id"],
                 "year": entry["year"],
                 "status": "downloaded" if entry.get("image") else "missing",
                 "bbox": bbox,
+                "searchWindow": f"{entry['year']}-{start_date}/{entry['year']}-{end_date}",
                 **entry,
             })
     return sorted(manifest, key=lambda row: (row["point"], row["year"]))

@@ -16,7 +16,7 @@ The complete per-image manifest is generated at `docs/satellite-imagery-manifest
 ## Scene Selection and Processing
 
 - Catalog: Microsoft Planetary Computer STAC, collection `sentinel-2-l2a`.
-- Seasonal search window: September 1 to December 15, with 2020 restricted to September 1-30 to keep that comparison in September.
+- Seasonal search window: September 1 to December 15, with 2020 and 2021 restricted to September 1-30 to keep those comparisons in September.
 - Candidate order: take up to 20 scenes ordered by STAC `eo:cloud_cover`, then select the lowest cloud/shadow fraction inside the point crop using Sentinel-2 SCL classes 3, 8, 9, 10 and 11.
 - Quality check: a rendered candidate containing visible no-data pixels is rejected and the next candidate is tried. This corrected tile-edge gaps in the fishery 2016 and 2017 crops.
 - Rendering: Sentinel-2 B04/B03/B02 true colour with a fixed 0-3000 reflectance stretch.

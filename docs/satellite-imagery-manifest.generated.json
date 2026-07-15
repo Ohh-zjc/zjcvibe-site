@@ -10,7 +10,6 @@
       29.334376
     ],
     "searchWindow": "2016-09-01/2016-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-scenic/2016.webp",
     "date": "2016-12-09",
     "dateRange": "",
@@ -34,7 +33,6 @@
       29.334376
     ],
     "searchWindow": "2017-09-01/2017-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-scenic/2017.webp",
     "date": "2017-10-30",
     "dateRange": "",
@@ -58,7 +56,6 @@
       29.334376
     ],
     "searchWindow": "2018-09-01/2018-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-scenic/2018.webp",
     "date": "2018-10-05",
     "dateRange": "",
@@ -82,7 +79,6 @@
       29.334376
     ],
     "searchWindow": "2019-09-01/2019-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-scenic/2019.webp",
     "date": "2019-09-30",
     "dateRange": "",
@@ -106,7 +102,6 @@
       29.334376
     ],
     "searchWindow": "2020-09-01/2020-09-30",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-scenic/2020.webp",
     "date": "2020-09-09",
     "dateRange": "",
@@ -129,8 +124,7 @@
       113.12697663628032,
       29.334376
     ],
-    "searchWindow": "2021-09-01/2021-12-15",
-    "rejectedCandidates": [],
+    "searchWindow": "2021-09-01/2021-09-30",
     "image": "/img/satellite/dongting-scenic/2021.webp",
     "date": "2021-12-03",
     "dateRange": "",
@@ -154,7 +148,6 @@
       29.5338232
     ],
     "searchWindow": "2016-09-01/2016-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-wetland/2016.webp",
     "date": "2016-12-09",
     "dateRange": "",
@@ -178,7 +171,6 @@
       29.5338232
     ],
     "searchWindow": "2017-09-01/2017-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-wetland/2017.webp",
     "date": "2017-11-09",
     "dateRange": "",
@@ -202,7 +194,6 @@
       29.5338232
     ],
     "searchWindow": "2018-09-01/2018-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-wetland/2018.webp",
     "date": "2018-09-15",
     "dateRange": "",
@@ -226,7 +217,6 @@
       29.5338232
     ],
     "searchWindow": "2019-09-01/2019-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-wetland/2019.webp",
     "date": "2019-09-05",
     "dateRange": "",
@@ -250,7 +240,6 @@
       29.5338232
     ],
     "searchWindow": "2020-09-01/2020-09-30",
-    "rejectedCandidates": [],
     "image": "/img/satellite/dongting-wetland/2020.webp",
     "date": "2020-09-24",
     "dateRange": "",
@@ -273,8 +262,7 @@
       112.85534836873025,
       29.5338232
     ],
-    "searchWindow": "2021-09-01/2021-12-15",
-    "rejectedCandidates": [],
+    "searchWindow": "2021-09-01/2021-09-30",
     "image": "/img/satellite/dongting-wetland/2021.webp",
     "date": "2021-12-03",
     "dateRange": "",
@@ -298,7 +286,6 @@
       29.375047300000002
     ],
     "searchWindow": "2016-09-01/2016-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/fishery/2016.webp",
     "date": "2016-12-09",
     "dateRange": "",
@@ -322,7 +309,6 @@
       29.375047300000002
     ],
     "searchWindow": "2017-09-01/2017-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/fishery/2017.webp",
     "date": "2017-09-15",
     "dateRange": "",
@@ -346,7 +332,6 @@
       29.375047300000002
     ],
     "searchWindow": "2018-09-01/2018-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/fishery/2018.webp",
     "date": "2018-09-15",
     "dateRange": "",
@@ -370,7 +355,6 @@
       29.375047300000002
     ],
     "searchWindow": "2019-09-01/2019-12-15",
-    "rejectedCandidates": [],
     "image": "/img/satellite/fishery/2019.webp",
     "date": "2019-09-30",
     "dateRange": "",
@@ -394,7 +378,6 @@
       29.375047300000002
     ],
     "searchWindow": "2020-09-01/2020-09-30",
-    "rejectedCandidates": [],
     "image": "/img/satellite/fishery/2020.webp",
     "date": "2020-09-09",
     "dateRange": "",
@@ -417,8 +400,7 @@
       113.11543684955362,
       29.375047300000002
     ],
-    "searchWindow": "2021-09-01/2021-12-15",
-    "rejectedCandidates": [],
+    "searchWindow": "2021-09-01/2021-09-30",
     "image": "/img/satellite/fishery/2021.webp",
     "date": "2021-09-09",
     "dateRange": "",
@@ -442,43 +424,6 @@
       29.4584699
     ],
     "searchWindow": "2016-09-01/2016-12-15",
-    "rejectedCandidates": [
-      {
-        "productId": "S2A_MSIL2A_20161209T031122_R075_T49RGN_20210213T191237",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20161209T031122_R075_T49RGN_20210213T191237"
-      },
-      {
-        "productId": "S2A_MSIL2A_20161109T030932_R075_T49RGN_20210414T011923",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20161109T030932_R075_T49RGN_20210414T011923"
-      },
-      {
-        "productId": "S2A_MSIL2A_20160930T030542_R075_T49RGN_20210213T055738",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20160930T030542_R075_T49RGN_20210213T055738"
-      },
-      {
-        "productId": "S2A_MSIL2A_20161020T030732_R075_T49RGN_20210213T122643",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20161020T030732_R075_T49RGN_20210213T122643"
-      },
-      {
-        "productId": "S2A_MSIL2A_20160910T030542_R075_T49RGN_20210212T231841",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20160910T030542_R075_T49RGN_20210212T231841"
-      },
-      {
-        "productId": "S2A_MSIL2A_20161119T031012_R075_T49RGN_20210414T151625",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20161119T031012_R075_T49RGN_20210414T151625"
-      },
-      {
-        "productId": "S2A_MSIL2A_20161030T031622_R075_T49RGN_20210213T154012",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20161030T031622_R075_T49RGN_20210213T154012"
-      }
-    ],
     "image": "/img/satellite/hualong/2016.webp",
     "date": "2016-12-09",
     "dateRange": "",
@@ -502,63 +447,6 @@
       29.4584699
     ],
     "searchWindow": "2017-09-01/2017-12-15",
-    "rejectedCandidates": [
-      {
-        "productId": "S2B_MSIL2A_20171030T030829_R075_T49RGN_20201015T031316",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20171030T030829_R075_T49RGN_20201015T031316"
-      },
-      {
-        "productId": "S2B_MSIL2A_20171109T030919_R075_T49RGN_20201014T190747",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20171109T030919_R075_T49RGN_20201014T190747"
-      },
-      {
-        "productId": "S2A_MSIL2A_20170915T030541_R075_T49RGN_20210202T025714",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20170915T030541_R075_T49RGN_20210202T025714"
-      },
-      {
-        "productId": "S2B_MSIL2A_20171209T031109_R075_T49RGN_20210114T092014",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20171209T031109_R075_T49RGN_20210114T092014"
-      },
-      {
-        "productId": "S2A_MSIL2A_20171204T031111_R075_T49RGN_20201014T115607",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20171204T031111_R075_T49RGN_20201014T115607"
-      },
-      {
-        "productId": "S2B_MSIL2A_20171020T030729_R075_T49RGN_20201015T010829",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20171020T030729_R075_T49RGN_20201015T010829"
-      },
-      {
-        "productId": "S2B_MSIL2A_20170930T030529_R075_T49RGN_20210202T120441",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20170930T030529_R075_T49RGN_20210202T120441"
-      },
-      {
-        "productId": "S2A_MSIL2A_20171114T031001_R075_T49RGN_20201014T194350",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20171114T031001_R075_T49RGN_20201014T194350"
-      },
-      {
-        "productId": "S2A_MSIL2A_20171005T030551_R075_T49RGN_20210202T140615",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20171005T030551_R075_T49RGN_20210202T140615"
-      },
-      {
-        "productId": "S2B_MSIL2A_20170910T030539_R075_T49RGN_20210201T232528",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20170910T030539_R075_T49RGN_20210201T232528"
-      },
-      {
-        "productId": "S2A_MSIL2A_20171025T030811_R075_T49RGN_20201015T020725",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20171025T030811_R075_T49RGN_20201015T020725"
-      }
-    ],
     "image": "/img/satellite/hualong/2017.webp",
     "date": "2017-11-09",
     "dateRange": "",
@@ -582,58 +470,6 @@
       29.4584699
     ],
     "searchWindow": "2018-09-01/2018-12-15",
-    "rejectedCandidates": [
-      {
-        "productId": "S2B_MSIL2A_20181005T030549_R075_T49RGN_20201009T082546",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20181005T030549_R075_T49RGN_20201009T082546"
-      },
-      {
-        "productId": "S2A_MSIL2A_20181129T031051_R075_T49RGN_20201008T223612",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20181129T031051_R075_T49RGN_20201008T223612"
-      },
-      {
-        "productId": "S2A_MSIL2A_20181109T030931_R075_T49RGN_20201008T170630",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20181109T030931_R075_T49RGN_20201008T170630"
-      },
-      {
-        "productId": "S2B_MSIL2A_20180915T030539_R075_T49RGN_20201009T012606",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20180915T030539_R075_T49RGN_20201009T012606"
-      },
-      {
-        "productId": "S2B_MSIL2A_20181124T031039_R075_T49RGN_20201008T212138",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20181124T031039_R075_T49RGN_20201008T212138"
-      },
-      {
-        "productId": "S2A_MSIL2A_20180930T030541_R075_T49RGN_20201009T062702",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20180930T030541_R075_T49RGN_20201009T062702"
-      },
-      {
-        "productId": "S2A_MSIL2A_20181030T030831_R075_T49RGN_20201009T164149",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20181030T030831_R075_T49RGN_20201009T164149"
-      },
-      {
-        "productId": "S2A_MSIL2A_20181119T031011_R075_T49RGN_20201008T195019",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20181119T031011_R075_T49RGN_20201008T195019"
-      },
-      {
-        "productId": "S2A_MSIL2A_20181010T030631_R075_T49RGN_20201009T100131",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20181010T030631_R075_T49RGN_20201009T100131"
-      },
-      {
-        "productId": "S2B_MSIL2A_20180905T030539_R075_T49RGN_20201011T085613",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20180905T030539_R075_T49RGN_20201011T085613"
-      }
-    ],
     "image": "/img/satellite/hualong/2018.webp",
     "date": "2018-09-15",
     "dateRange": "",
@@ -657,63 +493,6 @@
       29.4584699
     ],
     "searchWindow": "2019-09-01/2019-12-15",
-    "rejectedCandidates": [
-      {
-        "productId": "S2B_MSIL2A_20190930T030539_R075_T49RGN_20201004T185024",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20190930T030539_R075_T49RGN_20201004T185024"
-      },
-      {
-        "productId": "S2B_MSIL2A_20191119T031019_R075_T49RGN_20201003T180411",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20191119T031019_R075_T49RGN_20201003T180411"
-      },
-      {
-        "productId": "S2A_MSIL2A_20191204T031111_R075_T49RGN_20201003T002744",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20191204T031111_R075_T49RGN_20201003T002744"
-      },
-      {
-        "productId": "S2A_MSIL2A_20191114T031001_R075_T49RGN_20201003T161812",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20191114T031001_R075_T49RGN_20201003T161812"
-      },
-      {
-        "productId": "S2B_MSIL2A_20191109T030929_R075_T49RGN_20201003T144634",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20191109T030929_R075_T49RGN_20201003T144634"
-      },
-      {
-        "productId": "S2B_MSIL2A_20191020T030739_R075_T49RGN_20201004T042358",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20191020T030739_R075_T49RGN_20201004T042358"
-      },
-      {
-        "productId": "S2B_MSIL2A_20190910T030549_R075_T49RGN_20201004T113251",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20190910T030549_R075_T49RGN_20201004T113251"
-      },
-      {
-        "productId": "S2A_MSIL2A_20191104T030911_R075_T49RGN_20201003T125540",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20191104T030911_R075_T49RGN_20201003T125540"
-      },
-      {
-        "productId": "S2A_MSIL2A_20191214T031121_R075_T49RGN_20201003T044450",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20191214T031121_R075_T49RGN_20201003T044450"
-      },
-      {
-        "productId": "S2B_MSIL2A_20190920T030539_R075_T49RGN_20201004T152146",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20190920T030539_R075_T49RGN_20201004T152146"
-      },
-      {
-        "productId": "S2B_MSIL2A_20191209T031119_R075_T49RGN_20201003T024552",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20191209T031119_R075_T49RGN_20201003T024552"
-      }
-    ],
     "image": "/img/satellite/hualong/2019.webp",
     "date": "2019-10-20",
     "dateRange": "",
@@ -737,38 +516,6 @@
       29.4584699
     ],
     "searchWindow": "2020-09-01/2020-09-30",
-    "rejectedCandidates": [
-      {
-        "productId": "S2B_MSIL2A_20200924T030549_R075_T49RGN_20200926T143426",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20200924T030549_R075_T49RGN_20200926T143426"
-      },
-      {
-        "productId": "S2A_MSIL2A_20200909T030551_R075_T49RGN_20200912T004929",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20200909T030551_R075_T49RGN_20200912T004929"
-      },
-      {
-        "productId": "S2A_MSIL2A_20200929T030551_R075_T49RGN_20201001T201739",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20200929T030551_R075_T49RGN_20201001T201739"
-      },
-      {
-        "productId": "S2B_MSIL2A_20200914T030549_R075_T49RGN_20200919T194713",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20200914T030549_R075_T49RGN_20200919T194713"
-      },
-      {
-        "productId": "S2A_MSIL2A_20200919T030551_R075_T49RGN_20200922T220421",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20200919T030551_R075_T49RGN_20200922T220421"
-      },
-      {
-        "productId": "S2B_MSIL2A_20200904T030549_R075_T49RGN_20200908T021120",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20200904T030549_R075_T49RGN_20200908T021120"
-      }
-    ],
     "image": "/img/satellite/hualong/2020.webp",
     "date": "2020-09-09",
     "dateRange": "",
@@ -791,71 +538,14 @@
       113.07467832982097,
       29.4584699
     ],
-    "searchWindow": "2021-09-01/2021-12-15",
-    "rejectedCandidates": [
-      {
-        "productId": "S2A_MSIL2A_20211113T031001_R075_T49RGN_20211113T112140",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20211113T031001_R075_T49RGN_20211113T112140"
-      },
-      {
-        "productId": "S2A_MSIL2A_20211004T030551_R075_T49RGN_20211004T084547",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20211004T030551_R075_T49RGN_20211004T084547"
-      },
-      {
-        "productId": "S2B_MSIL2A_20211118T031019_R075_T49RGN_20211118T150224",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20211118T031019_R075_T49RGN_20211118T150224"
-      },
-      {
-        "productId": "S2B_MSIL2A_20211108T030929_R075_T49RGN_20211109T025721",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20211108T030929_R075_T49RGN_20211109T025721"
-      },
-      {
-        "productId": "S2A_MSIL2A_20210924T030551_R075_T49RGN_20210927T060631",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20210924T030551_R075_T49RGN_20210927T060631"
-      },
-      {
-        "productId": "S2B_MSIL2A_20210909T030539_R075_T49RGN_20210909T145309",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20210909T030539_R075_T49RGN_20210909T145309"
-      },
-      {
-        "productId": "S2A_MSIL2A_20211123T031031_R075_T49RGN_20211123T141931",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20211123T031031_R075_T49RGN_20211123T141931"
-      },
-      {
-        "productId": "S2A_MSIL2A_20210914T030541_R075_T49RGN_20210914T152427",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20210914T030541_R075_T49RGN_20210914T152427"
-      },
-      {
-        "productId": "S2A_MSIL2A_20211203T031111_R075_T49RGN_20211203T133906",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20211203T031111_R075_T49RGN_20211203T133906"
-      },
-      {
-        "productId": "S2B_MSIL2A_20211128T031049_R075_T49RGN_20211129T001040",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2B_MSIL2A_20211128T031049_R075_T49RGN_20211129T001040"
-      },
-      {
-        "productId": "S2A_MSIL2A_20211203T031111_R075_T49RGN_20230130T074614",
-        "stage": "SCL quality check",
-        "reason": "SCL crop contains no-data pixels for S2A_MSIL2A_20211203T031111_R075_T49RGN_20230130T074614"
-      }
-    ],
+    "searchWindow": "2021-09-01/2021-09-30",
     "image": "/img/satellite/hualong/2021.webp",
-    "date": "2021-12-03",
+    "date": "2021-09-09",
     "dateRange": "",
     "source": "Sentinel-2 L2A",
-    "productId": "S2A_MSIL2A_20211203T031111_R075_T49RFN_20230130T030355",
-    "cloudCover": 11.434843,
-    "localObscuredCover": 0.011161,
+    "productId": "S2B_MSIL2A_20210909T030539_R075_T49RFN_20210909T132747",
+    "cloudCover": 6.730681,
+    "localObscuredCover": 0.314732,
     "processing": "单景真彩色，固定 0-3000 反射率拉伸",
     "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
     "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
