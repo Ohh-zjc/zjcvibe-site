@@ -36,6 +36,7 @@ OUTPUT_SIZE = (1400, 800)
 QUALITY_SIZE = (280, 160)
 BBOX_HALF_HEIGHT = 0.012
 MAX_QUALITY_CANDIDATES = 20
+MAX_LOCAL_OBSCURED_COVER = 35.0
 OBSCURED_SCL_CLASSES = {3, 8, 9, 10, 11}
 
 
@@ -55,12 +56,15 @@ def point_bbox(point: dict) -> list[float]:
     return [lng - half_width, lat - BBOX_HALF_HEIGHT, lng + half_width, lat + BBOX_HALF_HEIGHT]
 
 
-def search_window(year: int) -> tuple[str, str]:
+def search_window(year: int, point: dict | None = None) -> tuple[str, str]:
+    custom_window = point.get("imagerySearchWindow") if point else None
+    if custom_window:
+        return custom_window["start"], custom_window["end"]
     return YEAR_WINDOWS.get(year, DEFAULT_AUTUMN_WINDOW)
 
 
-def find_candidates(session: requests.Session, bbox: list[float], year: int) -> list[dict]:
-    start_date, end_date = search_window(year)
+def find_candidates(session: requests.Session, bbox: list[float], year: int, window: tuple[str, str]) -> list[dict]:
+    start_date, end_date = window
     response = session.post(
         CATALOG_SEARCH_URL,
         json={
@@ -201,9 +205,9 @@ def process_point(
     report_rows = []
 
     for year in years:
-        start_date, end_date = search_window(year)
+        start_date, end_date = search_window(year, point)
         search_range = f"{year}-{start_date}/{year}-{end_date}"
-        candidates = find_candidates(session, bbox, year)
+        candidates = find_candidates(session, bbox, year, (start_date, end_date))
         if not candidates:
             print(f"{point['id']} {year}: no candidate")
             report_rows.append({"point": point["id"], "year": year, "status": "missing", "bbox": bbox, "searchWindow": search_range})
@@ -229,6 +233,34 @@ def process_point(
         item = None
         image_bytes = None
         ranked_candidates, local_scores, rejected = ranked_local_candidates(session, candidates, bbox)
+        if local_scores:
+            unsuitable_candidates = [
+                candidate for candidate in ranked_candidates
+                if local_scores[candidate["id"]] > MAX_LOCAL_OBSCURED_COVER
+            ]
+            rejected.extend({
+                "productId": candidate["id"],
+                "stage": "local quality threshold",
+                "reason": (
+                    f"local cloud/shadow {local_scores[candidate['id']]:.3f}% "
+                    f"exceeds {MAX_LOCAL_OBSCURED_COVER:.0f}%"
+                ),
+            } for candidate in unsuitable_candidates)
+            ranked_candidates = [
+                candidate for candidate in ranked_candidates
+                if local_scores[candidate["id"]] <= MAX_LOCAL_OBSCURED_COVER
+            ]
+        if not ranked_candidates:
+            print(f"{point['id']} {year}: no candidate below local obscured threshold")
+            report_rows.append({
+                "point": point["id"],
+                "year": year,
+                "status": "missing",
+                "bbox": bbox,
+                "searchWindow": search_range,
+                "rejected": rejected,
+            })
+            continue
         for candidate in ranked_candidates:
             try:
                 image_bytes = render_image(session, candidate, bbox)
@@ -272,7 +304,7 @@ def complete_manifest(geo: dict, latest_rows: list[dict]) -> list[dict]:
             if key in latest_by_key:
                 manifest.append(latest_by_key[key])
                 continue
-            start_date, end_date = search_window(entry["year"])
+            start_date, end_date = search_window(entry["year"], point)
             manifest.append({
                 "point": point["id"],
                 "year": entry["year"],

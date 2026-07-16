@@ -10,10 +10,10 @@
           <div v-if="mapError" class="map-error">地图加载失败，请检查网络连接后重试。</div>
         </div>
         <div class="map-legend" aria-label="点位图例">
-          <span><i class="legend-dot legend-dot--hydrology"></i>水文站</span>
+          <span><i class="legend-dot legend-dot--nanhu"></i>公园广场</span>
           <span><i class="legend-dot legend-dot--wetland"></i>湿地</span>
           <span><i class="legend-dot legend-dot--wharf"></i>码头</span>
-          <span><i class="legend-dot legend-dot--fishery"></i>巡护水域</span>
+          <span><i class="legend-dot legend-dot--fishery"></i>渔政监督</span>
         </div>
       </div>
     </section>
@@ -126,7 +126,7 @@ let map = null
 
 const pointMarkerMeta = {
   hualong: { icon: '⚓', type: 'wharf', label: '华龙码头（江豚湾）' },
-  'dongting-scenic': { icon: '🌊', type: 'scenic', label: '洞庭湖景区' },
+  'nanhu-square': { icon: '🏞️', type: 'nanhu', label: '南湖广场公园' },
   'dongting-wetland': { icon: '🌿', type: 'wetland', label: '东洞庭湖湿地' },
   fishery: { icon: '🛥', type: 'fishery', label: '渔政监督管理局' },
 }
@@ -283,7 +283,7 @@ onUnmounted(() => {
 
 .shoreline-marker i { font-style: normal; transform: rotate(45deg); }
 .shoreline-marker--wharf { background: #d97706; }
-.shoreline-marker--scenic { background: #1683c7; }
+.shoreline-marker--nanhu { background: #1683c7; }
 .shoreline-marker--wetland { background: #2f9e61; }
 .shoreline-marker--fishery { background: #6b5cc5; }
 .shoreline-marker--default { background: #2e86ab; }
@@ -315,7 +315,7 @@ onUnmounted(() => {
 .map-legend { position: absolute; right: 14px; bottom: 14px; display: grid; grid-template-columns: repeat(2, max-content); gap: 5px 12px; padding: 9px 12px; background: rgba(255, 255, 255, 0.94); box-shadow: var(--shadow); color: var(--text-secondary); font-size: 12px; }
 .map-legend span { display: inline-flex; align-items: center; gap: 5px; }
 .legend-dot { width: 9px; height: 9px; border-radius: 50%; }
-.legend-dot--wharf { background: #d97706; }.legend-dot--hydrology { background: #1683c7; }.legend-dot--wetland { background: #2f9e61; }.legend-dot--fishery { background: #6b5cc5; }
+.legend-dot--wharf { background: #d97706; }.legend-dot--nanhu { background: #1683c7; }.legend-dot--wetland { background: #2f9e61; }.legend-dot--fishery { background: #6b5cc5; }
 .section-heading-row { display: flex; justify-content: space-between; align-items: start; gap: 18px; margin-bottom: 12px; }
 .section-kicker { color: var(--primary); font-size: 13px; font-weight: 700; }
 .section-heading-row h3 { margin-top: 2px; color: var(--text-primary); font-size: 22px; }

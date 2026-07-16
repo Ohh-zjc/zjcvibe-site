@@ -1,143 +1,5 @@
 [
   {
-    "point": "dongting-scenic",
-    "year": 2016,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2016-09-01/2016-12-15",
-    "image": "/img/satellite/dongting-scenic/2016.webp",
-    "date": "2016-12-09",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2A_MSIL2A_20161209T031122_R075_T49RFN_20210213T191236",
-    "cloudCover": 0.172966,
-    "localObscuredCover": 1.283482,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
-    "point": "dongting-scenic",
-    "year": 2017,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2017-09-01/2017-12-15",
-    "image": "/img/satellite/dongting-scenic/2017.webp",
-    "date": "2017-10-30",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2B_MSIL2A_20171030T030829_R075_T49RGN_20201015T031316",
-    "cloudCover": 0.10891,
-    "localObscuredCover": 0.745536,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
-    "point": "dongting-scenic",
-    "year": 2018,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2018-09-01/2018-12-15",
-    "image": "/img/satellite/dongting-scenic/2018.webp",
-    "date": "2018-10-05",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2B_MSIL2A_20181005T030549_R075_T49RFN_20201009T082549",
-    "cloudCover": 0.074791,
-    "localObscuredCover": 0.633929,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
-    "point": "dongting-scenic",
-    "year": 2019,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2019-09-01/2019-12-15",
-    "image": "/img/satellite/dongting-scenic/2019.webp",
-    "date": "2019-09-30",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2B_MSIL2A_20190930T030539_R075_T49RFN_20201004T185018",
-    "cloudCover": 0.073022,
-    "localObscuredCover": 0.165179,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
-    "point": "dongting-scenic",
-    "year": 2020,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2020-09-01/2020-09-30",
-    "image": "/img/satellite/dongting-scenic/2020.webp",
-    "date": "2020-09-09",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2A_MSIL2A_20200909T030551_R075_T49RGN_20200912T004929",
-    "cloudCover": 32.952782,
-    "localObscuredCover": 0.761161,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
-    "point": "dongting-scenic",
-    "year": 2021,
-    "status": "downloaded",
-    "bbox": [
-      113.07880476371969,
-      29.310375999999998,
-      113.12697663628032,
-      29.334376
-    ],
-    "searchWindow": "2021-09-01/2021-09-30",
-    "image": "/img/satellite/dongting-scenic/2021.webp",
-    "date": "2021-12-03",
-    "dateRange": "",
-    "source": "Sentinel-2 L2A",
-    "productId": "S2A_MSIL2A_20211203T031111_R075_T49RGN_20230130T074614",
-    "cloudCover": 27.040243,
-    "localObscuredCover": 0.0,
-    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
-    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
-    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
-    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
-  },
-  {
     "point": "dongting-wetland",
     "year": 2016,
     "status": "downloaded",
@@ -546,6 +408,285 @@
     "productId": "S2B_MSIL2A_20210909T030539_R075_T49RFN_20210909T132747",
     "cloudCover": 6.730681,
     "localObscuredCover": 0.314732,
+    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
+    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
+    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
+    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2016,
+    "status": "missing",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2016-09-01/2016-09-30",
+    "rejected": [
+      {
+        "productId": "S2A_MSIL2A_20160910T030542_R075_T49RFN_20210212T231839",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20160910T030542_R075_T49RGN_20210212T231841",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      }
+    ]
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2017,
+    "status": "downloaded",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2017-09-01/2017-09-30",
+    "rejectedCandidates": [
+      {
+        "productId": "S2B_MSIL2A_20170910T030539_R075_T49RGN_20210201T232528",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20170910T030539_R075_T49RFN_20210201T232528",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      }
+    ],
+    "image": "/img/satellite/nanhu-square/2017.webp",
+    "date": "2017-09-15",
+    "dateRange": "",
+    "source": "Sentinel-2 L2A",
+    "productId": "S2A_MSIL2A_20170915T030541_R075_T49RFN_20210202T025712",
+    "cloudCover": 0.126469,
+    "localObscuredCover": 0.439732,
+    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
+    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
+    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
+    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2018,
+    "status": "downloaded",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2018-09-01/2018-09-30",
+    "rejectedCandidates": [
+      {
+        "productId": "S2A_MSIL2A_20180910T030541_R075_T49RFN_20201008T233112",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.681% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20180910T030541_R075_T49RGN_20201008T233114",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.681% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20180925T030539_R075_T49RGN_20201009T044722",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20180925T030539_R075_T49RFN_20201009T044720",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      }
+    ],
+    "image": "/img/satellite/nanhu-square/2018.webp",
+    "date": "2018-09-15",
+    "dateRange": "",
+    "source": "Sentinel-2 L2A",
+    "productId": "S2B_MSIL2A_20180915T030539_R075_T49RGN_20201009T012606",
+    "cloudCover": 4.766474,
+    "localObscuredCover": 0.196429,
+    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
+    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
+    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
+    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2019,
+    "status": "downloaded",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2019-09-01/2019-09-30",
+    "rejectedCandidates": [
+      {
+        "productId": "S2A_MSIL2A_20190915T030541_R075_T49RGN_20201004T131908",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 72.205% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20190915T030541_R075_T49RFN_20201004T131909",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 76.676% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20190905T030541_R075_T49RGN_20201004T092657",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 92.319% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20190905T030541_R075_T49RFN_20201004T092657",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 92.603% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20190925T030541_R075_T49RFN_20201004T165128",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.246% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20190925T030541_R075_T49RGN_20201004T165128",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.395% exceeds 35%"
+      }
+    ],
+    "image": "/img/satellite/nanhu-square/2019.webp",
+    "date": "2019-09-10",
+    "dateRange": "",
+    "source": "Sentinel-2 L2A",
+    "productId": "S2B_MSIL2A_20190910T030549_R075_T49RGN_20201004T113251",
+    "cloudCover": 3.189729,
+    "localObscuredCover": 0.265625,
+    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
+    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
+    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
+    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2020,
+    "status": "downloaded",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2020-09-01/2020-09-30",
+    "rejectedCandidates": [
+      {
+        "productId": "S2A_MSIL2A_20200919T030551_R075_T49RFN_20200922T220219",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 97.498% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20200919T030551_R075_T49RGN_20200922T220421",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 97.596% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20200914T030549_R075_T49RGN_20200919T194713",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.871% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20200904T030549_R075_T49RFN_20200919T143955",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.915% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20200904T030549_R075_T49RGN_20200908T021120",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.935% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20200914T030549_R075_T49RFN_20200919T194223",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 99.940% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20200929T030551_R075_T49RGN_20201001T201739",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20200929T030551_R075_T49RFN_20201001T201748",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      }
+    ],
+    "image": "/img/satellite/nanhu-square/2020.webp",
+    "date": "2020-09-09",
+    "dateRange": "",
+    "source": "Sentinel-2 L2A",
+    "productId": "S2A_MSIL2A_20200909T030551_R075_T49RGN_20200912T004929",
+    "cloudCover": 32.952782,
+    "localObscuredCover": 0.433036,
+    "processing": "单景真彩色，固定 0-3000 反射率拉伸",
+    "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
+    "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
+    "note": "影像按秋季窗口、场景云量和点位 SCL 云/阴影估算筛选；可见变化仍需结合水文资料和实地调查判断。"
+  },
+  {
+    "point": "nanhu-square",
+    "year": 2021,
+    "status": "downloaded",
+    "bbox": [
+      113.08797946333485,
+      29.340424,
+      113.13616553666515,
+      29.364424
+    ],
+    "searchWindow": "2021-09-01/2021-09-30",
+    "rejectedCandidates": [
+      {
+        "productId": "S2A_MSIL2A_20210914T030541_R075_T49RFN_20210914T161903",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 39.942% exceeds 35%"
+      },
+      {
+        "productId": "S2A_MSIL2A_20210914T030541_R075_T49RGN_20210914T152427",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 39.989% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20210929T030539_R075_T49RFN_20210929T135206",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 74.741% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20210929T030539_R075_T49RGN_20210929T131518",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 85.571% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20210919T030539_R075_T49RFN_20210919T142009",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      },
+      {
+        "productId": "S2B_MSIL2A_20210919T030539_R075_T49RGN_20210919T125947",
+        "stage": "local quality threshold",
+        "reason": "local cloud/shadow 100.000% exceeds 35%"
+      }
+    ],
+    "image": "/img/satellite/nanhu-square/2021.webp",
+    "date": "2021-09-09",
+    "dateRange": "",
+    "source": "Sentinel-2 L2A",
+    "productId": "S2B_MSIL2A_20210909T030539_R075_T49RFN_20210909T132747",
+    "cloudCover": 6.730681,
+    "localObscuredCover": 0.323661,
     "processing": "单景真彩色，固定 0-3000 反射率拉伸",
     "attribution": "Contains modified Copernicus Sentinel data via Microsoft Planetary Computer.",
     "sourcePage": "https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a",
