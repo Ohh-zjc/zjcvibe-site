@@ -57,6 +57,10 @@ def point_bbox(point: dict) -> list[float]:
 
 
 def search_window(year: int, point: dict | None = None) -> tuple[str, str]:
+    yearly_windows = point.get("imagerySearchWindowByYear") if point else None
+    if yearly_windows and str(year) in yearly_windows:
+        custom_window = yearly_windows[str(year)]
+        return custom_window["start"], custom_window["end"]
     custom_window = point.get("imagerySearchWindow") if point else None
     if custom_window:
         return custom_window["start"], custom_window["end"]
