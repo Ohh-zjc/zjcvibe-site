@@ -119,7 +119,7 @@
         </div>
         <div v-else class="artwork-grid">
           <div v-for="(art, i) in edu.artworks" :key="i" class="artwork-item">
-            <img :src="art" />
+            <img :src="publicAsset(art)" :alt="`江豚小课堂作品 ${i + 1}`" loading="lazy" />
           </div>
         </div>
       </el-tab-pane>
@@ -463,6 +463,32 @@ function resetQuiz() {
 .empty-state p { font-size: 14px; }
 .empty-hint { font-size: 12px !important; opacity: 0.6; }
 
+/* ===== 作品墙 ===== */
+.artwork-grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  columns: 3 220px;
+  column-gap: 16px;
+}
+
+.artwork-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(25, 62, 82, 0.1);
+}
+
+.artwork-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 180ms ease;
+}
+
+.artwork-item:hover img { transform: scale(1.02); }
+
 /* 反馈 */
 .feedback-list {
   display: grid;
@@ -489,5 +515,6 @@ function resetQuiz() {
   .flipbook-card, .quiz-card { padding: 20px; }
   .action-list { grid-template-columns: 1fr; gap: 14px; }
   .flipbook-controls { gap: 10px; }
+  .artwork-grid { columns: 1; }
 }
 </style>
