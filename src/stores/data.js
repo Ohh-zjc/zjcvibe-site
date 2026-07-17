@@ -88,6 +88,8 @@ export const useDataStore = defineStore('data', () => {
           cleanup: d.cleanup || dashboardJson.cleanup,
           patrol: d.patrol || dashboardJson.patrol,
           finless_porpoise: d.finless_porpoise || [],
+          field_sample: d.field_sample || dashboardJson.field_sample,
+          porpoise: d.porpoise || dashboardJson.porpoise,
         }
       }
 

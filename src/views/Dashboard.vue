@@ -1,255 +1,113 @@
 <template>
-  <div class="page-container">
+  <div class="page-container dashboard-page">
     <h2 class="section-title">📊 数据看板</h2>
-    <p class="section-subtitle">水质 · 植被 · 清滩 · 巡护 —— 全流程数据汇总</p>
+    <p class="section-subtitle">现场水样快检 · 江豚保护记录 · 公开生态背景</p>
 
-    <!-- 统计卡片 -->
-    <div class="stat-cards">
-      <div class="stat-card data-card">
-        <div class="stat-icon" style="background:#E8F4F8">💧</div>
-        <div class="stat-info">
-          <span class="stat-val">10年</span>
-          <span class="stat-lbl">水质监测跨度</span>
+    <section class="dashboard-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">2026 年实践现场快检</p>
+          <h3>洞庭湖水样记录</h3>
         </div>
+        <span class="section-meta">定性与便携仪器快检结果</span>
       </div>
-      <div class="stat-card data-card">
-        <div class="stat-icon" style="background:#E8F8E8">🌿</div>
-        <div class="stat-info">
-          <span class="stat-val">{{ (d.ndvi.hualong[2] * 100).toFixed(0) }}%</span>
-          <span class="stat-lbl">华龙码头植被覆盖</span>
-        </div>
-      </div>
-      <div class="stat-card data-card">
-        <div class="stat-icon" style="background:#FFF3E0">{{ d.patrol.distance_km || '—' }}</div>
-        <div class="stat-info">
-          <span class="stat-val">待填</span>
-          <span class="stat-lbl">巡护总里程 (km)</span>
-        </div>
-      </div>
-      <div class="stat-card data-card">
-        <div class="stat-icon" style="background:#F3E5F5">🐬</div>
-        <div class="stat-info">
-          <span class="stat-val">待填</span>
-          <span class="stat-lbl">江豚目击次数</span>
-        </div>
-      </div>
-    </div>
 
-    <!-- 水质趋势 -->
-    <section class="chart-row">
-      <div class="chart-half">
-        <h3>💧 叶绿素-a 浓度趋势（2016-2026）</h3>
-        <div class="chart-box data-card">
-          <v-chart :option="chlaOption" autoresize style="height: 320px" />
-        </div>
-      </div>
-      <div class="chart-half">
-        <h3>🌫️ 浊度趋势（2016-2026）</h3>
-        <div class="chart-box data-card">
-          <v-chart :option="turbOption" autoresize style="height: 320px" />
-        </div>
+      <div class="stat-cards">
+        <article class="stat-card data-card">
+          <div class="stat-icon stat-icon--blue">💧</div>
+          <div class="stat-info"><span class="stat-val">{{ sample.tds }}</span><span class="stat-unit">mg/L</span><span class="stat-lbl">TDS（溶解性总固体）</span></div>
+        </article>
+        <article class="stat-card data-card">
+          <div class="stat-icon stat-icon--green">⚗️</div>
+          <div class="stat-info"><span class="stat-val">{{ sample.ph }}</span><span class="stat-lbl">pH 现场判定</span></div>
+        </article>
+        <article class="stat-card data-card">
+          <div class="stat-icon stat-icon--amber">🧪</div>
+          <div class="stat-info"><span class="stat-val">{{ sample.residualChlorine }}</span><span class="stat-lbl">余氯含量</span></div>
+        </article>
+        <article class="stat-card data-card">
+          <div class="stat-icon stat-icon--porpoise">🐬</div>
+          <div class="stat-info"><span class="stat-val">{{ porpoise.dongtingCount }}</span><span class="stat-unit">头</span><span class="stat-lbl">洞庭湖江豚记录</span></div>
+        </article>
       </div>
     </section>
 
-    <!-- 植被覆盖 -->
-    <section class="chart-row">
-      <div class="chart-half">
-        <h3>🌿 植被覆盖率</h3>
-        <div class="chart-box data-card">
-          <v-chart :option="vegOption" autoresize style="height: 320px" />
+    <section class="dashboard-section data-card sample-detail">
+      <div class="sample-summary">
+        <span class="summary-icon">🔬</span>
+        <div>
+          <p class="section-kicker">水样快检</p>
+          <h3>矿物元素检出</h3>
+          <p>{{ sample.location }}。已检出钙、镁、锌等元素；余氯为低检出，pH 呈弱碱性。</p>
         </div>
       </div>
-      <div class="chart-half">
-        <h3>📈 NDVI 变化（三年对比）</h3>
-        <div class="chart-box data-card">
-          <v-chart :option="ndviOption" autoresize style="height: 320px" />
-        </div>
+      <div class="mineral-list" aria-label="水样检出元素">
+        <span v-for="mineral in sample.minerals" :key="mineral" class="mineral-tag">{{ mineral }} · 检出</span>
       </div>
     </section>
 
-    <!-- 清滩数据 -->
-    <section class="full-chart">
-      <h3>🗑️ 清滩垃圾类型对比</h3>
-      <div class="chart-box data-card">
-        <div v-if="!hasCleanupData" class="empty-state">
-          <el-icon :size="32"><Delete /></el-icon>
-          <p>清滩数据将在实地清滩活动后填入</p>
-          <p class="empty-hint">对比华龙码头 vs 渔政岸段：塑料 / 渔网 / 泡沫 / 其他</p>
+    <section class="dashboard-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">保护动态</p>
+          <h3>江豚观察与科学考察背景</h3>
         </div>
-        <v-chart v-else :option="cleanupOption" autoresize style="height: 320px" />
+        <span class="section-meta">现场记录与公开调查口径分列展示</span>
       </div>
+      <div class="porpoise-grid">
+        <article class="porpoise-card porpoise-card--local data-card">
+          <span class="porpoise-card__label">洞庭湖江豚现有记录</span>
+          <div class="porpoise-card__number">{{ porpoise.dongtingCount }}<small>头</small></div>
+          <p>{{ porpoise.dongtingNote }}</p>
+        </article>
+        <article class="porpoise-card data-card">
+          <span class="porpoise-card__label">长江江豚科学考察结果</span>
+          <div class="porpoise-card__number">{{ porpoise.nationalSurveyCount }}<small>头</small></div>
+          <p>{{ porpoise.nationalSurveyNote }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="dashboard-section data-card data-note">
+      <h3>数据说明</h3>
+      <p>现场水样数据由实践团队使用便携设备快检获得，用于实践记录与生态科普，不替代具备资质的实验室检测报告或水环境质量评价。</p>
+      <p>公开背景数据：2022 年长江江豚科学考察结果为 1,249 头，结果于 2023 年由农业农村部、生态环境部、国家林草局和中国科学院联合发布，是目前公开发布的最近一轮完整科学考察口径。</p>
     </section>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import VChart from 'vue-echarts'
-import { use } from 'echarts/core'
-import { LineChart, BarChart, GaugeChart } from 'echarts/charts'
-import { GridComponent, TooltipComponent, LegendComponent } from 'echarts/components'
-import { CanvasRenderer } from 'echarts/renderers'
-import { Delete } from '@element-plus/icons-vue'
 import { useDataStore } from '../stores/data'
 
 const dataStore = useDataStore()
-const d = computed(() => dataStore.dashboard)
-
-use([LineChart, BarChart, GaugeChart, GridComponent, TooltipComponent, LegendComponent, CanvasRenderer])
-
-function _d() { return d.value }
-
-const hasCleanupData = computed(() => {
-  const h = _d().cleanup.hualong
-  return h.plastic + h.net + h.foam + h.other > 0
-})
-
-const chlaOption = computed(() => ({
-  tooltip: { trigger: 'axis' },
-  grid: { left: '3%', right: '4%', bottom: '10%', top: '8%', containLabel: true },
-  xAxis: { type: 'category', data: _d().water_quality.years.map(String) },
-  yAxis: { type: 'value', name: 'μg/L' },
-  series: [{
-    type: 'line', data: _d().water_quality.chl_a, smooth: true,
-    lineStyle: { color: '#2E86AB', width: 3 }, itemStyle: { color: '#2E86AB' },
-    areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-      colorStops: [{ offset: 0, color: 'rgba(46,134,171,0.2)' }, { offset: 1, color: 'rgba(46,134,171,0)' }]
-    }},
-  }],
-}))
-
-const turbOption = computed(() => ({
-  tooltip: { trigger: 'axis' },
-  grid: { left: '3%', right: '4%', bottom: '10%', top: '8%', containLabel: true },
-  xAxis: { type: 'category', data: _d().water_quality.years.map(String) },
-  yAxis: { type: 'value', name: 'NTU' },
-  series: [{
-    type: 'line', data: _d().water_quality.turbidity, smooth: true,
-    lineStyle: { color: '#F18F01', width: 3 }, itemStyle: { color: '#F18F01' },
-    areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-      colorStops: [{ offset: 0, color: 'rgba(241,143,1,0.15)' }, { offset: 1, color: 'rgba(241,143,1,0)' }]
-    }},
-  }],
-}))
-
-const vegOption = computed(() => ({
-  series: [
-    { type: 'gauge', center: ['25%', '55%'], radius: '75%',
-      startAngle: 200, endAngle: -20, min: 0, max: 1,
-      axisLine: { lineStyle: { width: 16, color: [[0.5, '#F18F01'], [1, '#27AE60']] } },
-      axisTick: { show: false }, splitLine: { show: false }, axisLabel: { show: false },
-      detail: { formatter: (v) => (v * 100).toFixed(1) + '%', fontSize: 22, offsetCenter: [0, '65%'] },
-      data: [{ value: _d().vegetation.hualong, name: '华龙码头' }],
-    },
-    { type: 'gauge', center: ['75%', '55%'], radius: '75%',
-      startAngle: 200, endAngle: -20, min: 0, max: 1,
-      axisLine: { lineStyle: { width: 16, color: [[0.6, '#F18F01'], [1, '#27AE60']] } },
-      axisTick: { show: false }, splitLine: { show: false }, axisLabel: { show: false },
-      detail: { formatter: (v) => (v * 100).toFixed(1) + '%', fontSize: 22, offsetCenter: [0, '65%'] },
-      data: [{ value: _d().vegetation.dongting, name: '东洞庭湖湿地' }],
-    },
-  ],
-  graphic: [
-    { type: 'text', left: 'center', top: '85%', style: { text: '华龙码头　　　　　　东洞庭湖湿地', fill: '#5A6C7D', fontSize: 13, textAlign: 'center' } },
-  ],
-}))
-
-const ndviOption = computed(() => ({
-  tooltip: { trigger: 'axis' },
-  legend: { data: ['华龙码头', '东洞庭湖湿地'], bottom: 0 },
-  grid: { left: '3%', right: '4%', bottom: '12%', top: '8%', containLabel: true },
-  xAxis: { type: 'category', data: _d().ndvi.years.map(String) },
-  yAxis: { type: 'value', min: 0, max: 1, axisLabel: { formatter: '{value}' } },
-  color: ['#2E86AB', '#27AE60'],
-  series: [
-    { name: '华龙码头', type: 'bar', data: _d().ndvi.hualong, barWidth: '28%', itemStyle: { borderRadius: [4, 4, 0, 0] } },
-    { name: '东洞庭湖湿地', type: 'bar', data: _d().ndvi.dongting, barWidth: '28%', itemStyle: { borderRadius: [4, 4, 0, 0] } },
-  ],
-}))
-
-const cleanupOption = computed(() => ({
-  tooltip: { trigger: 'axis' },
-  legend: { data: ['华龙码头', '渔政岸段'] },
-  grid: { left: '3%', right: '4%', bottom: '10%', top: '12%', containLabel: true },
-  xAxis: { type: 'category', data: ['塑料', '渔网', '泡沫', '其他'] },
-  yAxis: { type: 'value', name: '重量 (kg)' },
-  color: ['#2E86AB', '#F18F01'],
-  series: [
-    { name: '华龙码头', type: 'bar', data: [_d().cleanup.hualong.plastic, _d().cleanup.hualong.net, _d().cleanup.hualong.foam, _d().cleanup.hualong.other] },
-    { name: '渔政岸段', type: 'bar', data: [_d().cleanup.fishery.plastic, _d().cleanup.fishery.net, _d().cleanup.fishery.foam, _d().cleanup.fishery.other] },
-  ],
-}))
+const dashboard = computed(() => dataStore.dashboard)
+const sample = computed(() => dashboard.value.field_sample)
+const porpoise = computed(() => dashboard.value.porpoise)
 </script>
 
 <style scoped>
-.stat-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 40px;
-}
+.dashboard-page { padding-bottom: 20px; }
+.dashboard-section { margin-bottom: 34px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: 14px; }
+.section-kicker { margin-bottom: 4px; color: var(--primary); font-size: 13px; font-weight: 700; }
+.section-heading h3, .sample-detail h3, .data-note h3 { color: var(--text-primary); font-size: 20px; }
+.section-meta { color: var(--text-muted); font-size: 12px; text-align: right; }
 
-.stat-card {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.stat-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.stat-card { min-height: 124px; padding: 20px; display: flex; align-items: center; gap: 14px; }
+.stat-icon { width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center; font-size: 23px; }
+.stat-icon--blue { background: #e5f4fb; }.stat-icon--green { background: #e8f7ec; }.stat-icon--amber { background: #fff2df; }.stat-icon--porpoise { background: #f3e8fa; }
+.stat-info { min-width: 0; }.stat-val { color: var(--text-primary); font-size: 25px; font-weight: 750; }.stat-unit { margin-left: 4px; color: var(--text-secondary); font-size: 13px; }.stat-lbl { display: block; margin-top: 4px; color: var(--text-secondary); font-size: 12px; line-height: 1.35; }
 
-.stat-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
+.sample-detail { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.7fr); gap: 24px; padding: 26px; }
+.sample-summary { display: flex; align-items: flex-start; gap: 14px; }.summary-icon { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; background: #e8f4f8; font-size: 22px; }.sample-summary p { margin-top: 7px; color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+.mineral-list { display: flex; align-content: center; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }.mineral-tag { padding: 7px 10px; border: 1px solid #cbe1e9; background: #f4fafc; color: #17617e; font-size: 13px; font-weight: 600; }
 
-.stat-val {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-primary);
-  display: block;
-}
+.porpoise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }.porpoise-card { padding: 26px; border-top: 3px solid #277eab; }.porpoise-card--local { border-top-color: #cf7c25; }.porpoise-card__label { color: var(--text-secondary); font-size: 13px; }.porpoise-card__number { margin: 10px 0 8px; color: var(--text-primary); font-size: 38px; font-weight: 800; line-height: 1; }.porpoise-card__number small { margin-left: 4px; color: var(--text-secondary); font-size: 15px; font-weight: 600; }.porpoise-card p { color: var(--text-secondary); font-size: 13px; line-height: 1.65; }
 
-.stat-lbl {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
+.data-note { padding: 24px 26px; border-left: 3px solid var(--primary); }.data-note p { margin-top: 9px; color: var(--text-secondary); font-size: 13px; line-height: 1.75; }
 
-.chart-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
-}
-
-.chart-row h3,
-.full-chart h3 {
-  font-size: 16px;
-  margin-bottom: 12px;
-  color: var(--text-primary);
-}
-
-.chart-box { padding: 16px; }
-
-.full-chart { margin-bottom: 32px; }
-
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 48px;
-  color: var(--text-muted);
-}
-
-.empty-state p { font-size: 14px; }
-.empty-hint { font-size: 12px !important; opacity: 0.6; }
-
-@media (max-width: 768px) {
-  .chart-row { grid-template-columns: 1fr; }
-  .stat-cards { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 900px) { .stat-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }.sample-detail { grid-template-columns: 1fr; }.mineral-list { justify-content: flex-start; } }
+@media (max-width: 640px) { .section-heading { align-items: start; flex-direction: column; gap: 5px; }.section-meta { text-align: left; }.stat-card { padding: 16px; }.porpoise-grid { grid-template-columns: 1fr; }.sample-detail { padding: 20px; }.porpoise-card { padding: 20px; } }
 </style>
