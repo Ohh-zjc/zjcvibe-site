@@ -469,6 +469,7 @@ function resetQuiz() {
   margin: 0 auto;
   columns: 3 220px;
   column-gap: 16px;
+  column-fill: balance;
 }
 
 .artwork-item {
