@@ -161,7 +161,7 @@ const bookPages = [
     text: '笑笑是一只长江江豚。它生活在长江和洞庭湖水域，是我国特有的淡水鲸类，也是国家一级重点保护野生动物。',
   },
   {
-    title: '找找我的特别之处', imgLabel: '圆圆脑袋的江豚', icon: '🔎',
+    title: '找找我的特别之处', imgLabel: '圆圆脑袋、没有背鳍的江豚', image: '/img/education/porpoise-features.jpeg',
     text: '江豚的嘴角天生微微上扬，好像一直在微笑。仔细看看，它和海豚并不一样。',
     facts: ['头部浑圆，自带“微笑”', '背部没有背鳍', '皮肤光滑，鳍肢宽大'],
   },
@@ -170,20 +170,20 @@ const bookPages = [
     text: '亮亮是生活在海里的海豚，有明显的背鳍和长长的嘴。笑笑生活在淡水里，头更圆，背上没有背鳍。现在你能分清我们了吗？',
   },
   {
-    title: '我的水下超能力', imgLabel: '声呐小专家', icon: '📡',
+    title: '我的水下超能力', imgLabel: '在水里结伴前行的江豚', image: '/img/education/porpoise-pod.jpeg',
     text: '江水有时很浑浊，笑笑的眼睛看不远，却能用额头和下巴发射、接收超声波，像带着一套水下雷达。',
     facts: ['用声呐辨别方向', '寻找食物和伙伴', '在浑水里也能灵活游泳'],
   },
   {
-    title: '江水健康我知道', imgLabel: '长江生态“晴雨表”', icon: '💧',
+    title: '江水健康我知道', imgLabel: '江豚家族与清洁水域', image: '/img/education/porpoise-family.jpeg',
     text: '江豚处在长江水生动物食物链的顶端，对水环境要求很高。它们的生活状况，就像一份送给长江的健康报告。',
   },
   {
-    title: '笑笑也有困扰', imgLabel: '一起找出危险', icon: '⚠️',
+    title: '笑笑也有困扰', imgLabel: '江豚面临的生态危机', image: '/img/education/porpoise-threats.jpeg',
     text: '密集船只、水质污染、栖息地被破坏和食物变少，都会让江豚的家变得不安全。保护形势仍然需要大家一起努力。',
   },
   {
-    title: '守护笑笑的家', imgLabel: '把约定带回家', icon: '🌊',
+    title: '守护笑笑的家', imgLabel: 'PPT 中的江豚宣教课堂', image: '/img/education/porpoise-classroom.jpeg',
     text: '不向水里扔垃圾，少用一次性塑料，主动讲述江豚故事。每一个小小的行动，都会让长江更适合笑笑和伙伴们生活。',
   },
 ]
