@@ -39,7 +39,7 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="身份标签">
-              <el-input v-model="form.identity" placeholder="如：城陵矶水文站退休职工" />
+              <el-input v-model="form.identity" placeholder="如：东洞庭湖湿地巡护员" />
             </el-form-item>
           </el-col>
         </el-row>
@@ -61,42 +61,8 @@
           </div>
         </el-form-item>
 
-        <el-form-item label="采访录音">
-          <div class="upload-row">
-            <input type="file" accept="audio/*" @change="onAudioUpload" ref="audioInput" style="display:none" />
-            <el-button @click="$refs.audioInput.click()">🎵 上传录音</el-button>
-            <audio v-if="form.audio" :src="form.audio" controls style="max-width:300px" />
-            <span v-else class="no-photo">未上传</span>
-          </div>
-          <div style="margin-top:8px">
-            <el-input v-model="form.audio" placeholder="或直接粘贴音频 URL" size="small" />
-          </div>
-        </el-form-item>
-
-        <el-form-item label="转写文字稿">
-          <el-input v-model="form.transcript" type="textarea" :rows="5" placeholder="AI 转写全文或手动输入" />
-        </el-form-item>
-
-        <el-form-item label="更多照片">
-          <div class="photo-list">
-            <div v-for="(p, i) in form.photos" :key="i" class="photo-item">
-              <img v-if="p && !p.includes('placeholder')" :src="p" />
-              <span v-else>📷 照片{{ i+1 }}</span>
-              <el-button size="small" type="danger" circle @click="form.photos.splice(i,1)">✕</el-button>
-            </div>
-            <div class="photo-add" @click="addPhotoUrl">
-              <span>+</span>
-            </div>
-          </div>
-        </el-form-item>
-
-        <el-form-item label="时间线事件">
-          <div v-for="(ev, i) in form.timeline" :key="i" class="timeline-row">
-            <el-input v-model="ev.year" placeholder="年份" style="width:100px" size="small" />
-            <el-input v-model="ev.event" placeholder="事件描述" size="small" style="flex:1" />
-            <el-button size="small" type="danger" circle @click="form.timeline.splice(i,1)">✕</el-button>
-          </div>
-          <el-button size="small" @click="form.timeline.push({year:'',event:''})">+ 添加事件</el-button>
+        <el-form-item label="人物故事整理稿">
+          <el-input v-model="form.transcript" type="textarea" :rows="8" placeholder="根据已核验的采访记录或工作场景整理，不填写逐字采访内容" />
         </el-form-item>
 
         <el-form-item label="关键词（逗号分隔）">
@@ -131,13 +97,7 @@ const defaultForm = () => ({
   summary: '',
   quote: '',
   photo: '/img/placeholder-person.jpg',
-  audio: null,
-  audio_segments: [],
   transcript: '',
-  photos: ['/img/placeholder-person.jpg'],
-  timeline: [],
-  waveform: null,
-  sentiment: null,
   keywords: [],
 })
 
@@ -163,18 +123,6 @@ async function onPhotoUpload(e) {
   if (!file) return
   const url = await dataStore.uploadImage(file)
   form.value.photo = url
-}
-
-async function onAudioUpload(e) {
-  const file = e.target.files[0]
-  if (!file) return
-  const url = await dataStore.uploadImage(file)
-  form.value.audio = url
-}
-
-function addPhotoUrl() {
-  const url = prompt('输入图片URL，或留空添加占位：')
-  form.value.photos.push(url || '/img/placeholder-person.jpg')
 }
 
 async function savePerson() {

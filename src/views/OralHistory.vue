@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <h2 class="section-title">🎙️ 护江者说</h2>
-    <p class="section-subtitle">聆听洞庭湖守护者的口述历史——从水文站到渔政船，从退捕渔民到湿地巡护员</p>
+    <p class="section-subtitle">洞庭湖保护一线的四种岗位视角：湿地巡护、退捕转型、社区参与与渔政执法</p>
 
     <div class="interview-grid">
       <div
@@ -16,10 +16,9 @@
         <div class="card-body">
           <h3>
             {{ person.name }}
-            <span class="placeholder-badge" v-if="person.photo.includes('placeholder')">待填充</span>
           </h3>
           <p class="card-identity">{{ person.identity }}</p>
-          <blockquote class="card-quote">「{{ person.quote }}」</blockquote>
+          <p class="card-quote">{{ person.quote }}</p>
           <div class="card-tags">
             <el-tag
               v-for="kw in person.keywords"
