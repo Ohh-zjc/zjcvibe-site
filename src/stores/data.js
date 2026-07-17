@@ -90,6 +90,7 @@ export const useDataStore = defineStore('data', () => {
           finless_porpoise: d.finless_porpoise || [],
           field_sample: d.field_sample || dashboardJson.field_sample,
           porpoise: d.porpoise || dashboardJson.porpoise,
+          remote_sensing: d.remote_sensing || dashboardJson.remote_sensing,
         }
       }
 

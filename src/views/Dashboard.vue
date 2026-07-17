@@ -49,6 +49,27 @@
     <section class="dashboard-section">
       <div class="section-heading">
         <div>
+          <p class="section-kicker">公开卫星影像处理</p>
+          <h3>江面悬浮物与浑浊度相对变化</h3>
+        </div>
+        <span class="section-meta">{{ remoteSensing.point }} · 2016—2021</span>
+      </div>
+      <div class="chart-row">
+        <div class="chart-panel data-card">
+          <h4>🌊 悬浮泥沙相对指数（NDTI）</h4>
+          <v-chart :option="sedimentOption" autoresize style="height: 280px" />
+        </div>
+        <div class="chart-panel data-card">
+          <h4>🌫️ 浑浊度代理值（红光波段）</h4>
+          <v-chart :option="turbidityOption" autoresize style="height: 280px" />
+        </div>
+      </div>
+      <p class="remote-note">来源：{{ remoteSensing.source }}。{{ remoteSensing.method }} 不等同于泥沙浓度（mg/L）或浊度仪读数（NTU）。</p>
+    </section>
+
+    <section class="dashboard-section">
+      <div class="section-heading">
+        <div>
           <p class="section-kicker">保护动态</p>
           <h3>江豚观察与科学考察背景</h3>
         </div>
@@ -78,12 +99,31 @@
 
 <script setup>
 import { computed } from 'vue'
+import VChart from 'vue-echarts'
+import { use } from 'echarts/core'
+import { LineChart } from 'echarts/charts'
+import { GridComponent, TooltipComponent } from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
 import { useDataStore } from '../stores/data'
+
+use([LineChart, GridComponent, TooltipComponent, CanvasRenderer])
 
 const dataStore = useDataStore()
 const dashboard = computed(() => dataStore.dashboard)
 const sample = computed(() => dashboard.value.field_sample)
 const porpoise = computed(() => dashboard.value.porpoise)
+const remoteSensing = computed(() => dashboard.value.remote_sensing)
+
+const lineBase = (name, data, color, yName, decimals = 1) => ({
+  tooltip: { trigger: 'axis', valueFormatter: value => `${Number(value).toFixed(decimals)}` },
+  grid: { left: '5%', right: '5%', top: '12%', bottom: '10%', containLabel: true },
+  xAxis: { type: 'category', data: remoteSensing.value.years.map(String), boundaryGap: false },
+  yAxis: { type: 'value', name: yName, scale: true },
+  series: [{ name, type: 'line', data, smooth: true, symbolSize: 8, lineStyle: { color, width: 3 }, itemStyle: { color }, areaStyle: { color: `${color}22` } }],
+})
+
+const sedimentOption = computed(() => lineBase('NDTI', remoteSensing.value.suspended_sediment_index, '#2e86ab', '相对值', 3))
+const turbidityOption = computed(() => lineBase('浑浊度代理', remoteSensing.value.turbidity_proxy, '#d97706', '0—100', 1))
 </script>
 
 <style scoped>
@@ -104,10 +144,12 @@ const porpoise = computed(() => dashboard.value.porpoise)
 .sample-summary { display: flex; align-items: flex-start; gap: 14px; }.summary-icon { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; background: #e8f4f8; font-size: 22px; }.sample-summary p { margin-top: 7px; color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
 .mineral-list { display: flex; align-content: center; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }.mineral-tag { padding: 7px 10px; border: 1px solid #cbe1e9; background: #f4fafc; color: #17617e; font-size: 13px; font-weight: 600; }
 
+.chart-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }.chart-panel { padding: 20px 16px 12px; }.chart-panel h4 { margin-left: 8px; color: var(--text-primary); font-size: 15px; }.remote-note { margin-top: 12px; color: var(--text-muted); font-size: 12px; line-height: 1.7; }
+
 .porpoise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }.porpoise-card { padding: 26px; border-top: 3px solid #277eab; }.porpoise-card--local { border-top-color: #cf7c25; }.porpoise-card__label { color: var(--text-secondary); font-size: 13px; }.porpoise-card__number { margin: 10px 0 8px; color: var(--text-primary); font-size: 38px; font-weight: 800; line-height: 1; }.porpoise-card__number small { margin-left: 4px; color: var(--text-secondary); font-size: 15px; font-weight: 600; }.porpoise-card p { color: var(--text-secondary); font-size: 13px; line-height: 1.65; }
 
 .data-note { padding: 24px 26px; border-left: 3px solid var(--primary); }.data-note p { margin-top: 9px; color: var(--text-secondary); font-size: 13px; line-height: 1.75; }
 
-@media (max-width: 900px) { .stat-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }.sample-detail { grid-template-columns: 1fr; }.mineral-list { justify-content: flex-start; } }
+@media (max-width: 900px) { .stat-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }.sample-detail { grid-template-columns: 1fr; }.mineral-list { justify-content: flex-start; }.chart-row { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .section-heading { align-items: start; flex-direction: column; gap: 5px; }.section-meta { text-align: left; }.stat-card { padding: 16px; }.porpoise-grid { grid-template-columns: 1fr; }.sample-detail { padding: 20px; }.porpoise-card { padding: 20px; } }
 </style>

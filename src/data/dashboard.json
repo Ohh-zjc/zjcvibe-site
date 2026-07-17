@@ -12,6 +12,14 @@
     "nationalSurveyCount": 1249,
     "nationalSurveyNote": "2022 年长江江豚科学考察结果，2023 年联合发布。"
   },
+  "remote_sensing": {
+    "point": "华龙码头（江豚湾）江面固定窗口",
+    "years": [2016, 2017, 2018, 2019, 2020, 2021],
+    "suspended_sediment_index": [-0.096, -0.156, -0.072, -0.17, 0.027, 0.054],
+    "turbidity_proxy": [19.6, 20.8, 35.7, 18.0, 52.2, 46.3],
+    "source": "Microsoft Planetary Computer Sentinel-2 L2A",
+    "method": "同一江面窗口内，以固定拉伸真彩色影像计算 NDTI 与红光波段相对值；仅用于年度间相对比较。"
+  },
   "water_quality": {
     "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
     "chl_a": [18.5, 17.2, 16.8, 15.9, 14.3, 13.7, 12.1, 11.5, 10.8, 10.2, 9.6],
