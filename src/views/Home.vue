@@ -11,12 +11,12 @@
         <p class="hero-subtitle">湖北大学计算机学院2026年暑期社会实践数据平台</p>
         <p class="hero-desc">
           2026年7月，湖北大学计算机学院「智护碧水」小分队赴岳阳洞庭湖流域，
-          开展为期6天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
+          开展为期5天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
           口述历史档案与水质反演数据，以数字技术守护一江碧水。
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-num">6</span>
+            <span class="stat-num">5</span>
             <span class="stat-label">天实地调研</span>
           </div>
           <div class="stat-item">
@@ -104,11 +104,11 @@
     <section class="timeline-section">
       <div class="page-container">
         <h2 class="section-title">实践路线</h2>
-        <p class="section-subtitle">Day 1 — Day 6，岳阳洞庭湖流域</p>
+        <p class="section-subtitle">周二 — 周六，岳阳洞庭湖流域</p>
         
         <div class="practice-timeline">
           <div class="tl-item" v-for="(day, i) in timeline" :key="i">
-            <div class="tl-marker">{{ day.day }}</div>
+            <div class="tl-marker"><span>{{ day.day }}</span><small>{{ day.weekday }}</small></div>
             <div class="tl-content">
               <h4>{{ day.title }}</h4>
               <p>{{ day.desc }}</p>
@@ -143,12 +143,11 @@ const galleryItems = [
 ]
 
 const timeline = [
-  { day: 'Day 1', title: '抵达岳阳', desc: '抵达岳阳，与城陵矶水文站对接，了解洞庭湖水文监测体系。' },
-  { day: 'Day 2', title: '口述史采集（一）', desc: '采访城陵矶水文站退休职工，记录长江水文变迁口述历史。' },
-  { day: 'Day 3', title: '口述史采集（二）', desc: '走访东洞庭湖湿地巡护员和退捕渔民，记录禁渔前后的生态变化。' },
-  { day: 'Day 4', title: '岸线巡护', desc: '跟随渔政执法船巡护洞庭湖水域，航拍华龙码头等岸线点位。' },
-  { day: 'Day 5', title: '童护长江课堂', desc: '在沿江社区和华龙码头开设生态课堂，教授AI绘本和生态知识。' },
-  { day: 'Day 6', title: '数据汇总 & 返程', desc: '整理采集数据，拍摄收尾影像，返程。' },
+  { day: 'Day 1', weekday: '周二', title: '生态展陈研学与幼儿江豚自然教育', desc: '上午走访生态展陈馆，梳理洞庭湖流域生态保护与自然教育素材；下午赴幼儿园开展江豚主题宣教、互动问答与手作体验。' },
+  { day: 'Day 2', weekday: '周三', title: '渔政执法协同调研与水域巡护观测', desc: '走访渔政执法局和生态数据中心，了解禁渔监管、数据监测与江豚保护机制；随执法船开展重点水域巡护与现场观察。' },
+  { day: 'Day 3', weekday: '周四', title: '生态认知问卷与无人机航测采集', desc: '开展生态保护认知问卷，采集公众反馈；实施重点水域无人机航拍，记录岸线形态与水域环境影像。' },
+  { day: 'Day 4', weekday: '周五', title: '退捕渔民访谈与社区生态对话', desc: '访谈渔民，记录生产生活转型与禁渔后的生态感受；走进社区开展长江保护议题对话与口述资料采集。' },
+  { day: 'Day 5', weekday: '周六', title: '江豚保护协作调研与净滩志愿服务', desc: '走访岳阳市江豚保护协会，了解民间保护、巡护与宣教机制；开展清滩行动，分类记录沿岸垃圾。' },
 ]
 </script>
 
@@ -389,16 +388,19 @@ const timeline = [
 .tl-marker {
   flex-shrink: 0;
   width: 72px;
-  height: 40px;
+  height: 46px;
   background: var(--primary);
   color: #fff;
   border-radius: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 13px;
 }
+
+.tl-marker small { margin-top: 1px; font-size: 10px; font-weight: 500; opacity: 0.85; }
 
 .tl-content {
   padding-top: 4px;
