@@ -1,23 +1,30 @@
 <template>
   <div class="page-container">
-    <h2 class="section-title">📖 童护长江</h2>
-    <p class="section-subtitle">AI绘本 · 生态答题 · 课堂作品墙 —— 将长江故事种进孩子们心中</p>
+    <h2 class="section-title">🐬 童护长江 · 江豚小课堂</h2>
+    <p class="section-subtitle">认识“微笑天使”笑笑，听懂江豚的故事，把守护长江变成今天能做的事</p>
 
     <!-- Tab 切换 -->
     <el-tabs v-model="activeTab" type="border-card" class="edu-tabs">
       <!-- 绘本翻页 -->
-      <el-tab-pane label="📖 AI绘本" name="flipbook">
+      <el-tab-pane label="🐬 认识笑笑" name="flipbook">
         <div class="flipbook-container">
           <div class="flipbook-card data-card">
             <div class="book-page" :class="{ flipped: currentPage % 2 === 0 }">
               <div class="page-content">
-                <h3>《守护一江碧水》</h3>
+                <h3>{{ bookPages[currentPage].title }}</h3>
                 <p class="page-num">第 {{ currentPage + 1 }} / {{ bookPages.length }} 页</p>
-                <div class="page-illustration placeholder-img">
-                  <el-icon :size="48"><PictureFilled /></el-icon>
+                <div v-if="bookPages[currentPage].image" class="page-illustration page-illustration--photo">
+                  <img :src="publicAsset(bookPages[currentPage].image)" :alt="bookPages[currentPage].imgLabel" />
+                  <span>{{ bookPages[currentPage].imgLabel }}</span>
+                </div>
+                <div v-else class="page-illustration page-illustration--lesson">
+                  <span class="lesson-icon">{{ bookPages[currentPage].icon }}</span>
                   <span>{{ bookPages[currentPage].imgLabel }}</span>
                 </div>
                 <p class="page-text">{{ bookPages[currentPage].text }}</p>
+                <ul v-if="bookPages[currentPage].facts" class="page-facts">
+                  <li v-for="fact in bookPages[currentPage].facts" :key="fact">{{ fact }}</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -34,7 +41,7 @@
       </el-tab-pane>
 
       <!-- 互动答题 -->
-      <el-tab-pane label="🎮 生态答题" name="quiz">
+      <el-tab-pane label="🎮 豚豚挑战" name="quiz">
         <div class="quiz-container" v-if="!quizFinished">
           <div class="quiz-card data-card">
             <div class="quiz-progress">
@@ -82,21 +89,33 @@
             <span class="result-score">{{ score }}</span>
             <span class="result-total">/ {{ edu.quiz.length }}</span>
           </div>
-          <h3>{{ score >= 8 ? '🏆 生态小达人！' : score >= 5 ? '👍 继续加油！' : '📚 多多学习哦！' }}</h3>
+          <h3>{{ score >= excellenceThreshold ? '🏆 江豚守护小达人！' : score >= Math.ceil(edu.quiz.length / 2) ? '👍 笑笑为你点赞！' : '📚 再听听笑笑的故事吧！' }}</h3>
           <p>你答对了 {{ score }} 道题，正确率 {{ Math.round((score / edu.quiz.length) * 100) }}%</p>
           <p class="result-msg">
-            {{ score >= 8 ? '你对长江生态保护了解很多，真棒！' : score >= 5 ? '不错的基础，继续了解更多长江知识吧！' : '别灰心，保护长江从现在学起！' }}
+            {{ resultMessage }}
           </p>
           <el-button @click="resetQuiz">重新答题</el-button>
         </div>
       </el-tab-pane>
 
       <!-- 作品墙 -->
-      <el-tab-pane label="🎨 AI绘长江" name="artwork">
+      <el-tab-pane label="🎨 画出江豚家园" name="artwork">
+        <section class="action-guide" aria-labelledby="action-guide-title">
+          <div>
+            <p class="section-kicker">今天就能做到</p>
+            <h3 id="action-guide-title">和笑笑约定三件事</h3>
+          </div>
+          <ol class="action-list">
+            <li v-for="action in protectionActions" :key="action.title">
+              <span class="action-icon">{{ action.icon }}</span>
+              <div><strong>{{ action.title }}</strong><p>{{ action.text }}</p></div>
+            </li>
+          </ol>
+        </section>
         <div v-if="edu.artworks.length === 0" class="empty-wall data-card empty-state">
           <el-icon :size="40"><PictureFilled /></el-icon>
-          <p>作品墙将在课堂活动后展示</p>
-          <p class="empty-hint">孩子们用AI生成的「我心中的长江」画作将在此拼成照片墙</p>
+          <p>江豚家园作品墙将在课堂后亮相</p>
+          <p class="empty-hint">画出笑笑喜欢的清水、鱼群和安静江面，和大家分享你的守护承诺。</p>
         </div>
         <div v-else class="artwork-grid">
           <div v-for="(art, i) in edu.artworks" :key="i" class="artwork-item">
@@ -106,11 +125,11 @@
       </el-tab-pane>
 
       <!-- 孩子们的话 -->
-      <el-tab-pane label="💬 孩子们的话" name="feedback">
+      <el-tab-pane label="💬 课堂回声" name="feedback">
         <div v-if="edu.feedback.length === 0" class="empty-wall data-card empty-state">
           <el-icon :size="40"><ChatLineSquare /></el-icon>
-          <p>课堂反馈将在活动后收集</p>
-          <p class="empty-hint">选取孩子们写下的最真挚的话语，滚动展示</p>
+          <p>课堂回声将在活动后收集</p>
+          <p class="empty-hint">孩子们写给笑笑的话、课堂照片和作品会在这里陆续展出。</p>
         </div>
         <div v-else class="feedback-list">
           <div v-for="(fb, i) in edu.feedback" :key="i" class="feedback-card data-card">
@@ -137,14 +156,47 @@ const activeTab = ref('flipbook')
 // ===== 绘本 =====
 const currentPage = ref(0)
 const bookPages = [
-  { imgLabel: '绘本封面', text: '从前，有一条大河叫长江，她流过很多很多地方。在长江和洞庭湖交汇的地方，有一座美丽的城市——岳阳。' },
-  { imgLabel: '江豚场景', text: '长江里住着一位"微笑天使"——江豚。它嘴角上扬，像是在对所有路过的人微笑。可是，江豚越来越少了……' },
-  { imgLabel: '码头变迁', text: '华龙码头曾经堆满了砂石，江豚的家被破坏了。但是，人们决定改变！大家开始清理码头、种树、保护江水。' },
-  { imgLabel: '巡护场景', text: '渔政叔叔每天开着船在江上巡护，不让坏人偷偷捕鱼。禁渔之后，长江里的鱼又多了起来！' },
-  { imgLabel: '湿地候鸟', text: '冬天来了，东洞庭湖湿地迎来了很多候鸟朋友——白鹤、天鹅、大雁……它们在这里过冬、觅食、嬉戏。' },
-  { imgLabel: '课堂场景', text: '小朋友们也来帮忙啦！大家学习长江知识，用AI画出心中的长江，还亲手种下小树苗。' },
-  { imgLabel: '美好未来', text: '今天的华龙码头变成了美丽的江豚湾，人人都在守护长江。一江碧水，奔流不息，这是我们的长江，我们的家！' },
+  {
+    title: '你好，我是笑笑', imgLabel: '长江里的“微笑天使”', image: '/img/education/yangtze-finless-porpoise.jpeg',
+    text: '笑笑是一只长江江豚。它生活在长江和洞庭湖水域，是我国特有的淡水鲸类，也是国家一级重点保护野生动物。',
+  },
+  {
+    title: '找找我的特别之处', imgLabel: '圆圆脑袋的江豚', icon: '🔎',
+    text: '江豚的嘴角天生微微上扬，好像一直在微笑。仔细看看，它和海豚并不一样。',
+    facts: ['头部浑圆，自带“微笑”', '背部没有背鳍', '皮肤光滑，鳍肢宽大'],
+  },
+  {
+    title: '我不是海豚亮亮', imgLabel: '有背鳍、住在海里的海豚', image: '/img/education/ocean-dolphin.jpeg',
+    text: '亮亮是生活在海里的海豚，有明显的背鳍和长长的嘴。笑笑生活在淡水里，头更圆，背上没有背鳍。现在你能分清我们了吗？',
+  },
+  {
+    title: '我的水下超能力', imgLabel: '声呐小专家', icon: '📡',
+    text: '江水有时很浑浊，笑笑的眼睛看不远，却能用额头和下巴发射、接收超声波，像带着一套水下雷达。',
+    facts: ['用声呐辨别方向', '寻找食物和伙伴', '在浑水里也能灵活游泳'],
+  },
+  {
+    title: '江水健康我知道', imgLabel: '长江生态“晴雨表”', icon: '💧',
+    text: '江豚处在长江水生动物食物链的顶端，对水环境要求很高。它们的生活状况，就像一份送给长江的健康报告。',
+  },
+  {
+    title: '笑笑也有困扰', imgLabel: '一起找出危险', icon: '⚠️',
+    text: '密集船只、水质污染、栖息地被破坏和食物变少，都会让江豚的家变得不安全。保护形势仍然需要大家一起努力。',
+  },
+  {
+    title: '守护笑笑的家', imgLabel: '把约定带回家', icon: '🌊',
+    text: '不向水里扔垃圾，少用一次性塑料，主动讲述江豚故事。每一个小小的行动，都会让长江更适合笑笑和伙伴们生活。',
+  },
 ]
+
+const protectionActions = [
+  { icon: '🗑️', title: '不把垃圾送进江里', text: '分类投放，看到岸边垃圾及时提醒大人一起清理。' },
+  { icon: '🥤', title: '少用一次性塑料', text: '带上水杯和环保袋，减少塑料进入河湖的机会。' },
+  { icon: '📣', title: '讲一个江豚故事', text: '把今天认识的笑笑讲给家人和朋友听。' },
+]
+
+function publicAsset(path) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+}
 
 function prevPage() { if (currentPage.value > 0) currentPage.value-- }
 function nextPage() { if (currentPage.value < bookPages.length - 1) currentPage.value++ }
@@ -156,6 +208,12 @@ const answered = ref(false)
 const isCorrect = ref(false)
 const score = ref(0)
 const quizFinished = ref(false)
+const excellenceThreshold = computed(() => Math.ceil(edu.value.quiz.length * 0.8))
+const resultMessage = computed(() => {
+  if (score.value >= excellenceThreshold.value) return '你已经认识了笑笑，也知道怎样守护她的家，真棒！'
+  if (score.value >= Math.ceil(edu.value.quiz.length / 2)) return '你已经掌握了不少江豚知识，再翻翻“认识笑笑”吧！'
+  return '别灰心，认识江豚、守护长江，从再听一遍笑笑的故事开始。'
+})
 
 function selectOption(i) {
   if (answered.value) return
@@ -226,11 +284,11 @@ function resetQuiz() {
   font-size: 13px;
 }
 
-.placeholder-img {
-  background: var(--bg-light);
-  border: 2px dashed var(--border);
-  color: var(--text-muted);
-}
+.page-illustration--photo { position: relative; overflow: hidden; background: #0e617f; color: #fff; }
+.page-illustration--photo img { width: 100%; height: 100%; object-fit: cover; }
+.page-illustration--photo span { position: absolute; right: 10px; bottom: 10px; padding: 4px 8px; background: rgba(7, 42, 58, 0.72); font-size: 12px; }
+.page-illustration--lesson { background: #edf7fa; border: 1px solid #c9e1ea; color: var(--primary-dark); }
+.lesson-icon { font-size: 52px; line-height: 1; }
 
 .page-text {
   font-size: 16px;
@@ -238,6 +296,10 @@ function resetQuiz() {
   color: var(--text-secondary);
   text-align: left;
 }
+
+.page-facts { display: grid; gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; text-align: left; }
+.page-facts li { position: relative; padding-left: 18px; color: var(--text-secondary); font-size: 14px; line-height: 1.55; }
+.page-facts li::before { content: '•'; position: absolute; left: 4px; color: var(--primary); font-weight: 800; }
 
 .flipbook-controls {
   display: flex;
@@ -377,6 +439,15 @@ function resetQuiz() {
 
 .result-msg { margin-bottom: 20px !important; }
 
+.action-guide { max-width: 780px; margin: 0 auto 28px; padding: 4px 0 22px; border-bottom: 1px solid var(--border); }
+.section-kicker { margin-bottom: 4px; color: var(--primary); font-size: 13px; font-weight: 700; }
+.action-guide h3 { color: var(--text-primary); font-size: 21px; }
+.action-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 18px 0 0; padding: 0; list-style: none; }
+.action-list li { display: flex; gap: 10px; align-items: flex-start; min-width: 0; }
+.action-icon { flex: 0 0 34px; height: 34px; display: grid; place-items: center; background: #eaf5f8; color: var(--primary-dark); font-size: 19px; }
+.action-list strong { display: block; color: var(--text-primary); font-size: 14px; line-height: 1.4; }
+.action-list p { margin-top: 3px; color: var(--text-secondary); font-size: 12px; line-height: 1.55; }
+
 /* 空状态 */
 .empty-wall { padding: 48px; }
 
@@ -412,5 +483,11 @@ function resetQuiz() {
 .fb-author {
   font-size: 13px;
   color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .flipbook-card, .quiz-card { padding: 20px; }
+  .action-list { grid-template-columns: 1fr; gap: 14px; }
+  .flipbook-controls { gap: 10px; }
 }
 </style>

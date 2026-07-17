@@ -5,7 +5,7 @@
     <!-- 答题管理 -->
     <div class="section">
       <div class="section-top">
-        <h3>🎮 生态答题 ({{ edu.quiz.length }} 题)</h3>
+        <h3>🎮 豚豚挑战 ({{ edu.quiz.length }} 题)</h3>
         <el-button size="small" type="primary" @click="addQuiz">+ 添加题目</el-button>
       </div>
       
@@ -29,11 +29,11 @@
     <!-- 课堂反馈 -->
     <div class="section">
       <div class="section-top">
-        <h3>💬 孩子们的话</h3>
+        <h3>💬 课堂回声</h3>
         <el-button size="small" type="primary" @click="addFeedback">+ 添加</el-button>
       </div>
       <div v-for="(fb, i) in edu.feedback" :key="i" class="feedback-row">
-        <el-input v-model="fb.text" placeholder="孩子说的话" size="small" style="flex:1" />
+        <el-input v-model="fb.text" placeholder="孩子写给笑笑的话" size="small" style="flex:1" />
         <el-input v-model="fb.author" placeholder="署名" size="small" style="width:120px" />
         <el-button size="small" type="danger" @click="edu.feedback.splice(i,1)">✕</el-button>
       </div>
@@ -43,7 +43,7 @@
     <!-- 作品墙 -->
     <div class="section">
       <div class="section-top">
-        <h3>🎨 AI绘长江 — 作品墙</h3>
+        <h3>🎨 画出江豚家园 — 作品墙</h3>
         <el-button size="small" type="primary" @click="addArtwork">+ 添加作品</el-button>
       </div>
       <div class="artwork-grid">

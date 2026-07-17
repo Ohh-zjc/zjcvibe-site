@@ -75,7 +75,7 @@
           <router-link to="/education" class="module-card">
             <div class="module-icon">📖</div>
             <h3>童护长江</h3>
-            <p>AI绘本 + 生态答题 + 课堂作品墙，将长江故事种进孩子们心中。</p>
+            <p>江豚小课堂 + 豚豚挑战 + 守护约定，让孩子认识“微笑天使”，一起守护长江。</p>
             <span class="module-arrow">进入 →</span>
           </router-link>
         </div>
