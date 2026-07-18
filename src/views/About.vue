@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <h2 class="section-title">🙋 关于本项目</h2>
-    <p class="section-subtitle">湖北大学计算机学院 · 智护碧水小分队 · 2026暑期社会实践</p>
+    <p class="section-subtitle">湖北大学计算机学院 × 湖南理工大学化学化工学院 · 2026暑期社会实践</p>
 
     <!-- 项目简介 -->
     <section class="about-section">
@@ -25,18 +25,32 @@
       </div>
     </section>
 
-    <!-- 团队成员 -->
+    <!-- 合作团队 -->
     <section class="about-section">
-      <h3>团队成员</h3>
-      <div class="team-grid">
-        <div class="team-card data-card" v-for="m in members" :key="m.name">
-          <div class="team-avatar placeholder-img">
-            <el-icon :size="40"><UserFilled /></el-icon>
+      <h3>合作实践团队</h3>
+      <div class="partner-grid">
+        <article class="partner-card data-card">
+          <div class="team-photo team-photo--placeholder" aria-label="湖北大学团队合影待补充">
+            <el-icon :size="36"><PictureFilled /></el-icon>
+            <span>团队合影待补充</span>
           </div>
-          <h4>{{ m.name }}</h4>
-          <span class="team-role">{{ m.role }}</span>
-          <p class="team-task">{{ m.task }}</p>
-        </div>
+          <div class="partner-body">
+            <p class="partner-school">湖北大学计算机学院</p>
+            <h4>“智护碧水”社会实践小分队</h4>
+            <p>以数字技术守护一江碧水，围绕遥感影像、无人机航拍与生态数据整理，记录洞庭湖流域的实践见闻与保护行动。</p>
+          </div>
+        </article>
+
+        <article class="partner-card data-card">
+          <img class="team-photo" :src="hunanIstTeamPhoto" alt="湖南理工大学化学化工学院护豚逐浪，碧水长漾实践团队合影" />
+          <div class="partner-body">
+            <p class="partner-school">湖南理工大学化学化工学院</p>
+            <h4>“护豚逐浪，碧水长漾”三下乡实践团队</h4>
+            <p>以“研究洞庭湖湿地生态，宣传湿地保护知识，提高大学生湿地保护意识”为宗旨，聚焦洞庭湖生态保护与修复。</p>
+            <p>团队成员均来自化学化工学院，依托实验室技术开展水质检测，为水质评估提供科学数据支持。</p>
+            <p>团队通过实地调研、净滩行动及深度访谈，记录退捕渔民转型故事与社区观念变迁，展现“人退鱼进”的生态图景，助力生态文明理念落地生根。</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -105,15 +119,7 @@ import { UserFilled, PictureFilled } from '@element-plus/icons-vue'
 
 const siteUrl = 'https://zjcvibe.xyz/'
 const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
-
-const members = [
-  { name: '（前端A · 待填）', role: '前端开发', task: 'Vue 3 + Vite 脚手架、组件开发、ECharts 图表' },
-  { name: '（前端B · 待填）', role: '前端开发', task: 'Leaflet 地图组件、UI样式、移动端适配' },
-  { name: '（数据负责人 · 待填）', role: '数据处理', task: 'Sentinel-2 影像处理、数据JSON编写' },
-  { name: '（口述史负责人 · 待填）', role: '采访 & 转写', task: '口述史采访、AI转写校对' },
-  { name: '（影像负责人 · 待填）', role: '影像采集', task: '无人机航拍、照片整理' },
-  { name: '（课堂负责人 · 待填）', role: '社区课堂', task: '绘本教学、答题互动组织' },
-]
+const hunanIstTeamPhoto = `${import.meta.env.BASE_URL}img/about/hunan-ist-team.webp`
 
 const logDays = [
   { day: 'Day 1', weekday: '周二', title: '生态展陈研学与幼儿江豚自然教育', desc: '上午走访生态展陈馆，梳理洞庭湖流域生态保护与自然教育素材；下午赴幼儿园开展江豚主题宣教、互动问答与手作体验。' },
@@ -159,51 +165,46 @@ const thanks = [
 
 .about-card p:last-child { margin-bottom: 0; }
 
-/* 团队 */
-.team-grid {
+/* 合作团队 */
+.partner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.team-card {
-  padding: 24px 16px;
-  text-align: center;
+.partner-card {
+  overflow: hidden;
 }
 
-.team-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto 12px;
+.team-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.team-photo--placeholder {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
   color: var(--text-muted);
+  background: #eef6f8;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
 }
+
+.partner-body { padding: 22px; }
+.partner-school { margin-bottom: 4px; color: var(--primary); font-size: 13px; font-weight: 700; }
+.partner-body h4 { margin-bottom: 12px; color: var(--text-primary); font-size: 18px; line-height: 1.45; }
+.partner-body p:not(.partner-school) { margin-top: 10px; color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+.partner-body p:not(.partner-school):first-of-type { margin-top: 0; }
 
 .placeholder-img {
   background: var(--bg-light);
   border: 2px dashed var(--border);
-}
-
-.team-card h4 {
-  font-size: 15px;
-  margin-bottom: 4px;
-}
-
-.team-role {
-  font-size: 12px;
-  color: var(--primary);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.team-task {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.5;
 }
 
 /* 日志 */
@@ -338,6 +339,7 @@ const thanks = [
 }
 
 @media (max-width: 768px) {
+  .partner-grid { grid-template-columns: 1fr; }
   .log-item { flex-direction: column; }
   .log-date { width: 100%; border-radius: 8px; }
 }
