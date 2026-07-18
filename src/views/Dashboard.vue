@@ -52,7 +52,7 @@
           <p class="section-kicker">公开卫星影像处理</p>
           <h3>江面悬浮物与浑浊度相对变化</h3>
         </div>
-        <span class="section-meta">{{ remoteSensing.point }} · 2016—2021</span>
+        <span class="section-meta">{{ remoteSensing.point }} · {{ remoteSensing.years[0] }}—{{ remoteSensing.years.at(-1) }}</span>
       </div>
       <div class="chart-row">
         <div class="chart-panel data-card">
@@ -65,6 +65,7 @@
         </div>
       </div>
       <p class="remote-note">来源：{{ remoteSensing.source }}。{{ remoteSensing.method }} 不等同于泥沙浓度（mg/L）或浊度仪读数（NTU）。</p>
+      <p class="remote-note remote-note--current">{{ remoteSensing.currentObservationNote }}</p>
     </section>
 
     <section class="dashboard-section">
