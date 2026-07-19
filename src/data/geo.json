@@ -236,6 +236,7 @@
     },
     {
       "id": "dongting-wetland",
+      "showOnShoreline": false,
       "name": "东洞庭湖湿地",
       "address": "湖南东洞庭湖国家级自然保护区",
       "amapPoiId": "B02DA011PQ",

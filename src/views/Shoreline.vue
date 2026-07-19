@@ -11,7 +11,6 @@
         </div>
         <div class="map-legend" aria-label="点位图例">
           <span><i class="legend-dot legend-dot--nanhu"></i>公园广场</span>
-          <span><i class="legend-dot legend-dot--wetland"></i>湿地</span>
           <span><i class="legend-dot legend-dot--wharf"></i>码头</span>
           <span><i class="legend-dot legend-dot--fishery"></i>渔政监督</span>
         </div>
@@ -136,6 +135,8 @@ const activeHistoricalEntry = computed(() => {
   return entries.find(entry => entry.year === activeHistoricalYear.value) || entries[0] || { year: 2016 }
 })
 
+const visiblePoints = computed(() => (dataStore.geo?.points || []).filter(point => point.showOnShoreline !== false))
+
 const compareLeftEntry = computed(() => {
   const entries = selectedPoint.value?.timeline || []
   return entries.find(entry => entry.year === compareLeftYear.value) || entries[0] || { year: 2016 }
@@ -196,7 +197,7 @@ function initMap() {
       attribution: '&copy; 高德地图',
     }).addTo(map)
 
-    const points = dataStore.geo?.points || []
+    const points = visiblePoints.value
     const markerPositions = []
     points.forEach(point => {
       const position = [point.displayLat ?? point.lat, point.displayLng ?? point.lng]
@@ -241,7 +242,7 @@ const ndviOption = computed(() => ({
 }))
 
 onMounted(() => {
-  const defaultPoint = dataStore.geo?.points?.find(point => point.id === 'dongting-wetland') || dataStore.geo?.points?.[0]
+  const defaultPoint = visiblePoints.value.find(point => point.id === 'hualong') || visiblePoints.value[0]
   if (defaultPoint) selectPoint(defaultPoint)
   nextTick(() => setTimeout(initMap, 200))
 })
