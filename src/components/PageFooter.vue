@@ -24,7 +24,7 @@
         </div>
         <div class="footer-col">
           <h5>致谢</h5>
-          <span>城陵矶水文站</span>
+          <span>渔政综合行政执法局</span>
           <span>东洞庭湖保护区</span>
           <span>江豚保护协会</span>
           <span>岳阳县渔政执法局</span>

@@ -54,7 +54,7 @@
           <router-link to="/oral-history" class="module-card">
             <div class="module-icon">🎙️</div>
             <h3>护江者说</h3>
-            <p>聆听退捕渔民、湿地巡护员、水文站职工的口述历史，感受人与江河的生命交织。</p>
+            <p>聆听退捕渔民、湿地巡护员、社区居民与渔政执法人员的故事，感受人与江河的生命交织。</p>
             <span class="module-arrow">进入 →</span>
           </router-link>
           
@@ -135,8 +135,8 @@ function scrollToModules() {
 }
 
 const galleryItems = [
-  { label: '城陵矶', caption: '城陵矶水文站——洞庭入江口' },
-  { label: '华龙码头', caption: '华龙码头（江豚湾）今昔对比' },
+  { label: '座谈会', caption: '渔政综合行政执法局——禁渔护渔现场座谈' },
+  { label: '江豚保护', caption: '江豚保护协会——共话守护行动' },
   { label: '湿地', caption: '东洞庭湖湿地候鸟观测' },
   { label: '采访', caption: '口述史采访现场' },
   { label: '课堂', caption: '社区儿童生态课堂' },
