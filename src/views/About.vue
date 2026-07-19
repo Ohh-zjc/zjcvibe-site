@@ -8,10 +8,7 @@
       <h3>合作实践团队</h3>
       <div class="partner-grid">
         <article class="partner-card data-card">
-          <div class="team-photo team-photo--placeholder" aria-label="湖北大学团队合影待补充">
-            <el-icon :size="36"><PictureFilled /></el-icon>
-            <span>团队合影待补充</span>
-          </div>
+          <img class="team-photo" :src="hubeiTeamPhoto" alt="湖北大学计算机学院智护碧水社会实践小分队合影" />
           <div class="partner-body">
             <p class="partner-school">湖北大学计算机学院</p>
             <h4>“智护碧水”社会实践小分队</h4>
@@ -99,6 +96,7 @@ import { UserFilled, PictureFilled } from '@element-plus/icons-vue'
 
 const siteUrl = 'https://zjcvibe.xyz/'
 const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
+const hubeiTeamPhoto = `${import.meta.env.BASE_URL}img/about/hubei-team.webp`
 const hunanIstTeamPhoto = `${import.meta.env.BASE_URL}img/about/hunan-ist-team.webp`
 
 const logDays = [
