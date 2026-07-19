@@ -90,7 +90,8 @@
         
         <div class="gallery-grid">
           <div class="gallery-item" v-for="(item, i) in galleryItems" :key="i">
-            <div class="gallery-img placeholder-img">
+            <img v-if="item.image" class="gallery-photo" :src="item.image" :alt="item.caption" />
+            <div v-else class="gallery-img placeholder-img">
               <el-icon :size="36"><PictureFilled /></el-icon>
               <span>{{ item.label }}</span>
             </div>
@@ -137,7 +138,7 @@ function scrollToModules() {
 const galleryItems = [
   { label: '座谈会', caption: '渔政综合行政执法局——禁渔护渔现场座谈' },
   { label: '江豚保护', caption: '江豚保护协会——共话守护行动' },
-  { label: '湿地', caption: '东洞庭湖湿地候鸟观测' },
+  { label: '江豚湾航拍', caption: '华龙码头（江豚湾）——湖岸湿地航拍', image: `${import.meta.env.BASE_URL}img/field/hualong/gallery-lakeshore.webp` },
   { label: '采访', caption: '口述史采访现场' },
   { label: '课堂', caption: '社区儿童生态课堂' },
 ]
@@ -398,6 +399,15 @@ const timeline = [
   justify-content: center;
   font-weight: 700;
   font-size: 13px;
+}
+
+.gallery-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .tl-marker small { margin-top: 1px; font-size: 10px; font-weight: 500; opacity: 0.85; }
