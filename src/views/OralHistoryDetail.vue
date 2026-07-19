@@ -7,8 +7,9 @@
 
     <!-- 人物头部 -->
     <div class="person-header">
-      <div class="person-photo placeholder-img">
-        <el-icon :size="64"><UserFilled /></el-icon>
+      <div class="person-photo" :class="{ 'placeholder-img': !hasPhoto(person) }">
+        <img v-if="hasPhoto(person)" :src="person.photo" :alt="`${person.name}照片`" />
+        <el-icon v-else :size="64"><UserFilled /></el-icon>
       </div>
       <div class="person-meta">
         <h1>
@@ -46,6 +47,7 @@ const dataStore = useDataStore()
 const person = computed(() => {
   return dataStore.interviews.find(p => p.id === Number(route.params.id)) || null
 })
+const hasPhoto = person => person.photo && !person.photo.includes('placeholder')
 </script>
 
 <style scoped>
@@ -75,7 +77,10 @@ const person = computed(() => {
   height: 160px;
   border-radius: var(--radius);
   flex-shrink: 0;
+  overflow: hidden;
 }
+
+.person-photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
 .placeholder-img {
   background: var(--bg-light);

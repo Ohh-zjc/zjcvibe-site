@@ -136,11 +136,11 @@ function scrollToModules() {
 }
 
 const galleryItems = [
-  { label: '座谈会', caption: '渔政综合行政执法局——禁渔护渔现场座谈' },
-  { label: '江豚保护', caption: '江豚保护协会——共话守护行动' },
+  { label: '座谈会', caption: '渔政综合行政执法局——禁渔护渔现场座谈', image: `${import.meta.env.BASE_URL}img/gallery/fishery-forum.webp` },
+  { label: '江豚保护', caption: '江豚保护协会——共话守护行动', image: `${import.meta.env.BASE_URL}img/gallery/porpoise-association.webp` },
   { label: '江豚湾航拍', caption: '华龙码头（江豚湾）——湖岸湿地航拍', image: `${import.meta.env.BASE_URL}img/field/hualong/gallery-lakeshore.webp` },
-  { label: '采访', caption: '口述史采访现场' },
-  { label: '课堂', caption: '社区儿童生态课堂' },
+  { label: '采访', caption: '口述史采访现场', image: `${import.meta.env.BASE_URL}img/gallery/oral-history-interview.webp` },
+  { label: '课堂', caption: '社区儿童生态课堂', image: `${import.meta.env.BASE_URL}img/education/community-children-classroom.webp` },
 ]
 
 const timeline = [

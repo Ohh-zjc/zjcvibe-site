@@ -10,8 +10,9 @@
         class="interview-card data-card"
         @click="$router.push(`/oral-history/${person.id}`)"
       >
-        <div class="card-photo placeholder-img">
-          <el-icon :size="40"><UserFilled /></el-icon>
+        <div class="card-photo" :class="{ 'placeholder-img': !hasPhoto(person) }">
+          <img v-if="hasPhoto(person)" :src="person.photo" :alt="`${person.name}照片`" />
+          <el-icon v-else :size="40"><UserFilled /></el-icon>
         </div>
         <div class="card-body">
           <h3>
@@ -41,6 +42,7 @@ import { UserFilled } from '@element-plus/icons-vue'
 
 const dataStore = useDataStore()
 const interviews = computed(() => dataStore.interviews)
+const hasPhoto = person => person.photo && !person.photo.includes('placeholder')
 </script>
 
 <style scoped>
@@ -67,7 +69,10 @@ const interviews = computed(() => dataStore.interviews)
   height: 100px;
   border-radius: 12px;
   flex-shrink: 0;
+  overflow: hidden;
 }
+
+.card-photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
 .placeholder-img {
   background: var(--bg-light);
