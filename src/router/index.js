@@ -6,6 +6,7 @@ import Shoreline from '../views/Shoreline.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Education from '../views/Education.vue'
 import About from '../views/About.vue'
+import PracticeLogDetail from '../views/PracticeLogDetail.vue'
 import Login from '../views/admin/Login.vue'
 import AdminLayout from '../views/admin/AdminLayout.vue'
 import AdminOverview from '../views/admin/Overview.vue'
@@ -22,6 +23,7 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/education', name: 'Education', component: Education },
   { path: '/about', name: 'About', component: About },
+  { path: '/practice-log/:id', name: 'PracticeLogDetail', component: PracticeLogDetail },
 
   // 管理员路由
   { path: '/admin/login', name: 'AdminLogin', component: Login },

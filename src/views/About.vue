@@ -35,17 +35,16 @@
     <section class="about-section">
       <h3>实践日志</h3>
       <div class="log-timeline">
-        <div class="log-item" v-for="(day, i) in logDays" :key="i">
+        <div class="log-item" v-for="day in logDays" :key="day.id">
           <div class="log-date"><span>{{ day.day }}</span><small>{{ day.weekday }}</small></div>
-          <div class="log-card data-card">
-            <div class="log-img placeholder-img">
-              <el-icon :size="28"><PictureFilled /></el-icon>
-            </div>
+          <RouterLink class="log-card data-card" :to="{ name: 'PracticeLogDetail', params: { id: day.id } }">
+            <img class="log-img" :src="mediaUrl(day.cover)" :alt="`${day.title}现场照片`" />
             <div class="log-body">
               <h4>{{ day.title }}</h4>
-              <p>{{ day.desc }}</p>
+              <p>{{ day.summary }}</p>
+              <span class="log-link">阅读当日笔记 →</span>
             </div>
-          </div>
+          </RouterLink>
         </div>
       </div>
     </section>
@@ -92,20 +91,19 @@
 </template>
 
 <script setup>
-import { UserFilled, PictureFilled } from '@element-plus/icons-vue'
+import { UserFilled } from '@element-plus/icons-vue'
+import { practiceLogs } from '../data/practiceLogs'
 
 const siteUrl = 'https://zjcvibe.xyz/'
 const qrCodeSrc = `${import.meta.env.BASE_URL}img/site-qr.png`
 const hubeiTeamPhoto = `${import.meta.env.BASE_URL}img/about/hubei-team.webp`
 const hunanIstTeamPhoto = `${import.meta.env.BASE_URL}img/about/hunan-ist-team.webp`
 
-const logDays = [
-  { day: 'Day 1', weekday: '周二', title: '生态展陈研学与幼儿江豚自然教育', desc: '上午走访生态展陈馆，梳理洞庭湖流域生态保护与自然教育素材；下午赴幼儿园开展江豚主题宣教、互动问答与手作体验。' },
-  { day: 'Day 2', weekday: '周三', title: '渔政执法协同调研与水域巡护观测', desc: '走访渔政执法局和生态数据中心，了解禁渔监管、数据监测与江豚保护机制；随执法船开展重点水域巡护与现场观察。' },
-  { day: 'Day 3', weekday: '周四', title: '生态认知问卷与无人机航测采集', desc: '开展生态保护认知问卷，采集公众反馈；实施重点水域无人机航拍，记录岸线形态与水域环境影像。' },
-  { day: 'Day 4', weekday: '周五', title: '退捕渔民访谈与社区生态对话', desc: '访谈渔民，记录生产生活转型与禁渔后的生态感受；走进社区开展长江保护议题对话与口述资料采集。' },
-  { day: 'Day 5', weekday: '周六', title: '江豚保护协作调研与净滩志愿服务', desc: '走访岳阳市江豚保护协会，了解民间保护、巡护与宣教机制；开展清滩行动，分类记录沿岸垃圾。' },
-]
+const logDays = practiceLogs
+
+function mediaUrl(path) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+}
 
 const thanks = [
   '渔政综合行政执法局',
@@ -218,17 +216,18 @@ const thanks = [
   display: flex;
   gap: 16px;
   align-items: center;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
+.log-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(40, 89, 110, 0.14); }
 
 .log-img {
   width: 80px;
   height: 60px;
-  border-radius: 6px;
+  border-radius: 4px;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
+  object-fit: cover;
 }
 
 .log-body h4 {
@@ -283,6 +282,8 @@ const thanks = [
   margin-top: 8px;
   text-align: center;
 }
+
+.log-link { display: inline-block; margin-top: 8px; color: var(--primary); font-size: 13px; font-weight: 700; }
 
 .log-date small { margin-top: 1px; font-size: 10px; font-weight: 500; opacity: 0.85; }
 
