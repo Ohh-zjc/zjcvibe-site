@@ -99,16 +99,15 @@
         <div id="patrol-map" class="patrol-map" aria-label="渔政综合行政执法局至岳阳楼景区近水域的巡护路线地图"></div>
         <div class="patrol-summary">
           <div class="patrol-stat">
-            <span>单程巡护</span>
-            <strong>{{ patrolDistance }} km</strong>
+            <span>单程巡护约</span>
+            <strong>{{ patrolDistance }} 公里</strong>
           </div>
           <div class="patrol-stat patrol-route-label">
             <span>行进方向</span>
             <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.end }}</strong>
           </div>
-          <button type="button" class="replay-button" @click="replayPatrol">重播路线</button>
+          <button type="button" class="replay-button" @click="replayPatrol">{{ replayLabel }}</button>
         </div>
-        <p class="track-note">{{ patrolMeta.note }}</p>
       </div>
     </section>
   </div>
@@ -139,7 +138,8 @@ const markerById = new Map()
 let map = null
 let patrolMap = null
 let patrolBoatMarker = null
-let patrolAnimationFrame = null
+let patrolTimer = null
+let patrolProgressLine = null
 
 const pointMarkerMeta = {
   hualong: { icon: '⚓', type: 'wharf', label: '华龙码头（江豚湾）' },
@@ -155,11 +155,11 @@ const activeHistoricalEntry = computed(() => {
 
 const visiblePoints = computed(() => (dataStore.geo?.points || []).filter(point => point.showOnShoreline !== false))
 const patrolTrack = computed(() => dataStore.geo?.patrol_track || [])
+const replayLabel = ref('重播路线')
 const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   start: '渔政综合行政执法局',
   end: '岳阳楼景区近水域',
   distance_km: 0,
-  note: '巡护轨迹待补充。',
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
 
@@ -278,6 +278,7 @@ function initPatrolMap() {
     const track = patrolTrack.value
     L.polyline(track, { color: '#ffffff', weight: 8, opacity: 0.9, lineCap: 'round' }).addTo(patrolMap)
     L.polyline(track, { color: '#15769d', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
+    patrolProgressLine = L.polyline([track[0]], { color: '#ef9f32', weight: 5, opacity: 1, lineCap: 'round' }).addTo(patrolMap)
     L.circleMarker(track[0], { radius: 8, color: '#fff', weight: 3, fillColor: '#239b73', fillOpacity: 1 })
       .addTo(patrolMap).bindTooltip('起点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
     L.circleMarker(track[track.length - 1], { radius: 8, color: '#fff', weight: 3, fillColor: '#d97706', fillOpacity: 1 })
@@ -294,24 +295,38 @@ function initPatrolMap() {
 function replayPatrol() {
   const track = patrolTrack.value
   if (!patrolBoatMarker || track.length < 2) return
-  if (patrolAnimationFrame) cancelAnimationFrame(patrolAnimationFrame)
-  const duration = 4600
-  const startTime = performance.now()
+  if (patrolTimer) clearInterval(patrolTimer)
+  patrolBoatMarker.setLatLng(track[0])
+  patrolProgressLine?.setLatLngs([track[0]])
+  patrolMap?.setView(track[0], Math.max(patrolMap.getZoom(), 13), { animate: true, duration: 0.35 })
+  replayLabel.value = '巡护进行中'
+  const duration = 6200
+  const startTime = Date.now()
 
-  const animate = (time) => {
-    const progress = Math.min((time - startTime) / duration, 1)
+  const renderProgress = () => {
+    const progress = Math.min((Date.now() - startTime) / duration, 1)
     const scaled = progress * (track.length - 1)
     const index = Math.min(Math.floor(scaled), track.length - 2)
     const ratio = scaled - index
     const from = track[index]
     const to = track[index + 1]
-    patrolBoatMarker.setLatLng([
+    const position = [
       from[0] + (to[0] - from[0]) * ratio,
       from[1] + (to[1] - from[1]) * ratio,
-    ])
-    if (progress < 1) patrolAnimationFrame = requestAnimationFrame(animate)
+    ]
+    patrolBoatMarker.setLatLng(position)
+    patrolProgressLine?.setLatLngs([...track.slice(0, index + 1), position])
+    if (progress < 1) {
+      return
+    } else {
+      patrolProgressLine?.setLatLngs(track)
+      clearInterval(patrolTimer)
+      patrolTimer = null
+      replayLabel.value = '重播路线'
+    }
   }
-  patrolAnimationFrame = requestAnimationFrame(animate)
+  renderProgress()
+  patrolTimer = setInterval(renderProgress, 80)
 }
 
 const ndviOption = computed(() => ({
@@ -342,7 +357,7 @@ onUnmounted(() => {
     map.remove()
     map = null
   }
-  if (patrolAnimationFrame) cancelAnimationFrame(patrolAnimationFrame)
+  if (patrolTimer) clearInterval(patrolTimer)
   if (patrolMap) {
     patrolMap.remove()
     patrolMap = null
