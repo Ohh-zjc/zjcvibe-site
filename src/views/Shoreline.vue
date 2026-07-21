@@ -88,11 +88,27 @@
     </section>
 
     <section class="track-section">
-      <h3>巡护轨迹</h3>
-      <div class="track-card data-card empty-state">
-        <el-icon :size="32"><Guide /></el-icon>
-        <p>GPS 巡护轨迹将在实地调研后补充。</p>
-        <p class="empty-hint">将记录随渔政执法船巡护的真实 GPS 轨迹数据。</p>
+      <div class="track-heading">
+        <div>
+          <span class="section-kicker">湖上巡护</span>
+          <h3>巡护路线</h3>
+        </div>
+        <span class="route-status">路线示意</span>
+      </div>
+      <div class="track-card data-card">
+        <div id="patrol-map" class="patrol-map" aria-label="渔政综合行政执法局至岳阳楼景区近水域的巡护路线地图"></div>
+        <div class="patrol-summary">
+          <div class="patrol-stat">
+            <span>单程巡护</span>
+            <strong>{{ patrolDistance }} km</strong>
+          </div>
+          <div class="patrol-stat patrol-route-label">
+            <span>行进方向</span>
+            <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.end }}</strong>
+          </div>
+          <button type="button" class="replay-button" @click="replayPatrol">重播路线</button>
+        </div>
+        <p class="track-note">{{ patrolMeta.note }}</p>
       </div>
     </section>
   </div>
@@ -102,7 +118,6 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { Guide } from '@element-plus/icons-vue'
 import VChart from 'vue-echarts'
 import { use } from 'echarts/core'
 import { BarChart } from 'echarts/charts'
@@ -122,6 +137,9 @@ const compareLeftYear = ref(2016)
 const compareRightYear = ref(2021)
 const markerById = new Map()
 let map = null
+let patrolMap = null
+let patrolBoatMarker = null
+let patrolAnimationFrame = null
 
 const pointMarkerMeta = {
   hualong: { icon: '⚓', type: 'wharf', label: '华龙码头（江豚湾）' },
@@ -136,6 +154,14 @@ const activeHistoricalEntry = computed(() => {
 })
 
 const visiblePoints = computed(() => (dataStore.geo?.points || []).filter(point => point.showOnShoreline !== false))
+const patrolTrack = computed(() => dataStore.geo?.patrol_track || [])
+const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
+  start: '渔政综合行政执法局',
+  end: '岳阳楼景区近水域',
+  distance_km: 0,
+  note: '巡护轨迹待补充。',
+})
+const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
 
 const compareLeftEntry = computed(() => {
   const entries = selectedPoint.value?.timeline || []
@@ -228,6 +254,66 @@ function initMap() {
   }
 }
 
+function boatIcon() {
+  return L.divIcon({
+    className: 'patrol-boat-shell',
+    html: '<span class="patrol-boat" title="巡护船位置">🛥</span>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+  })
+}
+
+function initPatrolMap() {
+  try {
+    const el = document.getElementById('patrol-map')
+    if (!el || patrolMap || patrolTrack.value.length < 2) return
+
+    patrolMap = L.map(el, { zoomControl: true, scrollWheelZoom: false })
+    L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+      subdomains: ['1', '2', '3', '4'],
+      maxZoom: 18,
+      attribution: '&copy; 高德地图',
+    }).addTo(patrolMap)
+
+    const track = patrolTrack.value
+    L.polyline(track, { color: '#ffffff', weight: 8, opacity: 0.9, lineCap: 'round' }).addTo(patrolMap)
+    L.polyline(track, { color: '#15769d', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
+    L.circleMarker(track[0], { radius: 8, color: '#fff', weight: 3, fillColor: '#239b73', fillOpacity: 1 })
+      .addTo(patrolMap).bindTooltip('起点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
+    L.circleMarker(track[track.length - 1], { radius: 8, color: '#fff', weight: 3, fillColor: '#d97706', fillOpacity: 1 })
+      .addTo(patrolMap).bindTooltip('终点：岳阳楼景区近水域', { permanent: true, direction: 'left', offset: [-10, 0], className: 'patrol-label' })
+    patrolBoatMarker = L.marker(track[0], { icon: boatIcon(), interactive: false }).addTo(patrolMap)
+    patrolMap.fitBounds(L.latLngBounds(track), { padding: [46, 46], maxZoom: 14 })
+    setTimeout(() => patrolMap?.invalidateSize(), 300)
+    replayPatrol()
+  } catch (error) {
+    console.error('Patrol map initialization failed:', error)
+  }
+}
+
+function replayPatrol() {
+  const track = patrolTrack.value
+  if (!patrolBoatMarker || track.length < 2) return
+  if (patrolAnimationFrame) cancelAnimationFrame(patrolAnimationFrame)
+  const duration = 4600
+  const startTime = performance.now()
+
+  const animate = (time) => {
+    const progress = Math.min((time - startTime) / duration, 1)
+    const scaled = progress * (track.length - 1)
+    const index = Math.min(Math.floor(scaled), track.length - 2)
+    const ratio = scaled - index
+    const from = track[index]
+    const to = track[index + 1]
+    patrolBoatMarker.setLatLng([
+      from[0] + (to[0] - from[0]) * ratio,
+      from[1] + (to[1] - from[1]) * ratio,
+    ])
+    if (progress < 1) patrolAnimationFrame = requestAnimationFrame(animate)
+  }
+  patrolAnimationFrame = requestAnimationFrame(animate)
+}
+
 const ndviOption = computed(() => ({
   tooltip: { trigger: 'axis' },
   legend: { data: ['华龙码头（江豚湾）', '东洞庭湖湿地'], bottom: 0 },
@@ -244,7 +330,10 @@ const ndviOption = computed(() => ({
 onMounted(() => {
   const defaultPoint = visiblePoints.value.find(point => point.id === 'hualong') || visiblePoints.value[0]
   if (defaultPoint) selectPoint(defaultPoint)
-  nextTick(() => setTimeout(initMap, 200))
+  nextTick(() => setTimeout(() => {
+    initMap()
+    initPatrolMap()
+  }, 200))
 })
 
 onUnmounted(() => {
@@ -252,6 +341,11 @@ onUnmounted(() => {
   if (map) {
     map.remove()
     map = null
+  }
+  if (patrolAnimationFrame) cancelAnimationFrame(patrolAnimationFrame)
+  if (patrolMap) {
+    patrolMap.remove()
+    patrolMap = null
   }
 })
 </script>
@@ -302,6 +396,10 @@ onUnmounted(() => {
   white-space: nowrap;
 }
 
+.patrol-boat-shell { background: transparent; border: 0; }
+.patrol-boat { display: grid; width: 30px; height: 30px; place-items: center; border: 2px solid #fff; border-radius: 50%; background: #1f6281; box-shadow: 0 2px 8px rgba(20, 66, 87, 0.32); font-size: 16px; }
+.patrol-label { padding: 4px 7px; border: 1px solid rgba(33, 62, 78, 0.2); border-radius: 4px; background: rgba(255, 255, 255, 0.94); box-shadow: 0 2px 6px rgba(20, 48, 64, 0.16); color: #203847; font-size: 12px; font-weight: 600; white-space: nowrap; }
+
 .leaflet-tooltip-top.shoreline-marker-label::before {
   border-top-color: rgba(255, 255, 255, 0.94);
 }
@@ -322,6 +420,18 @@ onUnmounted(() => {
 .section-heading-row h3 { margin-top: 2px; color: var(--text-primary); font-size: 22px; }
 .coordinate-status, .comparison-mode { padding: 3px 8px; border: 1px solid var(--border); background: #fff; color: var(--text-muted); font-size: 12px; }
 .imagery-card, .chart-card, .track-card { padding: 22px; }
+.track-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.track-heading h3 { margin: 2px 0 0; }
+.route-status { padding: 3px 8px; border: 1px solid #b9d9e7; background: #f2f9fc; color: #1d6a89; font-size: 12px; }
+.patrol-map { height: 360px; overflow: hidden; border: 1px solid var(--border); }
+.patrol-summary { display: grid; grid-template-columns: minmax(132px, 0.55fr) minmax(0, 1.65fr) auto; gap: 12px; align-items: stretch; margin-top: 14px; }
+.patrol-stat { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 12px 14px; border-left: 3px solid #2e86ab; background: #f5fafc; }
+.patrol-stat span { color: var(--text-muted); font-size: 12px; }
+.patrol-stat strong { margin-top: 3px; color: var(--text-primary); font-size: 18px; line-height: 1.35; }
+.patrol-route-label strong { font-size: 14px; }.patrol-route-label i { color: var(--primary); font-style: normal; }
+.replay-button { align-self: center; min-height: 38px; padding: 0 13px; border: 1px solid #2e86ab; border-radius: 4px; background: #fff; color: #1c6988; cursor: pointer; font: inherit; font-size: 13px; }
+.replay-button:hover { background: #eef8fb; }
+.track-note { margin: 12px 0 0; color: var(--text-secondary); font-size: 13px; line-height: 1.7; }
 .field-flight { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--border); }
 .field-flight__heading { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 12px; }
 .field-flight h4 { margin-top: 2px; color: var(--text-primary); font-size: 17px; }
@@ -341,5 +451,9 @@ onUnmounted(() => {
   .section-heading-row, .field-flight__heading { align-items: start; flex-direction: column; }
   .field-flight__grid { grid-template-columns: 1fr; }
   .imagery-card, .chart-card, .track-card { padding: 16px; }
+  .track-heading { align-items: start; flex-direction: column; }
+  .patrol-map { height: 300px; }
+  .patrol-summary { grid-template-columns: 1fr; }
+  .replay-button { justify-self: start; }
 }
 </style>

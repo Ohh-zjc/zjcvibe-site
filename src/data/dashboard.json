@@ -39,7 +39,7 @@
     "hualong": { "plastic": 0, "net": 0, "foam": 0, "other": 0 },
     "fishery": { "plastic": 0, "net": 0, "foam": 0, "other": 0 }
   },
-  "patrol": { "distance_km": 0, "duration_h": 0, "area_km2": 0 },
+  "patrol": { "distance_km": 3.9, "duration_h": 0, "area_km2": 0 },
   "finless_porpoise": [],
   "ndvi": {
     "years": [2016, 2022, 2026],
