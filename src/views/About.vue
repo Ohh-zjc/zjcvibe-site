@@ -67,7 +67,7 @@
           <el-icon :size="36"><UserFilled /></el-icon>
         </div>
         <div>
-          <h4>（待填）</h4>
+          <h4>张剑恒</h4>
           <p>湖北大学计算机学院</p>
         </div>
       </div>
@@ -106,7 +106,7 @@ function mediaUrl(path) {
 }
 
 const thanks = [
-  '渔政综合行政执法局',
+  '蓓蕾教育机构',
   '东洞庭湖国家级自然保护区管理局',
   '岳阳市江豚保护协会',
   '岳阳县渔政执法局',
