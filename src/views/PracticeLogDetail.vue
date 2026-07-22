@@ -74,6 +74,7 @@ function mediaUrl(path) {
 .journal-entry:first-of-type { padding-top: 0; }.journal-entry h3 { margin-bottom: 8px; color: var(--text-primary); font-size: 17px; }.journal-entry p { color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
 .photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .photo-card { overflow: hidden; margin: 0; border: 1px solid var(--border); background: #fff; }
+.photo-card:only-child { grid-column: 1 / -1; max-width: 680px; }
 .photo-card img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }.photo-card figcaption { padding: 10px 12px; color: var(--text-secondary); font-size: 13px; }
 .takeaway { margin-top: 38px; padding: 22px 24px; border-left: 4px solid #d97706; background: #fff8ed; }.takeaway span { color: #9a5b12; font-size: 13px; font-weight: 700; }.takeaway p { margin-top: 7px; color: #5d4a35; font-size: 15px; line-height: 1.8; }
 .not-found { padding: 72px 0; text-align: center; }.not-found h1 { color: var(--text-primary); font-size: 24px; }.not-found a { display: inline-block; margin-top: 16px; color: var(--primary); }

@@ -5,10 +5,10 @@ export const practiceLogs = [
     weekday: '周二',
     title: '从生态展陈到儿童课堂：把保护故事讲清楚',
     summary: '第一天围绕“如何把洞庭湖保护讲给不同的人听”展开：先在展陈中梳理保护叙事，再把其中可感知的知识带进幼儿园课堂。',
-    cover: '/img/education/community-children-classroom.webp',
+    cover: '/img/practice-logs/day1-exhibition-group.webp',
     photos: [
-      { src: '/img/education/community-children-classroom.webp', caption: '社区儿童江豚主题自然教育课堂' },
-      { src: '/img/about/hubei-team.webp', caption: '湖北大学计算机学院“智护碧水”实践小分队' },
+      { src: '/img/practice-logs/day1-exhibition-group.webp', caption: '“守护好一江碧水”展陈馆前团队合影' },
+      { src: '/img/practice-logs/day1-exhibition-tour.webp', caption: '团队在展陈馆内了解长江大保护历程' },
     ],
     entries: [
       {
@@ -32,10 +32,10 @@ export const practiceLogs = [
     weekday: '周三',
     title: '听执法一线讲监管，也在船上看见湖面',
     summary: '第二天以渔政综合行政执法局现场座谈和重点水域巡护为主线，理解岸上监管机制如何延伸到湖面。',
-    cover: '/img/gallery/fishery-forum.webp',
+    cover: '/img/practice-logs/day2-patrol-boat.webp',
     photos: [
-      { src: '/img/gallery/fishery-forum.webp', caption: '渔政综合行政执法局现场座谈' },
-      { src: '/img/oral-history/fishery-he.webp', caption: '渔政执法人员何力接受访谈' },
+      { src: '/img/practice-logs/day2-patrol-boat.webp', caption: '随渔政执法船开展重点水域巡护' },
+      { src: '/img/practice-logs/day2-fishery-data-center.webp', caption: '渔政执法人员介绍生态数据与智慧监管平台' },
     ],
     entries: [
       {
@@ -59,10 +59,10 @@ export const practiceLogs = [
     weekday: '周四',
     title: '问卷、航测与岸线：把现场观察变成可整理的数据',
     summary: '第三天的重点是多源采集：一边听取公众对保护议题的理解，一边从空中记录水域、岸线与居民区的空间关系。',
-    cover: '/img/field/fishery/2026-shoreline-residents.webp',
+    cover: '/img/practice-logs/day3-questionnaire-interview.webp',
     photos: [
-      { src: '/img/field/fishery/2026-shoreline-residents.webp', caption: '洞庭湖水域、岸线与居民区航拍画面' },
-      { src: '/img/field/nanhu/2026-residents-lakeshore.webp', caption: '南湖广场公园湖岸航拍画面' },
+      { src: '/img/practice-logs/day3-questionnaire-interview.webp', caption: '团队与居民开展生态保护认知问卷交流' },
+      { src: '/img/practice-logs/day3-questionnaire-survey.webp', caption: '现场填写生态保护认知问卷' },
     ],
     entries: [
       {
@@ -86,10 +86,9 @@ export const practiceLogs = [
     weekday: '周五',
     title: '从退捕转型到社区日常：收集有温度的口述史',
     summary: '第四天走进访谈现场和沿江社区，关注政策与生态变化如何进入普通人的生产、生活与记忆。',
-    cover: '/img/gallery/oral-history-interview.webp',
+    cover: '/img/practice-logs/day4-community-interview.webp',
     photos: [
-      { src: '/img/gallery/oral-history-interview.webp', caption: '长江生态保护口述史采访现场' },
-      { src: '/img/oral-history/community-jiang.webp', caption: '沿江社区居民姜阿姨' },
+      { src: '/img/practice-logs/day4-community-interview.webp', caption: '团队在沿江社区开展入户访谈' },
     ],
     entries: [
       {
@@ -113,10 +112,10 @@ export const practiceLogs = [
     weekday: '周六',
     title: '在江豚守护现场收束调研：协作与行动并行',
     summary: '最后一天走访岳阳市江豚保护协会并参与净滩志愿服务，将前几日的资料整理与一次面向岸线的实际行动连接起来。',
-    cover: '/img/gallery/porpoise-association.webp',
+    cover: '/img/practice-logs/day5-cleanup-slope.webp',
     photos: [
-      { src: '/img/gallery/porpoise-association.webp', caption: '岳阳市江豚保护协会交流现场' },
-      { src: '/img/field/hualong/gallery-lakeshore.webp', caption: '华龙码头（江豚湾）湖岸湿地航拍画面' },
+      { src: '/img/practice-logs/day5-cleanup-slope.webp', caption: '团队在沿岸开展净滩行动' },
+      { src: '/img/practice-logs/day5-cleanup-shore.webp', caption: '成员在湖岸分类清理可见垃圾' },
     ],
     entries: [
       {
