@@ -81,9 +81,10 @@
     </section>
 
     <section class="chart-section">
-      <h3>NDVI 植被覆盖趋势</h3>
+      <h3>卫星影像植被覆盖率估算（2016–2026）</h3>
       <div class="chart-card data-card">
         <v-chart :option="ndviOption" autoresize style="height: 380px" />
+        <p class="coverage-note">{{ vegetationCoverage.source }}{{ vegetationCoverage.method }}</p>
       </div>
     </section>
 
@@ -162,6 +163,13 @@ const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   distance_km: 0,
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
+const vegetationCoverage = computed(() => dataStore.dashboard.vegetation_coverage || {
+  years: dataStore.dashboard.ndvi?.years || [],
+  hualong: (dataStore.dashboard.ndvi?.hualong || []).map(value => value * 100),
+  dongting: (dataStore.dashboard.ndvi?.dongting || []).map(value => value * 100),
+  source: '卫星影像判读结果。',
+  method: '',
+})
 
 const compareLeftEntry = computed(() => {
   const entries = selectedPoint.value?.timeline || []
@@ -330,15 +338,15 @@ function replayPatrol() {
 }
 
 const ndviOption = computed(() => ({
-  tooltip: { trigger: 'axis' },
+  tooltip: { trigger: 'axis', valueFormatter: value => `${value}%` },
   legend: { data: ['华龙码头（江豚湾）', '东洞庭湖湿地'], bottom: 0 },
-  grid: { left: '3%', right: '4%', bottom: '12%', top: '8%', containLabel: true },
-  xAxis: { type: 'category', data: dataStore.dashboard.ndvi.years.map(String), name: '年份' },
-  yAxis: { type: 'value', name: 'NDVI', min: 0, max: 1, axisLabel: { formatter: '{value}' } },
+  grid: { left: '3%', right: '4%', bottom: '15%', top: '8%', containLabel: true },
+  xAxis: { type: 'category', data: vegetationCoverage.value.years.map(String), name: '年份', axisLabel: { interval: 0 } },
+  yAxis: { type: 'value', name: '覆盖率', min: 0, max: 100, axisLabel: { formatter: '{value}%' } },
   color: ['#2E86AB', '#27AE60'],
   series: [
-    { name: '华龙码头（江豚湾）', type: 'bar', data: dataStore.dashboard.ndvi.hualong, barWidth: '32%', itemStyle: { borderRadius: [4, 4, 0, 0] } },
-    { name: '东洞庭湖湿地', type: 'bar', data: dataStore.dashboard.ndvi.dongting, barWidth: '32%', itemStyle: { borderRadius: [4, 4, 0, 0] } },
+    { name: '华龙码头（江豚湾）', type: 'bar', data: vegetationCoverage.value.hualong, barMaxWidth: 26, itemStyle: { borderRadius: [4, 4, 0, 0] } },
+    { name: '东洞庭湖湿地', type: 'bar', data: vegetationCoverage.value.dongting, barMaxWidth: 26, itemStyle: { borderRadius: [4, 4, 0, 0] } },
   ],
 }))
 
@@ -457,6 +465,7 @@ onUnmounted(() => {
 .image-placeholder { display: grid; place-items: center; padding: 16px; background: #f7fbfc; color: var(--text-muted); font-size: 13px; text-align: center; }
 .image-placeholder--current { background: #f0f7fa; color: var(--primary-dark); }
 .field-flight__note, .scientific-note, .coordinate-note { margin: 12px 0 0; color: var(--text-secondary); font-size: 13px; line-height: 1.7; }
+.coverage-note { margin: 10px 2px 0; color: var(--text-muted); font-size: 12px; line-height: 1.7; }
 .coordinate-note { color: var(--text-muted); }
 .empty-state { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 40px; color: var(--text-muted); text-align: center; }
 .empty-state p { font-size: 14px; }.empty-hint { font-size: 12px !important; opacity: 0.7; }
