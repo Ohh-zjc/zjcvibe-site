@@ -86,7 +86,6 @@
     <section class="gallery-section">
       <div class="page-container">
         <h2 class="section-title">实践影像</h2>
-        <p class="section-subtitle">代表性场景将在实地调研后替换为真实照片</p>
         
         <div class="gallery-grid">
           <div class="gallery-item" v-for="(item, i) in galleryItems" :key="i">
