@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
   // Cloudflare Pages serves the app at the domain root, unlike GitHub Pages.
   base: process.env.CF_PAGES ? '/' : '/dongtinghu/',
-  plugins: [vue()],
+  plugins: [vue(), cloudflare()],
   resolve: {
     alias: {
       '@': '/src',
