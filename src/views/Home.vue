@@ -8,7 +8,7 @@
           <span class="hero-icon">🌊</span>
           智护碧水·数绘洞庭
         </h1>
-        <p class="hero-subtitle">湖北大学计算机学院2026年暑期社会实践数据平台</p>
+        <p class="hero-subtitle">湖北大学计算机学院、湖南理工大学化学化工学院2026年暑期社会实践数据平台</p>
         <p class="hero-desc">
           2026年7月，湖北大学计算机学院「智护碧水」小分队赴岳阳洞庭湖流域，
           开展为期5天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
@@ -24,7 +24,7 @@
             <span class="stat-label">位口述史人物</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">4</span>
+            <span class="stat-num">3</span>
             <span class="stat-label">个岸线点位</span>
           </div>
           <div class="stat-item">
