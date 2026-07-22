@@ -9,6 +9,8 @@ export const practiceLogs = [
     photos: [
       { src: '/img/practice-logs/day1-exhibition-group.webp', caption: '“守护好一江碧水”展陈馆前团队合影' },
       { src: '/img/practice-logs/day1-exhibition-tour.webp', caption: '团队在展陈馆内了解长江大保护历程' },
+      { src: '/img/practice-logs/day1-classroom-collage.webp', caption: '江豚主题自然教育课堂互动记录' },
+      { src: '/img/practice-logs/day1-classroom-craft.webp', caption: '孩子们参与江豚主题手作体验' },
     ],
     entries: [
       {
@@ -36,6 +38,8 @@ export const practiceLogs = [
     photos: [
       { src: '/img/practice-logs/day2-patrol-boat.webp', caption: '随渔政执法船开展重点水域巡护' },
       { src: '/img/practice-logs/day2-fishery-data-center.webp', caption: '渔政执法人员介绍生态数据与智慧监管平台' },
+      { src: '/img/practice-logs/day2-eco-police-center.webp', caption: '岳阳县生态警务联勤指挥中心现场合影' },
+      { src: '/img/practice-logs/day2-fishery-meeting.webp', caption: '团队与渔政执法人员开展现场座谈' },
     ],
     entries: [
       {
@@ -89,6 +93,7 @@ export const practiceLogs = [
     cover: '/img/practice-logs/day4-community-interview.webp',
     photos: [
       { src: '/img/practice-logs/day4-community-interview.webp', caption: '团队在沿江社区开展入户访谈' },
+      { src: '/img/practice-logs/day4-outdoor-interview.webp', caption: '团队在社区开展户外访谈交流' },
     ],
     entries: [
       {
@@ -116,6 +121,7 @@ export const practiceLogs = [
     photos: [
       { src: '/img/practice-logs/day5-cleanup-slope.webp', caption: '团队在沿岸开展净滩行动' },
       { src: '/img/practice-logs/day5-cleanup-shore.webp', caption: '成员在湖岸分类清理可见垃圾' },
+      { src: '/img/practice-logs/day5-porpoise-association-meeting.webp', caption: '团队在岳阳市江豚保护协会开展交流' },
     ],
     entries: [
       {
