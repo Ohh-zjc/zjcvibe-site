@@ -24,7 +24,7 @@
         </div>
         <div class="footer-col">
           <h5>致谢</h5>
-          <a href="https://mp.weixin.qq.com/s/iHJuXuIhOnBTDJ47u81afw" target="_blank" rel="noopener noreferrer">蓓蕾教育机构</a>
+          <a href="https://mp.weixin.qq.com/s/iHJuXuHhOnBTDJ47u81afw" target="_blank" rel="noopener noreferrer">蓓蕾教育机构</a>
           <a href="https://lyj.yueyang.gov.cn/6983/65985/content_1999390.html" target="_blank" rel="noopener noreferrer">东洞庭湖保护区</a>
           <a href="https://www.yueyang.gov.cn/yyast/31417/73083/73084/content_2283526.html" target="_blank" rel="noopener noreferrer">岳阳市江豚保护协会</a>
           <a href="https://www.yyx.gov.cn/37584/38146/38301/index.htm" target="_blank" rel="noopener noreferrer">岳阳县渔政执法局</a>
