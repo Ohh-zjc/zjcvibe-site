@@ -26,8 +26,9 @@
           <h5>致谢</h5>
           <span>蓓蕾教育机构</span>
           <span>东洞庭湖保护区</span>
-          <span>江豚保护协会</span>
+          <span>岳阳市江豚保护协会</span>
           <span>岳阳县渔政执法局</span>
+          <span>君山区团委</span>
         </div>
       </div>
     </div>

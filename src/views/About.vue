@@ -59,20 +59,6 @@
       </div>
     </section>
 
-    <!-- 指导教师 -->
-    <section class="about-section">
-      <h3>指导教师</h3>
-      <div class="advisor-card data-card">
-        <div class="advisor-avatar placeholder-img">
-          <el-icon :size="36"><UserFilled /></el-icon>
-        </div>
-        <div>
-          <h4>张剑恒</h4>
-          <p>湖北大学计算机学院</p>
-        </div>
-      </div>
-    </section>
-
     <!-- 二维码 -->
     <section class="about-section qr-section" aria-label="网站访问二维码">
       <div class="qr-card">
@@ -91,7 +77,6 @@
 </template>
 
 <script setup>
-import { UserFilled } from '@element-plus/icons-vue'
 import { practiceLogs } from '../data/practiceLogs'
 
 const siteUrl = 'https://zjcvibe.xyz/'
@@ -110,6 +95,7 @@ const thanks = [
   '东洞庭湖国家级自然保护区管理局',
   '岳阳市江豚保护协会',
   '岳阳县渔政执法局',
+  '君山区团委',
   '岳阳沿江社区居委会',
   '所有接受采访的护江者',
 ]
@@ -254,28 +240,6 @@ const thanks = [
   font-size: 15px;
   color: var(--text-secondary);
 }
-
-/* 教师 */
-.advisor-card {
-  padding: 24px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.advisor-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
-.advisor-card h4 { font-size: 18px; margin-bottom: 4px; }
-.advisor-card p { font-size: 14px; color: var(--text-secondary); }
 
 /* 二维码 */
 .qr-section {
