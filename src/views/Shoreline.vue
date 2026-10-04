@@ -97,7 +97,7 @@
         <span class="route-status">路线示意</span>
       </div>
       <div class="track-card data-card">
-        <div id="patrol-map" class="patrol-map" aria-label="从渔政综合行政执法局出发、绕行湖上重点水域并返回起点的巡护路线地图"></div>
+        <div id="patrol-map" class="patrol-map" aria-label="从渔政综合行政执法局出发、在湖上重点水域绕行后返回起点的巡护路线地图"></div>
         <div class="patrol-summary">
           <div class="patrol-stat">
             <span>巡护总里程约</span>
@@ -109,6 +109,7 @@
           </div>
           <button type="button" class="replay-button" @click="replayPatrol">{{ replayLabel }}</button>
         </div>
+        <p v-if="patrolMeta.note" class="track-note">{{ patrolMeta.note }}</p>
       </div>
     </section>
   </div>
@@ -160,7 +161,8 @@ const replayLabel = ref('重播路线')
 const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   start: '渔政综合行政执法局',
   end: '渔政综合行政执法局（返回起点）',
-  route: '北上绕行湖面重点水域',
+  route: '湖上重点水域环线示意',
+  note: '地图圆环仅示意湖上巡护段；35公里为包含往返航行及其他水域的总巡护里程。',
   distance_km: 0,
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
