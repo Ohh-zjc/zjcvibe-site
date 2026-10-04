@@ -97,15 +97,15 @@
         <span class="route-status">路线示意</span>
       </div>
       <div class="track-card data-card">
-        <div id="patrol-map" class="patrol-map" aria-label="渔政综合行政执法局至岳阳楼景区近水域的巡护路线地图"></div>
+        <div id="patrol-map" class="patrol-map" aria-label="从渔政综合行政执法局出发、绕行湖上重点水域并返回起点的巡护路线地图"></div>
         <div class="patrol-summary">
           <div class="patrol-stat">
-            <span>单程巡护约</span>
+            <span>巡护总里程约</span>
             <strong>{{ patrolDistance }} 公里</strong>
           </div>
           <div class="patrol-stat patrol-route-label">
             <span>行进方向</span>
-            <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.end }}</strong>
+            <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.route || '湖上环线' }} <i>→</i> 返回起点</strong>
           </div>
           <button type="button" class="replay-button" @click="replayPatrol">{{ replayLabel }}</button>
         </div>
@@ -159,7 +159,8 @@ const patrolTrack = computed(() => dataStore.geo?.patrol_track || [])
 const replayLabel = ref('重播路线')
 const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   start: '渔政综合行政执法局',
-  end: '岳阳楼景区近水域',
+  end: '渔政综合行政执法局（返回起点）',
+  route: '北上绕行湖面重点水域',
   distance_km: 0,
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
@@ -288,9 +289,7 @@ function initPatrolMap() {
     L.polyline(track, { color: '#15769d', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
     patrolProgressLine = L.polyline([track[0]], { color: '#ef9f32', weight: 5, opacity: 1, lineCap: 'round' }).addTo(patrolMap)
     L.circleMarker(track[0], { radius: 8, color: '#fff', weight: 3, fillColor: '#239b73', fillOpacity: 1 })
-      .addTo(patrolMap).bindTooltip('起点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
-    L.circleMarker(track[track.length - 1], { radius: 8, color: '#fff', weight: 3, fillColor: '#d97706', fillOpacity: 1 })
-      .addTo(patrolMap).bindTooltip('终点：岳阳楼景区近水域', { permanent: true, direction: 'left', offset: [-10, 0], className: 'patrol-label' })
+      .addTo(patrolMap).bindTooltip('起点 / 返回点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
     patrolBoatMarker = L.marker(track[0], { icon: boatIcon(), interactive: false }).addTo(patrolMap)
     patrolMap.fitBounds(L.latLngBounds(track), { padding: [46, 46], maxZoom: 14 })
     setTimeout(() => patrolMap?.invalidateSize(), 300)
