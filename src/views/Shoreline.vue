@@ -293,11 +293,9 @@ function initPatrolMap() {
     L.circleMarker(track[0], { radius: 8, color: '#fff', weight: 3, fillColor: '#239b73', fillOpacity: 1 })
       .addTo(patrolMap).bindTooltip('起点 / 返回点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
     patrolBoatMarker = L.marker(track[0], { icon: boatIcon(), interactive: false }).addTo(patrolMap)
-    const trackBounds = L.latLngBounds(track)
-    patrolMap.fitBounds(trackBounds, { padding: [46, 46], maxZoom: 14 })
+    patrolMap.setView([29.385, 113.08], 11)
     setTimeout(() => {
       patrolMap?.invalidateSize()
-      patrolMap?.fitBounds(trackBounds, { padding: [46, 46], maxZoom: 14 })
     }, 300)
     replayPatrol()
   } catch (error) {
