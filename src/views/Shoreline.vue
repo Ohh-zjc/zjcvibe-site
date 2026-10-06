@@ -97,7 +97,7 @@
         <span class="route-status">路线示意</span>
       </div>
       <div class="track-card data-card">
-        <div id="patrol-map" class="patrol-map" aria-label="从渔政综合行政执法局出发、在湖上重点水域绕行后返回起点的巡护路线地图"></div>
+        <div id="patrol-map" class="patrol-map" aria-label="从渔政综合行政执法局前往西北侧口岸登船，完成湖上环线后返回口岸和执法局的巡护路线地图"></div>
         <div class="patrol-summary">
           <div class="patrol-stat">
             <span>巡护总里程约</span>
@@ -105,7 +105,7 @@
           </div>
           <div class="patrol-stat patrol-route-label">
             <span>行进方向</span>
-            <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.route || '湖上环线' }} <i>→</i> 返回起点</strong>
+            <strong>{{ patrolMeta.start }} <i>→</i> {{ patrolMeta.route || '西北侧口岸登船 → 湖上环线 → 返回口岸' }} <i>→</i> 返回起点</strong>
           </div>
           <button type="button" class="replay-button" @click="replayPatrol">{{ replayLabel }}</button>
         </div>
@@ -166,6 +166,7 @@ const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   distance_km: 0,
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
+const patrolBoardingIndex = 1
 const vegetationCoverage = computed(() => dataStore.dashboard.vegetation_coverage || {
   years: dataStore.dashboard.ndvi?.years || [],
   hualong: (dataStore.dashboard.ndvi?.hualong || []).map(value => value * 100),
@@ -287,11 +288,19 @@ function initPatrolMap() {
     }).addTo(patrolMap)
 
     const track = patrolTrack.value
-    L.polyline(track, { color: '#ffffff', weight: 8, opacity: 0.9, lineCap: 'round' }).addTo(patrolMap)
-    L.polyline(track, { color: '#15769d', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
+    const boarding = track[patrolBoardingIndex]
+    const lakeTrack = track.slice(patrolBoardingIndex, track.length - 1)
+    const transferOut = track.slice(0, patrolBoardingIndex + 1)
+    const transferBack = track.slice(track.length - 2)
+    L.polyline([...transferOut, ...transferBack], { color: '#ffffff', weight: 8, opacity: 0.9, lineCap: 'round' }).addTo(patrolMap)
+    L.polyline([...transferOut, ...transferBack], { color: '#d98a28', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
+    L.polyline(lakeTrack, { color: '#ffffff', weight: 8, opacity: 0.9, lineCap: 'round' }).addTo(patrolMap)
+    L.polyline(lakeTrack, { color: '#15769d', weight: 4, opacity: 0.95, lineCap: 'round', dashArray: '8 7' }).addTo(patrolMap)
     patrolProgressLine = L.polyline([track[0]], { color: '#ef9f32', weight: 5, opacity: 1, lineCap: 'round' }).addTo(patrolMap)
     L.circleMarker(track[0], { radius: 8, color: '#fff', weight: 3, fillColor: '#239b73', fillOpacity: 1 })
       .addTo(patrolMap).bindTooltip('起点 / 返回点：渔政综合行政执法局', { permanent: true, direction: 'right', offset: [10, 0], className: 'patrol-label' })
+    L.circleMarker(boarding, { radius: 7, color: '#fff', weight: 3, fillColor: '#d98a28', fillOpacity: 1 })
+      .addTo(patrolMap).bindTooltip('登船点：渔政综合行政执法局西北侧口岸', { permanent: true, direction: 'top', offset: [0, -8], className: 'patrol-label' })
     patrolBoatMarker = L.marker(track[0], { icon: boatIcon(), interactive: false }).addTo(patrolMap)
     patrolMap.setView([29.385, 113.08], 11)
     setTimeout(() => {
