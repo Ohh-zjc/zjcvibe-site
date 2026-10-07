@@ -109,7 +109,6 @@
           </div>
           <button type="button" class="replay-button" @click="replayPatrol">{{ replayLabel }}</button>
         </div>
-        <p v-if="patrolMeta.note" class="track-note">{{ patrolMeta.note }}</p>
       </div>
     </section>
   </div>
@@ -162,7 +161,6 @@ const patrolMeta = computed(() => dataStore.geo?.patrol_meta || {
   start: '渔政综合行政执法局',
   end: '渔政综合行政执法局（返回起点）',
   route: '湖上重点水域环线示意',
-  note: '地图圆环仅示意湖上巡护段；35公里为包含往返航行及其他水域的总巡护里程。',
   distance_km: 0,
 })
 const patrolDistance = computed(() => Number(patrolMeta.value.distance_km || 0).toFixed(1))
