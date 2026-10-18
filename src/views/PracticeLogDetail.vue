@@ -23,7 +23,7 @@
         </article>
       </section>
 
-      <section class="detail-section" aria-labelledby="photos-heading">
+      <section v-if="log.photos?.length" class="detail-section" aria-labelledby="photos-heading">
         <h2 id="photos-heading">现场照片</h2>
         <div class="photo-grid">
           <figure v-for="photo in log.photos" :key="photo.src" class="photo-card">

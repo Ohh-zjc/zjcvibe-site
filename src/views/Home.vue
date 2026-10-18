@@ -11,12 +11,12 @@
         <p class="hero-subtitle">湖北大学计算机学院、湖南理工大学化学化工学院2026年暑期社会实践数据平台</p>
         <p class="hero-desc">
           2026年7月，湖北大学计算机学院「智护碧水」小分队赴岳阳洞庭湖流域，
-          开展为期5天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
+          开展为期7天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
           口述历史档案与水质反演数据，以数字技术守护一江碧水。
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-num">5</span>
+            <span class="stat-num">7</span>
             <span class="stat-label">天实地调研</span>
           </div>
           <div class="stat-item">
@@ -104,7 +104,7 @@
     <section class="timeline-section">
       <div class="page-container">
         <h2 class="section-title">实践路线</h2>
-        <p class="section-subtitle">周二 — 周六，岳阳洞庭湖流域</p>
+        <p class="section-subtitle">周一 — 周日，岳阳洞庭湖流域</p>
         
         <div class="practice-timeline">
           <div class="tl-item" v-for="(day, i) in timeline" :key="i">
@@ -143,11 +143,13 @@ const galleryItems = [
 ]
 
 const timeline = [
-  { day: 'Day 1', weekday: '周二', title: '生态展陈研学与幼儿江豚自然教育', desc: '上午走访生态展陈馆，梳理洞庭湖流域生态保护与自然教育素材；下午赴幼儿园开展江豚主题宣教、互动问答与手作体验。' },
-  { day: 'Day 2', weekday: '周三', title: '渔政执法协同调研与水域巡护观测', desc: '走访渔政执法局和生态数据中心，了解禁渔监管、数据监测与江豚保护机制；随执法船开展重点水域巡护与现场观察。' },
-  { day: 'Day 3', weekday: '周四', title: '生态认知问卷与无人机航测采集', desc: '开展生态保护认知问卷，采集公众反馈；实施重点水域无人机航拍，记录岸线形态与水域环境影像。' },
-  { day: 'Day 4', weekday: '周五', title: '退捕渔民访谈与社区生态对话', desc: '访谈渔民，记录生产生活转型与禁渔后的生态感受；走进社区开展长江保护议题对话与口述资料采集。' },
-  { day: 'Day 5', weekday: '周六', title: '江豚保护协作调研与净滩志愿服务', desc: '走访岳阳市江豚保护协会，了解民间保护、巡护与宣教机制；开展清滩行动，分类记录沿岸垃圾。' },
+  { day: 'Day 1', weekday: '周一', title: '实践对接与调研任务协调', desc: '与渔政、保护协会、社区及合作实践团队负责人逐一对接，确认走访时间、人员分工、船只安排和资料采集边界，完成七天调研计划与安全提示的统一。' },
+  { day: 'Day 2', weekday: '周二', title: '生态展陈研学与幼儿江豚自然教育', desc: '上午走访生态展陈馆，梳理洞庭湖流域生态保护与自然教育素材；下午赴幼儿园开展江豚主题宣教、互动问答与手作体验。' },
+  { day: 'Day 3', weekday: '周三', title: '渔政执法协同调研与水域巡护观测', desc: '走访渔政执法局和生态数据中心，了解禁渔监管、数据监测与江豚保护机制；随执法船开展重点水域巡护与现场观察。' },
+  { day: 'Day 4', weekday: '周四', title: '生态认知问卷与无人机航测采集', desc: '开展生态保护认知问卷，采集公众反馈；实施重点水域无人机航拍，记录岸线形态与水域环境影像。' },
+  { day: 'Day 5', weekday: '周五', title: '退捕渔民访谈与社区生态对话', desc: '访谈渔民，记录生产生活转型与禁渔后的生态感受；走进社区开展长江保护议题对话与口述资料采集。' },
+  { day: 'Day 6', weekday: '周六', title: '江豚保护协作调研与净滩志愿服务', desc: '走访岳阳市江豚保护协会，了解民间保护、巡护与宣教机制；开展清滩行动，分类记录沿岸垃圾。' },
+  { day: 'Day 7', weekday: '周日', title: '材料汇总与成果整理', desc: '集中整理问卷、访谈转写、航拍影像、巡护记录和现场照片，复核地点、时间与来源信息，形成可用于平台展示和后续汇报的成果清单。' },
 ]
 </script>
 

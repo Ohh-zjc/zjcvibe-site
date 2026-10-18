@@ -12,7 +12,7 @@
           <div class="partner-body">
             <p class="partner-school">湖北大学计算机学院</p>
             <h4>“智护碧水”社会实践小分队</h4>
-            <p>2026年7月，湖北大学计算机学院「智护碧水」社会实践小分队赴湖南省岳阳市洞庭湖流域，开展了为期5天的暑期社会实践活动。我们以“数字技术守护一江碧水”为核心理念，综合运用卫星遥感反演、无人机航拍、GIS空间分析，对洞庭湖流域的生态环境进行了多维度数据采集与分析。</p>
+            <p>2026年7月，湖北大学计算机学院「智护碧水」社会实践小分队赴湖南省岳阳市洞庭湖流域，开展了为期7天的暑期社会实践活动。我们以“数字技术守护一江碧水”为核心理念，综合运用卫星遥感反演、无人机航拍、GIS空间分析，对洞庭湖流域的生态环境进行了多维度数据采集与分析。</p>
             <p>实践过程中，我们走访生态展陈馆、渔政执法局、生态数据中心和岳阳市江豚保护协会，访谈退捕渔民、社区居民与渔政执法人员，记录长江生态保护口述资料；随执法船开展重点水域巡护，以问卷调研、无人机航测和清滩分类记录采集多源生态数据；在幼儿园开展江豚主题自然教育与手作体验活动。</p>
             <p>本平台将所有采集到的多源数据进行整合展示，以期为长江大保护提供量化依据，让更多人了解洞庭湖生态保护的最新进展。我们相信，代码可以书写责任，数据能够守护碧水。</p>
           </div>
@@ -38,7 +38,7 @@
         <div class="log-item" v-for="day in logDays" :key="day.id">
           <div class="log-date"><span>{{ day.day }}</span><small>{{ day.weekday }}</small></div>
           <RouterLink class="log-card data-card" :to="{ name: 'PracticeLogDetail', params: { id: day.id } }">
-            <img class="log-img" :src="mediaUrl(day.cover)" :alt="`${day.title}现场照片`" />
+            <img v-if="day.cover" class="log-img" :src="mediaUrl(day.cover)" :alt="`${day.title}现场照片`" />
             <div class="log-body">
               <h4>{{ day.title }}</h4>
               <p>{{ day.summary }}</p>
