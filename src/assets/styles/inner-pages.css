@@ -1,0 +1,218 @@
+/* Content pages share a clear blue/white palette; the original homepage is independent. */
+.main-content.inner-page{--font-editorial:'Microsoft YaHei','PingFang SC',-apple-system,sans-serif;background:#f4f7f9;color:#304f60}
+.main-content.inner-page .page-container{padding-top:42px;padding-bottom:64px}
+.main-content.inner-page h1,.main-content.inner-page h2,.main-content.inner-page h3{font-family:var(--font-editorial)}
+.main-content.inner-page .section-title{text-align:left;font-size:32px;font-weight:600;line-height:1.5;letter-spacing:.5px;color:#234d63;margin-bottom:11px}
+.main-content.inner-page .section-subtitle{text-align:left;font-size:14px;line-height:1.9;color:#547183;max-width:880px;margin-bottom:30px}
+.main-content.inner-page .data-card{border:1px solid #dce7ec;border-radius:8px;box-shadow:0 3px 14px #224b6506}
+.main-content.inner-page .data-card:hover{transform:none;box-shadow:0 5px 18px #224b650b}
+.main-content.inner-page a:focus-visible,.main-content.inner-page button:focus-visible{outline:2px solid #4c95b5;outline-offset:4px}
+.main-content.inner-page .forest-button{background:#2e7898;border-color:#2e7898;border-radius:5px;font-size:13px;font-weight:500;gap:15px;transform:none}
+.main-content.inner-page .forest-button:hover{background:#246786;border-color:#246786}
+.main-content.inner-page .text-link{font-size:13px;color:#367c9b;font-weight:500}
+.main-content.inner-page .eyebrow{font-size:11px;color:#7c929e;font-weight:500;letter-spacing:1px}
+
+/* Archive list, filters and photographs. */
+.main-content.inner-page .archive-page,.main-content.inner-page .association-page,.main-content.inner-page .resources-page{padding-top:40px}
+.main-content.inner-page .archive-intro{padding-bottom:26px;border-color:#d7e3e9}
+.main-content.inner-page .archive-intro h1{font-size:36px;line-height:1.45;font-weight:600;color:#234d63;margin:10px 0 12px}
+.main-content.inner-page .archive-intro p:not(.eyebrow){font-size:14px;line-height:1.95;color:#547183}
+.main-content.inner-page .archive-total{font-size:12px;color:#547183;letter-spacing:.3px}
+.main-content.inner-page .archive-total strong{font:500 36px/1.3 'Segoe UI',sans-serif;color:#41768e;margin-bottom:4px}
+.main-content.inner-page .archive-categories{gap:10px;margin:25px 0 20px}
+.main-content.inner-page .category-filter{display:grid;grid-template-columns:23px minmax(0,1fr) auto;gap:9px;align-items:center;min-height:64px;padding:16px 15px;border-radius:6px;border-color:#dce7ec;background:#fff;color:#607f91}
+.main-content.inner-page .category-filter svg{width:21px;height:21px;margin:0;color:#7c9eae;stroke-width:1.4}
+.main-content.inner-page .category-filter span{font-size:13px;font-weight:500;white-space:nowrap}
+.main-content.inner-page .category-filter small{position:static;font:500 15px 'Segoe UI',sans-serif;color:#547183}
+.main-content.inner-page .category-filter:hover{background:#f6fbfd;border-color:#bad3df}
+.main-content.inner-page .category-filter.active{background:#eaf4f9;border-color:#7daec5;color:#2b6c8b}
+.main-content.inner-page .category-filter.active svg,.main-content.inner-page .category-filter.active small{color:#367e9f}
+.main-content.inner-page .archive-toolbar{gap:11px;padding-bottom:18px}
+.main-content.inner-page .archive-toolbar input,.main-content.inner-page .archive-toolbar select{height:46px;border-color:#d7e4eb;border-radius:5px;font-size:13px;color:#4d6c7d;background:#fff}
+.main-content.inner-page .archive-toolbar input::placeholder{color:#97a8b2}
+.main-content.inner-page .archive-search svg{top:14px;color:#8aabbc}
+.main-content.inner-page .outline-button{border-color:#cbdde6;border-radius:5px;background:#fff;color:#527f94;font-size:12px;min-height:44px}
+.main-content.inner-page .outline-button:hover{background:#edf6fa;border-color:#9fc3d5}
+.main-content.inner-page .archive-results-meta{font-size:12px;color:#547183;margin-bottom:19px}
+.main-content.inner-page .archive-reset{font-size:12px;color:#5787a0;border-color:#b3d0df}
+.main-content.inner-page .record-grid{gap:23px}
+.main-content.inner-page .conservation-card{border-color:#dce7ed;border-radius:7px;box-shadow:0 2px 12px #214c6504;background:#fff}
+.main-content.inner-page .conservation-card:hover{border-color:#b2d0df;transform:translateY(-2px);box-shadow:0 9px 24px #234b660b}
+.main-content.inner-page .record-cover{height:212px;background:#e6eff3}
+.main-content.inner-page .record-cover-label{font-size:11px;letter-spacing:.3px;color:#44758e;background:#f8fcfff2;border-radius:3px;padding:5px 11px}
+.main-content.inner-page .record-card-body{padding:20px 22px 23px}
+.main-content.inner-page .record-card-meta{font-size:11px;color:#547183}
+.main-content.inner-page .record-card-body h3{font-size:18px;font-weight:600;color:#355b70;line-height:1.7;margin:11px 0 9px}
+.main-content.inner-page .record-card-body>p{font-size:13px;line-height:1.95;color:#547183;min-height:calc(1.95em * 2)}
+.main-content.inner-page .record-read{font-size:12px;color:#5e92ab;margin-top:auto;padding-top:20px}
+.main-content.inner-page .archive-cover{color:#eaf1e4}
+.main-content.inner-page .archive-cover .cover-facts{color:#eef6e7}
+.main-content.inner-page .archive-cover .cover-year{color:#1f4a33}
+.main-content.inner-page .archive-source-note{font-size:12px;line-height:1.9;color:#547183}
+.main-content.inner-page .archive-empty{border-color:#c8dce6;background:#fafdff;color:#6b8a9b}
+
+/* Archive details: readable text and a separate provenance column. */
+.main-content.inner-page .record-detail{padding-top:28px}
+.main-content.inner-page .detail-back{font-size:13px;color:#547183;margin-bottom:24px}
+.main-content.inner-page .detail-heading{border-color:#d8e5ec;padding-bottom:27px}
+.main-content.inner-page .detail-heading h1{font-size:34px;line-height:1.65;color:#2e556b;font-weight:600;max-width:900px}
+.main-content.inner-page .detail-meta{font-size:12px;color:#547183;gap:20px}
+.main-content.inner-page .detail-grid{grid-template-columns:minmax(0,1fr) 285px;gap:42px}
+.main-content.inner-page .article-summary{border-color:#a4c8d8;color:#5e7e90;font-size:16px;line-height:2;padding-left:19px}
+.main-content.inner-page .article-paragraph{font-size:15px;line-height:2.15;color:#607d8c;margin-bottom:22px}
+.main-content.inner-page .detail-sidebar{position:sticky;top:calc(var(--nav-height) + 24px);border-color:#d4e3eb;border-radius:7px;background:#fafdff;padding:25px}
+.main-content.inner-page .detail-sidebar h2{font-size:17px;color:#4e7a90}
+.main-content.inner-page .detail-sidebar dt{font-size:11px;color:#547183;margin-bottom:5px}
+.main-content.inner-page .detail-sidebar dd{font-size:13px;line-height:1.9;color:#547183}
+.main-content.inner-page .detail-source-link{font-size:13px;color:#427e9c}
+.main-content.inner-page .detail-source-note{font-size:11px;color:#547183;border-color:#dfe9ee}
+.main-content.inner-page .detail-photos .el-image{border-radius:6px;border:1px solid #dce7ed;background:#eaf1f5}
+.main-content.inner-page .detail-photos figcaption{font-size:12px;color:#547183;line-height:1.9}
+.main-content.inner-page .detail-metrics div{border-radius:5px;border-color:#d6e6ee;background:#fafdff;padding:17px 21px}
+.main-content.inner-page .detail-metrics strong{font:500 27px 'Segoe UI',sans-serif;color:#427c98}
+.main-content.inner-page .detail-metrics span,.main-content.inner-page .detail-metrics small{color:#547183;font-size:11px}
+.main-content.inner-page .detail-related{border-color:#d7e5ec}
+.main-content.inner-page .detail-related h2{font-size:25px;color:#426d83}
+
+/* Association pages and the reading library. */
+.main-content.inner-page .association-heading{grid-template-columns:1fr 1.08fr;gap:50px}
+.main-content.inner-page .association-heading h1{font-size:34px;line-height:1.6;font-weight:600;color:#2b566c;margin:13px 0 17px}
+.main-content.inner-page .association-heading p:not(.eyebrow){font-size:14px;line-height:2;color:#547183}
+.main-content.inner-page .association-heading figure img{display:block;aspect-ratio:auto;object-fit:contain;border-radius:7px;border:1px solid #dce7ec;background:#eaf1f5}
+.main-content.inner-page .association-heading figcaption{font-size:11px;color:#547183;line-height:1.8;margin-top:10px}
+.main-content.inner-page .association-source{font-size:11px!important;color:#547183!important}
+.main-content.inner-page .association-work>h2,.main-content.inner-page .association-history>h2{font-size:25px;font-weight:600;color:#426d83}
+.main-content.inner-page .direction-grid{gap:16px;border:none;border-radius:0;overflow:visible}
+.main-content.inner-page .direction-item{border:1px solid #dbe7ed!important;border-radius:7px;background:#fff;padding:26px 23px}
+.main-content.inner-page .direction-item:hover{border-color:#adccd9!important;background:#fafdff}
+.main-content.inner-page .direction-item>svg:first-child{color:#72a0b5;stroke-width:1.4}
+.main-content.inner-page .direction-item h3{font-size:17px;font-weight:600;color:#47748b;margin-top:18px}
+.main-content.inner-page .direction-item p{font-size:13px;color:#547183;line-height:1.9;min-height:50px}
+.main-content.inner-page .direction-arrow{color:#7aa6ba}
+.main-content.inner-page .association-history{grid-template-columns:230px minmax(0,1fr);gap:55px;border-color:#d8e5eb;padding-top:39px;margin-top:55px}
+.main-content.inner-page .history-item{border-color:#c6dce7;padding-bottom:30px}
+.main-content.inner-page .history-item:before{background:#74a8bf}
+.main-content.inner-page .history-year{font:500 24px 'Segoe UI',sans-serif;color:#6b9bb0}
+.main-content.inner-page .history-item h3{font-size:16px;font-weight:600;color:#517d93}
+.main-content.inner-page .history-item p{font-size:13px;color:#547183;line-height:1.95}
+.main-content.inner-page .history-item a{font-size:12px;color:#648fa4}
+.main-content.inner-page .association-invitation{background:#eaf3f8;border:1px solid #d4e5ee;border-radius:7px;padding:30px;margin-top:27px}
+.main-content.inner-page .association-invitation h2{font-size:24px;color:#4b7990}
+.main-content.inner-page .association-invitation p{font-size:13px;color:#547183;line-height:1.9}
+.main-content.inner-page .resource-heading-icon{color:#aac9d8;width:76px;height:76px;margin:10px 32px}
+.main-content.inner-page .resource-tool{background:#eaf3f8;border:1px solid #d5e5ee;border-radius:7px;padding:28px 32px}
+.main-content.inner-page .resource-tool h2{font-size:23px;font-weight:600;color:#49758c}
+.main-content.inner-page .resource-tool p{font-size:13px;color:#547183;line-height:1.95}
+.main-content.inner-page .resource-section{margin-top:39px}
+.main-content.inner-page .resource-section .editorial-heading h2{font-size:25px;color:#49758b;font-weight:600}
+.main-content.inner-page .resource-section .heading-aside{font-size:12px;color:#547183}
+.main-content.inner-page .resource-grid{gap:22px}
+.main-content.inner-page .resource-card{background:#fff;border-color:#dce7ed;border-radius:7px;padding:27px 28px}
+.main-content.inner-page .resource-card:hover{background:#fafdff;border-color:#b1d0df}
+.main-content.inner-page .resource-card-top{color:#89afc2;margin-bottom:22px}
+.main-content.inner-page .resource-card-top span{font:500 16px 'Segoe UI',sans-serif}
+.main-content.inner-page .resource-card>small{font-size:12px;color:#547183}
+.main-content.inner-page .resource-card h3{font-size:20px;font-weight:600;color:#4b788f;margin:10px 0}
+.main-content.inner-page .resource-card>p{font-size:13px;line-height:1.95;color:#547183}
+.main-content.inner-page .resource-read{font-size:12px;color:#6293ab}
+.main-content.inner-page .resource-credit{font-size:12px;color:#547183;line-height:1.9}
+
+/* Existing modules keep their tools and data; only their presentation changes. */
+.main-content.inner-page .interview-grid{gap:22px}
+.main-content.inner-page .interview-card{padding:24px;gap:20px;align-items:flex-start}
+.main-content.inner-page .interview-card:hover{border-color:#a6c9db}
+.main-content.inner-page .card-photo,.main-content.inner-page .person-photo{border-radius:7px;border:1px solid #d7e4eb}
+.main-content.inner-page .card-body h3{font-size:20px;font-weight:600;color:#325b71}
+.main-content.inner-page .card-identity{font-size:13px;color:#547183;margin-top:4px}
+.main-content.inner-page .card-quote{font-size:14px;line-height:1.9;color:#547183;margin-top:11px}
+.main-content.inner-page .person-meta h1{color:#345d73}
+.main-content.inner-page .transcript{padding:28px 31px;border-color:#d8e5ec;background:#fff}
+.main-content.inner-page .transcript-text{font-size:15px;line-height:2.1;color:#607f90}
+.main-content.inner-page .shoreline-map{border:1px solid #d5e5ed;border-radius:7px}
+.main-content.inner-page .dashboard-section{padding:25px;background:#fff;border:1px solid #dce7ed;border-radius:8px;margin-bottom:25px}
+.main-content.inner-page .edu-tabs{border:1px solid #d8e5ed;border-radius:8px;overflow:hidden;box-shadow:0 3px 18px #315a7005}
+.main-content.inner-page .edu-tabs>.el-tabs__header{background:#ecf4f8;border-color:#d8e5ed}
+.main-content.inner-page .edu-tabs>.el-tabs__header .el-tabs__item{height:49px;font-size:14px;color:#7193a7}
+.main-content.inner-page .edu-tabs>.el-tabs__header .el-tabs__item.is-active{color:#357d9e;background:#fff}
+.main-content.inner-page .edu-tabs>.el-tabs__content{padding:28px}
+.main-content.inner-page .quiz-option{border-radius:6px;border-color:#d9e7ed;background:#fff}
+.main-content.inner-page .quiz-option:hover{border-color:#a9ccdc;background:#f2f8fb}
+.main-content.inner-page .about-purpose{background:#fff;border-left:3px solid #8fb9cd;border-radius:0 7px 7px 0;font-size:14px}
+.main-content.inner-page .team-photo{aspect-ratio:16/10;object-fit:contain;background:#eaf1f5;border-color:#d9e6ed}
+.main-content.inner-page .partner-body{padding:24px}
+.main-content.inner-page .partner-body p:not(.partner-school){font-size:14px;line-height:1.95}
+.main-content.inner-page .log-card{background:#fff;border-color:#dce7ed;padding:18px;border-radius:7px}
+.main-content.inner-page .log-date{border-radius:7px;background:#5a91ac}
+
+@media(max-width:1050px){
+  .main-content.inner-page .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .main-content.inner-page .category-filter{grid-template-columns:20px minmax(0,1fr);padding:14px 11px;gap:7px}
+  .main-content.inner-page .category-filter small{display:none}
+  .main-content.inner-page .category-filter span{font-size:12px}
+  .main-content.inner-page .detail-grid{grid-template-columns:minmax(0,1fr) 250px;gap:26px}
+  .main-content.inner-page .association-heading{gap:30px}
+  .main-content.inner-page .association-heading h1{font-size:30px}
+  .main-content.inner-page .direction-grid{gap:12px}
+  .main-content.inner-page .direction-item{padding:22px 18px}
+}
+@media(max-width:750px){
+  .main-content.inner-page .page-container{padding:28px 18px 45px}
+  .main-content.inner-page .archive-page,.main-content.inner-page .association-page,.main-content.inner-page .resources-page{padding-top:27px}
+  .main-content.inner-page .section-title,.main-content.inner-page .archive-intro h1{font-size:28px}
+  .main-content.inner-page .section-subtitle{font-size:13px;line-height:1.9;margin-bottom:24px}
+  .main-content.inner-page .archive-intro{align-items:flex-start;gap:17px;padding-bottom:23px}
+  .main-content.inner-page .archive-intro p:not(.eyebrow){font-size:13px}
+  .main-content.inner-page .archive-total{font-size:10px;margin-top:22px}
+  .main-content.inner-page .archive-total strong{font-size:29px}
+  .main-content.inner-page .archive-categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:22px 0 17px}
+  .main-content.inner-page .category-filter{min-height:55px;grid-template-columns:18px minmax(0,1fr);padding:12px 10px;gap:6px}
+  .main-content.inner-page .category-filter svg{width:18px;height:18px}
+  .main-content.inner-page .category-filter span{font-size:11px}
+  .main-content.inner-page .archive-toolbar{gap:8px}
+  .main-content.inner-page .archive-toolbar select{font-size:12px}
+  .main-content.inner-page .archive-toolbar .outline-button{font-size:11px;padding-inline:10px}
+  .main-content.inner-page .archive-results-meta{font-size:11px}
+  .main-content.inner-page .record-grid{grid-template-columns:1fr;gap:19px}
+  .main-content.inner-page .record-cover{height:220px}
+  .main-content.inner-page .record-card-body{padding:18px 20px 21px}
+  .main-content.inner-page .record-card-body h3{font-size:18px}
+  .main-content.inner-page .record-card-body>p{font-size:13px}
+  .main-content.inner-page .detail-grid{grid-template-columns:1fr;gap:24px}
+  .main-content.inner-page .detail-sidebar{position:static;padding:23px}
+  .main-content.inner-page .detail-heading h1{font-size:27px}
+  .main-content.inner-page .detail-meta{gap:12px;font-size:11px}
+  .main-content.inner-page .article-summary{font-size:14px}
+  .main-content.inner-page .article-paragraph{font-size:14px;line-height:2}
+  .main-content.inner-page .association-heading{grid-template-columns:1fr;gap:26px}
+  .main-content.inner-page .association-heading h1{font-size:27px}
+  .main-content.inner-page .association-heading p:not(.eyebrow){font-size:13px}
+  .main-content.inner-page .association-work>h2,.main-content.inner-page .association-history>h2{font-size:23px}
+  .main-content.inner-page .direction-grid{grid-template-columns:1fr 1fr;gap:11px}
+  .main-content.inner-page .direction-item{padding:21px 16px}
+  .main-content.inner-page .direction-item h3{font-size:16px}
+  .main-content.inner-page .direction-item p{font-size:12px;min-height:0}
+  .main-content.inner-page .association-history{grid-template-columns:1fr;gap:0;margin-top:37px;padding-top:29px}
+  .main-content.inner-page .history-item{padding-left:24px;grid-template-columns:61px minmax(0,1fr);gap:15px}
+  .main-content.inner-page .history-item h3{font-size:15px}
+  .main-content.inner-page .history-item p{font-size:12px}
+  .main-content.inner-page .association-invitation{padding:23px;gap:22px}
+  .main-content.inner-page .association-invitation h2{font-size:23px}
+  .main-content.inner-page .resource-tool{padding:23px;gap:22px;margin:25px 0 32px}
+  .main-content.inner-page .resource-tool h2{font-size:21px}
+  .main-content.inner-page .resource-tool p{font-size:12px}
+  .main-content.inner-page .resource-grid{grid-template-columns:1fr;gap:18px}
+  .main-content.inner-page .resource-card{padding:23px}
+  .main-content.inner-page .resource-card h3{font-size:19px}
+  .main-content.inner-page .resource-section .editorial-heading h2{font-size:23px}
+  .main-content.inner-page .interview-card{padding:20px;gap:16px}
+  .main-content.inner-page .card-photo{width:85px;height:100px}
+  .main-content.inner-page .card-quote{font-size:13px;line-height:1.85}
+  .main-content.inner-page .dashboard-section{padding:19px 16px}
+  .main-content.inner-page .edu-tabs>.el-tabs__content{padding:19px 14px}
+  .main-content.inner-page .edu-tabs>.el-tabs__header .el-tabs__item{font-size:12px;padding-inline:14px}
+  .main-content.inner-page .transcript{padding:21px}
+  .main-content.inner-page .transcript-text{font-size:14px}
+  .main-content.inner-page .partner-body{padding:21px}
+}
+@media(prefers-reduced-motion:reduce){.main-content.inner-page .conservation-card:hover{transform:none}}
+@media print{.main-content.inner-page{background:#fff}.main-content.inner-page .detail-sidebar{position:static}.main-content.inner-page .detail-grid{grid-template-columns:1fr}}

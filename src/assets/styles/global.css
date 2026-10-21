@@ -16,6 +16,7 @@
   --shadow-lg: 0 4px 24px rgba(46, 134, 171, 0.12);
   --radius: 12px;
   --max-width: 1200px;
+  --nav-height: 64px;
 }
 
 * {

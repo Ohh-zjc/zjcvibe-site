@@ -11,6 +11,9 @@
         <router-link to="/admin" exact-active-class="active">
           <el-icon><HomeFilled /></el-icon> 总览
         </router-link>
+        <router-link to="/admin/records" active-class="active">
+          <el-icon><Document /></el-icon> 护江记录
+        </router-link>
         <router-link to="/admin/interviews" active-class="active">
           <el-icon><Microphone /></el-icon> 护江者说
         </router-link>
@@ -43,7 +46,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
-import { HomeFilled, Microphone, MapLocation, DataAnalysis, Reading } from '@element-plus/icons-vue'
+import { HomeFilled, Microphone, MapLocation, DataAnalysis, Reading, Document } from '@element-plus/icons-vue'
 
 const router = useRouter()
 const auth = useAuthStore()

@@ -7,6 +7,11 @@ import Dashboard from '../views/Dashboard.vue'
 import Education from '../views/Education.vue'
 import About from '../views/About.vue'
 import PracticeLogDetail from '../views/PracticeLogDetail.vue'
+const ConservationRecords = () => import('../views/ConservationRecords.vue')
+const ConservationDetail = () => import('../views/ConservationDetail.vue')
+const PatrolHistory = () => import('../views/PatrolHistory.vue')
+const Association = () => import('../views/Association.vue')
+const Resources = () => import('../views/Resources.vue')
 import Login from '../views/admin/Login.vue'
 import AdminLayout from '../views/admin/AdminLayout.vue'
 import AdminOverview from '../views/admin/Overview.vue'
@@ -14,9 +19,15 @@ import InterviewsManager from '../views/admin/InterviewsManager.vue'
 import GeoManager from '../views/admin/GeoManager.vue'
 import DashboardManager from '../views/admin/DashboardManager.vue'
 import EducationManager from '../views/admin/EducationManager.vue'
+const ConservationManager = () => import('../views/admin/ConservationManager.vue')
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
+  { path: '/records', name: 'ConservationRecords', component: ConservationRecords },
+  { path: '/records/history', name: 'PatrolHistory', component: PatrolHistory },
+  { path: '/records/:id', name: 'ConservationDetail', component: ConservationDetail },
+  { path: '/association', name: 'Association', component: Association },
+  { path: '/resources', name: 'Resources', component: Resources },
   { path: '/oral-history', name: 'OralHistory', component: OralHistory },
   { path: '/oral-history/:id', name: 'OralHistoryDetail', component: OralHistoryDetail },
   { path: '/shoreline', name: 'Shoreline', component: Shoreline },
@@ -33,6 +44,7 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       { path: '', name: 'AdminOverview', component: AdminOverview },
+      { path: 'records', name: 'AdminRecords', component: ConservationManager },
       { path: 'interviews', name: 'AdminInterviews', component: InterviewsManager },
       { path: 'geo', name: 'AdminGeo', component: GeoManager },
       { path: 'dashboard', name: 'AdminDashboard', component: DashboardManager },

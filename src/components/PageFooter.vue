@@ -13,6 +13,7 @@
         <div class="footer-col">
           <h5>页面导航</h5>
           <router-link to="/">首页</router-link>
+          <router-link to="/records">护江档案</router-link>
           <router-link to="/oral-history">护江者说</router-link>
           <router-link to="/shoreline">岸线寻访</router-link>
         </div>
@@ -21,6 +22,8 @@
           <router-link to="/dashboard">数据看板</router-link>
           <router-link to="/education">童护长江</router-link>
           <router-link to="/about">关于本项目</router-link>
+          <router-link to="/association">认识协会</router-link>
+          <router-link to="/resources">资料工具</router-link>
         </div>
         <div class="footer-col">
           <h5>致谢</h5>

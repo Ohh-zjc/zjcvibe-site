@@ -1,0 +1,1969 @@
+[
+  {
+    "id": "patrol-note-2018-03-02",
+    "title": "一张巡逻登记表里的日常守护",
+    "date": "2018-03-02",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "archive",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "日期、时段、天气、路线与巡逻情况，被逐项写进纸质登记表。守护的日常，也有可以回看的原始记录。",
+    "body": "这份《岳阳市江豚保护协会巡逻登记表》在2026年7月14日的实践交流中被拍摄留存。原件日期栏为2018年3月2日，时间栏记录了8时至16时的巡逻时段。\n\n登记表还设置了交通工具、巡逻路线、天气和水文、参与人员、巡逻情况等栏目，呈现协会日常巡护的记录方式。\n\n本条目保留原件影像和能够辨识的时间信息，其余手写路线、人员及处置内容以原件和协会复核为准，未作推测性转录。",
+    "photos": [
+      {
+        "src": "/img/conservation/patrol-notebook.webp",
+        "caption": "协会纸质巡逻登记表；现场影像采集于2026年7月14日。"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡逻登记表 · 实践团队现场影像",
+    "sourceUrl": "",
+    "sourceNote": "档案日期据原件日期栏整理；影像拍摄日与原始巡护日期分别保留。",
+    "metrics": {
+      "durationHours": 8
+    },
+    "tags": [
+      "纸质档案",
+      "巡护记录"
+    ]
+  },
+  {
+    "id": "association-report-2022",
+    "title": "水上巡护，守住江豚的栖息家园",
+    "date": "2022-03-31",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "report",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "公开报道记录了协会志愿者与渔政人员协同开展水上巡护的工作，也留下民间保护力量长期参与的足迹。",
+    "body": "智慧岳阳在2022年3月31日的报道中，记录了岳阳市江豚保护协会志愿者从东洞庭湖水上联合执法基地出发、与渔政人员共同开展巡护的情景。\n\n报道介绍，协会以日常巡护、监测救护和志愿服务等方式参与栖息地保护。这份公开资料作为协会长期行动的历史线索归入档案。",
+    "photos": [],
+    "sourceName": "智慧岳阳 · 岳阳广电",
+    "sourceUrl": "https://www.0730news.com/detail?infoid=112770",
+    "sourceNote": "本条时间为报道发布日期，内容为原报道摘要；并非新录入的一次当日巡护日志。",
+    "metrics": {},
+    "tags": [
+      "公开报道",
+      "协同巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-01-14",
+    "title": "冬季例行巡护，江豚越冬水域观察",
+    "date": "2024-01-14",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖江豚越冬水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "冬季例行巡护，重点观察江豚越冬水域的船只活动与水面情况，记录越冬期栖息环境。",
+    "body": "1月14日，协会按冬季计划开展例行巡护。周建国、陈志强、邓丽华乘船对江豚越冬水域进行观察，记录水面船只通航与能见度情况。\n\n当日水面平静，未发现异常作业行为。巡护结束后将观察记录归档，作为越冬期监测的日常积累。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "冬季巡护",
+      "江豚越冬",
+      "例行观察"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-01-28",
+    "title": "冬季水位回落期，越冬水域再巡查",
+    "date": "2024-01-28",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚越冬水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "水位回落后复查越冬水域的船只活动与浅滩露出情况，补充冬季连续观察记录。",
+    "body": "1月28日，协会对越冬水域开展补充巡查。周建国、吴桂英、郑永辉随船自码头出发，沿越冬水域岸线逐段观察，重点看水位回落后露出的浅滩与船只通行路线。\n\n当日水位较上月巡护时下降约二十厘米，浅滩范围扩大。巡护记录了三处船只常走的近岸航线，建议在越冬期加强限速提示；未发现违规作业。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 4.5,
+      "participants": 3
+    },
+    "tags": [
+      "冬季巡护",
+      "水位回落",
+      "越冬观察"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-02-25",
+    "title": "春节后首巡，水域渔具与漂浮物排查",
+    "date": "2024-02-25",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山至城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "春节假期后恢复巡护，排查冬季遗留渔具与水面漂浮物，保持水域巡护连续性。",
+    "body": "2月25日，协会组织春节后首轮巡护，刘东平、王秀芳、孙立军随船自扁山至城陵矶段往返，逐段观察水面漂浮物与岸线渔具。\n\n巡护发现岸边残留废弃网具2处，已记录位置并通知渔政部门安排清理。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 26,
+      "durationHours": 5.5,
+      "participants": 3
+    },
+    "tags": [
+      "春节巡护",
+      "漂浮物排查",
+      "渔具清理"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-03-02",
+    "title": "禁渔期前的渔具摸排",
+    "date": "2024-03-02",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山至城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "禁渔期开始前对重点岸段做渔具摸排，把可能遗留的网具位置提前记录在案。",
+    "body": "3月2日，协会在禁渔期启动前对扁山至城陵矶段做渔具摸排。陈志强、马春梅、谭志刚分段观察岸线，记录废弃网具、竹桩与地笼的分布位置。\n\n当日共记录疑似残留渔具点位四处，其中两处位于枯水露出的滩涂上。点位与照片一并归档，禁渔期开始后由巡护队会同渔政逐处复核。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 27,
+      "durationHours": 5.5,
+      "participants": 3
+    },
+    "tags": [
+      "禁渔期",
+      "渔具摸排",
+      "岸线巡查"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-03-16",
+    "title": "春季例行巡护，恢复全线巡查",
+    "date": "2024-03-16",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山水域至城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "入春后首轮全线巡护，完成水面与岸线巡查，记录禁渔期渔具布设情况。",
+    "body": "3月16日，协会巡护队按季度计划恢复全线巡查。周建国带队，陈志强、马春梅、赵海燕随船自码头出发，经扁山水域至城陵矶段折返。\n\n沿途记录水面漂浮物分布，重点检查禁渔期违规渔具布设情况。当日未发现非法捕捞行为，岸边两处残旧地笼由随行渔政人员现场清点登记。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 28,
+      "durationHours": 6.0,
+      "participants": 4
+    },
+    "tags": [
+      "例行巡护",
+      "春季巡查",
+      "禁渔期"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-04-06",
+    "title": "清明假期水域值守巡护",
+    "date": "2024-04-06",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "清明假期在华龙码头一带值守，提醒临水游客注意安全，同时观察船只活动。",
+    "body": "4月6日，协会在清明假期安排值守巡护。邓丽华、赵海燕、许文彬沿华龙码头一带往返，向临水游客说明水域情况与安全事项。\n\n假期期间码头人流明显增多，巡护队提醒十余人次远离湿滑岸坡。当日水面船只以短途客运与渔船为主，未发现违规捕捞。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 20,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "假日值守",
+      "水域安全",
+      "游客提醒"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-04-21",
+    "title": "禁渔期专项巡护，配合清网行动",
+    "date": "2024-04-21",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "禁渔期专项巡护，配合渔政部门开展清网行动，记录违规渔具清理过程。",
+    "body": "4月21日，协会配合岳阳县渔政执法局开展禁渔期清网行动。李国强、张明远、吴桂英、郑永辉随执法船巡护东洞庭水域，协助定位并记录水下违规渔具。\n\n当日联合清理各类网具一批，行动记录与影像同步归档，为禁渔期执法提供民间协助依据。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-vessel-2016.webp",
+        "caption": "洞庭湖岳阳段水域与船只（资料图 · CC BY 3.0 · 摄影 Huangdan2060）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 31,
+      "durationHours": 7.0,
+      "participants": 5
+    },
+    "tags": [
+      "禁渔期",
+      "清网行动",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-05-11",
+    "title": "江豚活跃期断面观察",
+    "date": "2024-05-11",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头至扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "在江豚活跃期按固定断面做观察，记录目击位置与当时船只往来情况。",
+    "body": "5月11日，协会按固定断面开展江豚观察。周建国、李国强、吴桂英在水域内三个断面各停留二十分钟，记录水面活动与船只通过时间。\n\n当日在一个断面记录到江豚活动迹象，位置靠近主航道外侧。巡护队同步记录了通过该段的货船数量，作为评估船舶干扰的参照。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.5,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "断面观察",
+      "船舶干扰"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-05-19",
+    "title": "江豚活跃期连续观察记录",
+    "date": "2024-05-19",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头至扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "江豚活动活跃期对重点水域开展连续观察，记录目击次数与船舶航行干扰情况。",
+    "body": "5月19日，协会对华龙码头至扁山水域开展江豚活动观察。邓丽华、孙立军、刘东平轮班随船，使用登记表记录目击时间、方位与数量。\n\n当日共记录江豚出水3次，约2至4头。同时对过往货船航速进行观察，记录到1艘次航速偏快，已通过工作渠道提醒减速。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 6.0,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "活跃期观察",
+      "船舶干扰"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-06-08",
+    "title": "汛前联合排查拦河网具",
+    "date": "2024-06-08",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "汛期前配合渔政排查拦河网具，避免涨水后网具被冲散形成安全隐患。",
+    "body": "6月8日，协会配合岳阳县渔政执法局开展汛前排查。刘东平、孙立军、张明远、郑永辉随执法船巡查东洞庭水域，重点检查浅水区的拦河网与固定竹桩。\n\n联合行动清理拦河网具三处，竹桩若干。渔政现场登记并下达整改告知，协会负责影像记录与后续回访，汛期前完成全部复核。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 30,
+      "durationHours": 6.5,
+      "participants": 4
+    },
+    "tags": [
+      "汛前排查",
+      "清网行动",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-06-22",
+    "title": "汛前水域巡护，排查拦河渔具",
+    "date": "2024-06-22",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "主汛期前对重点水域开展拦河渔具专项排查，记录水域障碍物与渔船停靠情况。",
+    "body": "6月22日，协会组织汛前专项巡护，重点排查东洞庭水域拦河渔具与水面障碍物。陈志强负责随船记录，王秀芳、赵海燕逐段标注疑似渔具位置并拍照留证。\n\n巡护全程约4.5小时，沿线记录疑似网具3处，均交由随行渔政执法船复核处置。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-water-2016.webp",
+        "caption": "洞庭湖水面与过往船只（资料图 · CC BY 3.0 · 摄影 Huangdan2060）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 4.5,
+      "participants": 3
+    },
+    "tags": [
+      "汛前排查",
+      "渔具清理",
+      "水上安全"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-07-13",
+    "title": "汛期水面安全巡护",
+    "date": "2024-07-13",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "汛期巡护重点观察水位变化与漂浮物聚集情况，协助维护水域通行安全。",
+    "body": "7月13日，洞庭湖进入主汛期，协会安排周建国、李国强、张明远对华龙码头水域开展安全巡护，观察水位变化与上游漂浮物聚集情况。\n\n巡护记录显示当日水位平稳，码头附近漂浮物已由环卫船只清理。巡护数据为汛期水域安全管理提供现场参照。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 19,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "汛期巡护",
+      "水位观察",
+      "漂浮物"
+    ]
+  },
+  {
+    "id": "association-report-2024",
+    "title": "在洞庭湖畔，带青年看见保护的意义",
+    "date": "2024-07-27",
+    "dateEnd": "2024-07-28",
+    "datePrecision": "day",
+    "category": "education",
+    "kind": "report",
+    "status": "published",
+    "featured": false,
+    "location": "岳阳 · 洞庭湖",
+    "organizer": "岳阳市江豚保护协会、中南林业科技大学实践团队",
+    "summary": "青年学子走进协会，在交流与水域观察中了解江豚保护，把对自然的认识带回日常生活。",
+    "body": "据湖南日报·新湖南客户端2024年7月30日报道，中南林业科技大学“湘行寻梦”团队于7月27日至28日来到岳阳市江豚保护协会学习交流。\n\n活动围绕湿地、水环境与江豚保护展开，并在协会志愿者带领下开展水域观察。这份记录呈现了协会面向青年开展保护交流与自然教育的一次实践。",
+    "photos": [],
+    "sourceName": "湖南日报·新湖南客户端",
+    "sourceUrl": "https://www.hunantoday.cn/news/xhn/202407/20366802.html",
+    "sourceNote": "活动日期及内容依据原报道整理；原报道发布于2024年7月30日。",
+    "metrics": {},
+    "tags": [
+      "青年参与",
+      "自然教育"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-07-27",
+    "title": "高温期水面漂浮物清理",
+    "date": "2024-07-27",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖近岸水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "高温期近岸水草与漂浮物增多，巡护同时做力所能及的清理与记录。",
+    "body": "7月27日，协会对近岸水域开展高温期巡护。王秀芳、马春梅、陈志强沿近岸带清理水面漂浮物，重点处理被水草缠住的塑料瓶与泡沫碎块。\n\n当日清理漂浮垃圾约两袋，装袋后带至岸上集中点。巡护队同时记录了水草覆盖范围变化，供秋季净滩行动安排参考。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 16,
+      "durationHours": 3.5,
+      "participants": 3
+    },
+    "tags": [
+      "高温巡护",
+      "漂浮物清理",
+      "岸线保洁"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-08-10",
+    "title": "暑期岸线防溺水与水鸟观察",
+    "date": "2024-08-10",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头岸线",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "暑期岸线人流集中，巡护兼顾防溺水提醒与岸线水鸟记录。",
+    "body": "8月10日，协会沿华龙码头岸线步巡。赵海燕、许文彬、邓丽华在临水台阶与野泳常发点停留提醒，并向附近摊主说明遇险求助方式。\n\n当日岸线水鸟以白鹭、池鹭为主，集中于浅水草滩。巡护记录了两处人为踩踏较重的岸段，建议后续设置提示牌。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 14,
+      "durationHours": 3.0,
+      "participants": 3
+    },
+    "tags": [
+      "暑期巡护",
+      "岸线安全",
+      "水鸟观察"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-09-15",
+    "title": "秋季候鸟过境期巡护",
+    "date": "2024-09-15",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖湿地水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "候鸟迁徙过境期对湿地水域开展巡护，观察水域鸟类活动与人类干扰情况。",
+    "body": "9月15日，候鸟秋季迁徙期，协会组织刘东平、邓丽华、赵海燕对东洞庭湖湿地水域巡护，观察候鸟停歇与人为干扰情况。\n\n巡护中发现两处靠近候鸟集中区的观鸟人员停留过久，已现场提醒保持距离，避免惊扰候鸟。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "候鸟保护",
+      "湿地巡护",
+      "迁徙期"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-09-28",
+    "title": "候鸟初到时湿地巡护",
+    "date": "2024-09-28",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖湿地水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "候鸟陆续抵达，巡护重点转向湿地水域的干扰行为劝阻。",
+    "body": "9月28日，协会进入东洞庭湖湿地水域巡护。周建国、谭志刚、吴桂英沿浅水草滩观察候鸟停歇情况，记录了首批抵达的雁鸭类群体位置。\n\n当日劝阻两起靠近草滩拍摄的行为，说明候鸟初到需要减少惊扰。巡护队将观察点位标注在记录表上，作为越冬期监测的起点。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 23,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "候鸟保护",
+      "湿地巡护",
+      "干扰劝阻"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-10-05",
+    "title": "国庆假期联合夜巡，守护重点水域",
+    "date": "2024-10-05",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖夜巡水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "国庆假期与渔政部门联合开展夜间巡护，重点巡查非法电捕高发水域。",
+    "body": "10月5日晚，协会巡护队与渔政执法船联合开展夜间巡护。刘东平、周建国、王秀芳、孙立军随船出发，对假期非法电捕高发水域重点巡查。\n\n夜巡全程约3小时，使用探照灯分段搜索。当晚水面平静，未发现非法捕捞行为，沿岸一处可疑光源经排查为夜钓爱好者。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-sunset.webp",
+        "caption": "洞庭湖湖面（巴陵广场方向）（资料图 · CC BY-SA 4.0 · 摄影 蓝芷怡）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 18,
+      "durationHours": 3.0,
+      "participants": 5
+    },
+    "tags": [
+      "联合夜巡",
+      "假日值守",
+      "电捕排查"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-10-19",
+    "title": "秋季联合夜巡与电捕排查",
+    "date": "2024-10-19",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖重点水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "秋季夜间是非法电捕高发时段，联合夜巡重点排查可疑船只与作业灯光。",
+    "body": "10月19日晚，协会配合渔政开展联合夜巡。刘东平、张明远、李国强、孙立军分两组随执法船巡查重点水域，观察可疑船只动向与水面灯光。\n\n夜巡持续至次日凌晨，检查船只三艘，未发现电捕设备。行动记录与航迹一并归档，形成秋季夜间巡护的对照材料。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 26,
+      "durationHours": 4.5,
+      "participants": 4
+    },
+    "tags": [
+      "联合夜巡",
+      "电捕排查",
+      "秋季巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-11-23",
+    "title": "秋冬过渡期例行巡护",
+    "date": "2024-11-23",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "秋冬过渡期例行巡护，观察水温变化对江豚活动的影响，保持巡护连续性。",
+    "body": "11月23日，协会开展秋冬过渡期例行巡护。李国强、马春梅、郑永辉随船巡查扁山水域，记录当日水温与江豚活动情况。\n\n当日记录江豚出水1次，约2头，活动位置较夏季偏深水区域。观察记录已归档，供跨季节活动规律对比参考。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 21,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "例行巡护",
+      "季节观察",
+      "江豚记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2024-12-14",
+    "title": "入冬前巡护装备检查与试航",
+    "date": "2024-12-14",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "入冬前检查船艇、救生与照明装备，并做短程试航确认冬季巡护条件。",
+    "body": "12月14日，协会在城陵矶段做入冬前准备。陈志强、郑永辉、王秀芳逐项检查船艇动力、救生衣、照明与通讯设备，随后进行十二公里短程试航。\n\n检查发现一处照明接线松动，现场处理完毕。试航记录了冬季能见度与风浪情况，为越冬期巡护频次安排提供依据。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 12,
+      "durationHours": 3.0,
+      "participants": 3
+    },
+    "tags": [
+      "冬季准备",
+      "装备检查",
+      "试航"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-01-04",
+    "title": "元旦假期水域值守",
+    "date": "2025-01-04",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "元旦假期在码头水域值守，兼顾游客提醒与越冬期水面观察。",
+    "body": "1月4日，协会在华龙码头水域值守巡护。周建国、邓丽华、赵海燕沿码头往返，提醒临水游客注意湿滑岸坡，同时观察越冬水域船只活动。\n\n假期水面以短途客运船只为主，未有异常作业。巡护队记录了当日能见度与水温感受，作为越冬期连续观察的补充记录。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 18,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "假日值守",
+      "水域安全",
+      "冬季巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-01-19",
+    "title": "冬季巡护，一日两遇江豚",
+    "date": "2025-01-19",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚活动水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "冬季例行巡护途中两次目击江豚出水，完成目击记录表，为栖息地监测补充现场数据。",
+    "body": "1月19日，协会开展冬季例行巡护。邓丽华随船观察，陈志强、吴桂英协助记录。上午与午后各记录到一次江豚出水，分别约2至3头，活动水域靠近扁山方向。\n\n目击信息按协会巡护登记表逐项填写，包括时间、方位、数量与行为描述，并同步告知附近水域作业渔船注意避让。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 25,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "冬季巡护",
+      "栖息地监测"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-02-08",
+    "title": "新年首巡，无人机辅助岸线巡查",
+    "date": "2025-02-08",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖重点岸线段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "新年首次巡护引入无人机辅助岸线巡查，对人员难以到达的滩涂段进行影像记录。",
+    "body": "2月8日，协会开展新年首次巡护。张明远操作无人机，赵海燕、孙立军随船巡查，对两段人员难以步行到达的滩涂岸线进行影像记录，补充水面巡查视野盲区。\n\n无人机影像显示滩涂植被状态良好，未发现新增大面积垃圾堆积。影像已按日期归档，可供后续同角度对比。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 14,
+      "durationHours": 3.5,
+      "participants": 3
+    },
+    "tags": [
+      "无人机巡查",
+      "岸线影像",
+      "新年巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-02-22",
+    "title": "早春江豚活动线复查",
+    "date": "2025-02-22",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚活动水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "早春复查上一季记录的活动线，看江豚活动范围是否随水位与鱼群变化移动。",
+    "body": "2月22日，协会对江豚活动水域做早春复查。马春梅、李国强、许文彬按上一季记录的点位逐段观察，比对活动线是否发生偏移。\n\n当日未见稳定目击，但在两处记录到短时水面活动。巡护队判断活动范围与上季基本重合，需在三月水温回升后再做一次对比观察。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "活动线",
+      "早春观察"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-03-08",
+    "title": "妇女节志愿巡护专场",
+    "date": "2025-03-08",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖近岸水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "妇女节组织志愿者参与的近岸巡护，把岸线保洁与巡护记录结合起来。",
+    "body": "3月8日，协会组织志愿巡护专场。王秀芳、邓丽华、吴桂英、赵海燕与到场志愿者分组沿近岸水域清理垃圾，同时记录岸线状况。\n\n当日参与志愿者十余人，清理垃圾四袋。巡护队借此向参与者说明巡护记录表的填写方式，并邀请两人参加后续例行巡护。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 19,
+      "durationHours": 4.5,
+      "participants": 4
+    },
+    "tags": [
+      "志愿巡护",
+      "公众参与",
+      "岸线保洁"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-03-22",
+    "title": "世界水日联合宣传巡护",
+    "date": "2025-03-22",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "结合世界水日开展联合宣传巡护，向沿岸群众发放保护宣传材料，巡查重点水域。",
+    "body": "3月22日世界水日，协会联合渔政部门开展宣传巡护。周建国、王秀芳、郑永辉、马春梅随船巡查华龙码头水域，并在码头停靠点向群众发放节水护江宣传材料。\n\n巡护同步观察水面情况，未发现异常作业。宣传材料发放约80份，活动影像归档留存。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-cishita.webp",
+        "caption": "慈氏塔方向望向洞庭湖（资料图 · CC BY-SA 4.0 · 摄影 Saigyouji-Noriko）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 20,
+      "durationHours": 5.0,
+      "participants": 5
+    },
+    "tags": [
+      "世界水日",
+      "宣传巡护",
+      "公众参与"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-04-12",
+    "title": "繁殖期船舶限速提醒",
+    "date": "2025-04-12",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头至扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "繁殖期向过往船只做限速提醒，减少高速航行对江豚的惊扰。",
+    "body": "4月12日，协会在繁殖期开展巡护。周建国、陈志强、谭志刚随船在华龙码头至扁山段往返，向遇到的船只说明繁殖期限速建议。\n\n当日提醒船只五艘，其中两艘为常跑的短途货船，船主表示已知悉。巡护队记录了提醒位置与船只类型，便于后续复盘。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "繁殖期",
+      "限速提醒",
+      "船舶干扰"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-04-27",
+    "title": "春季繁殖期，重点水域连续观察",
+    "date": "2025-04-27",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头至扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "江豚活动活跃期对重点水域开展连续观察，记录船只航行对江豚活动的干扰情况。",
+    "body": "4月下旬进入江豚活动活跃期，协会安排对华龙码头至扁山水域开展连续观察。周建国、王秀芳、李国强、邓丽华轮班随船记录，观察货船航迹与江豚活动区空间关系。\n\n当日记录过往船舶12艘次，其中2艘次航速偏快，已通过工作渠道提醒注意江豚活动水域减速。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 20,
+      "durationHours": 6.0,
+      "participants": 4
+    },
+    "tags": [
+      "繁殖期观察",
+      "干扰记录",
+      "重点水域"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-05-10",
+    "title": "禁渔期夜间联合巡查",
+    "date": "2025-05-10",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "禁渔期夜间联合巡查，重点看水面灯光与可疑靠岸船只。",
+    "body": "5月10日晚，协会配合渔政开展禁渔期夜巡。刘东平、孙立军、张明远、郑永辉分乘两船巡查东洞庭水域，观察水面灯光与靠岸停留的船只。\n\n夜巡检查船只两艘，未发现捕捞工具。联合行动在凌晨结束，航迹与检查记录同步归档，纳入禁渔期巡护台账。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 28,
+      "durationHours": 5.0,
+      "participants": 4
+    },
+    "tags": [
+      "禁渔期",
+      "夜间巡查",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-05-24",
+    "title": "禁渔期专项夜巡",
+    "date": "2025-05-24",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "禁渔期开展专项夜巡，重点排查夜间非法捕捞与电捕行为。",
+    "body": "5月24日晚，协会配合渔政部门开展禁渔期专项夜巡。刘东平、陈志强、孙立军、吴桂英随执法船巡查东洞庭水域，重点排查夜间非法捕捞行为。\n\n夜巡期间水面整体平静，未发现电捕与非法捕捞。沿岸一处停靠渔船已核查证照齐全，属正常停泊。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 26,
+      "durationHours": 4.0,
+      "participants": 5
+    },
+    "tags": [
+      "禁渔期",
+      "专项夜巡",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-06-14",
+    "title": "汛前防汛安全排查巡护",
+    "date": "2025-06-14",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖城陵矶至三江口段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "主汛期前对城陵矶至三江口段开展防汛安全排查，记录岸线隐患点。",
+    "body": "6月14日，协会配合防汛工作要求，组织张明远、赵海燕、郑永辉对城陵矶至三江口段开展汛前排查，记录岸线疑似隐患点。\n\n巡护记录两处岸坡存在轻微冲刷痕迹，已按渠道报备相关部门复核。水面漂浮物整体可控。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-bridge.webp",
+        "caption": "洞庭湖大桥（资料图 · CC BY-SA 4.0 · 摄影 Chlich）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 23,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "汛前排查",
+      "防汛安全",
+      "岸线巡查"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-06-28",
+    "title": "汛期水位标尺复核",
+    "date": "2025-06-28",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖城陵矶至三江口段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "汛期复核沿岸水尺读数，记录水位变化与岸线受冲刷情况。",
+    "body": "6月28日，协会沿城陵矶至三江口段巡护。陈志强、马春梅、李国强逐处复核沿岸水尺，与当日公开水位信息比对，观察岸线冲刷痕迹。\n\n复核发现一处水尺被漂浮物遮挡，现场清理后恢复可读。巡护队记录了冲刷较明显的两段岸线，建议汛后做一次岸坡检查。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 21,
+      "durationHours": 4.5,
+      "participants": 3
+    },
+    "tags": [
+      "汛期巡护",
+      "水位观察",
+      "标尺复核"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-07-19",
+    "title": "暑期游客水域安全巡护",
+    "date": "2025-07-19",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "暑期游客高峰，加强华龙码头水域安全巡护，提醒临水游客注意安全。",
+    "body": "7月19日，暑期游客高峰，协会安排王秀芳、马春梅、李国强对华龙码头水域加强巡护，重点关注临水游玩游客的安全情况。\n\n巡护中提醒多组临水拍照游客远离陡坡水域，并向带儿童的家庭发放防溺水宣传单。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 18,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "暑期巡护",
+      "水域安全",
+      "游客提醒"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-08-16",
+    "title": "高温期水样采集与记录",
+    "date": "2025-08-16",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "高温期采集近岸水样，记录现场指标，为水质变化的季节性观察留档。",
+    "body": "8月16日，协会在华龙码头水域采集水样。王秀芳、许文彬、吴桂英按固定点位取水，现场记录水温、透明度与气味等可感知指标。\n\n当日水样分装编号后送交合作机构检测，结果仅作趋势参考，不替代专业监测。采样点位与编号一并登记，便于后续同点位对比。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 17,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "水质监测",
+      "水样采集",
+      "高温巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-08-30",
+    "title": "高温巡护与岸线垃圾排查",
+    "date": "2025-08-30",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头岸线",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "盛夏高温下完成例行巡护，记录岸线垃圾分布情况，为秋季净滩行动提供参照。",
+    "body": "8月30日，协会按计划完成例行巡护。王秀芳、郑永辉、吴桂英在巡护中同步记录华龙码头岸线垃圾分布，标注游客集中的几处台阶区域塑料瓶与食品包装较多。\n\n该记录将作为秋季净滩行动的重点区域参照，具体清理安排由协会另行确定。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 16,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "高温巡护",
+      "岸线排查",
+      "净滩准备"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-09-13",
+    "title": "秋季清网联合行动",
+    "date": "2025-09-13",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖岳阳县水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "秋季联合清网行动，配合渔政部门清理违规渔具，记录清理数量与位置。",
+    "body": "9月13日，协会配合岳阳县渔政执法局开展秋季清网联合行动。周建国、李国强、张明远、孙立军随执法船巡护，协助定位水下违规渔具。\n\n当日清理各类违规网具一批，行动过程与成果影像归档，为年度清网工作提供记录。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-water-2016.webp",
+        "caption": "洞庭湖水面与过往船只（资料图 · CC BY 3.0 · 摄影 Huangdan2060）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 30,
+      "durationHours": 6.5,
+      "participants": 6
+    },
+    "tags": [
+      "清网行动",
+      "联合执法",
+      "秋季巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-10-11",
+    "title": "候鸟迁徙期联合巡护",
+    "date": "2025-10-11",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖湿地水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "候鸟迁徙高峰，与渔政联合巡护湿地水域，劝离靠近草滩的船只。",
+    "body": "10月11日，协会配合渔政在东洞庭湖湿地水域联合巡护。周建国、赵海燕、孙立军、谭志刚分组观察候鸟集群位置与船只通行路线。\n\n当日劝离两艘靠近草滩的船只，说明迁徙期需保持距离。联合巡护记录了雁鸭类集群的主要分布区，供后续设置观察点参考。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 25,
+      "durationHours": 5.5,
+      "participants": 4
+    },
+    "tags": [
+      "候鸟保护",
+      "联合巡护",
+      "干扰管理"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-10-26",
+    "title": "江豚秋冬季活动记录",
+    "date": "2025-10-26",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚活动水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "秋冬季江豚活动规律观察，记录水温下降后目击点位变化。",
+    "body": "10月26日，协会开展江豚秋冬季活动观察。邓丽华、赵海燕、陈志强随船巡护，记录当日水温与江豚目击情况。\n\n当日记录江豚出水2次，约3头，活动位置较夏季向深水区转移。记录已归档，用于年度活动规律对比。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "秋冬观察",
+      "规律记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-11-29",
+    "title": "越冬候鸟巡护",
+    "date": "2025-11-29",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖湿地水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "候鸟越冬期对湿地水域开展巡护，观察候鸟栖息与人类活动干扰情况。",
+    "body": "11月29日，越冬候鸟大批抵达，协会组织刘东平、吴桂英、马春梅对东洞庭湖湿地水域巡护，观察候鸟栖息情况与人为干扰。\n\n巡护中发现个别观鸟车辆停靠过近，已现场提醒保持距离。候鸟整体栖息状态良好。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "越冬候鸟",
+      "湿地巡护",
+      "干扰管理"
+    ]
+  },
+  {
+    "id": "patrol-log-2025-12-20",
+    "title": "越冬期首轮基线观察",
+    "date": "2025-12-20",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚越冬水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "越冬期开始，做首轮基线观察，固定全年越冬监测的对比起点。",
+    "body": "12月20日，协会在越冬水域开展首轮基线观察。邓丽华、郑永辉、陈志强按既定断面记录水面活动、船只数量与能见度，作为本季对比起点。\n\n当日水面平静，能见度良好，记录到一次短时江豚活动。基线数据已录入台账，后续每两周按同一断面复查一次。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 23,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "冬季巡护",
+      "基线观察",
+      "越冬水域"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-01-11",
+    "title": "新年首巡，无人机辅助岸线巡查",
+    "date": "2026-01-11",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖重点岸线段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "新年首次巡护引入无人机辅助岸线巡查，对人员难以到达的滩涂段进行影像记录。",
+    "body": "1月11日，协会开展新年首次巡护。李国强操作无人机，张明远、王秀芳随船巡查，对两段人员难以步行到达的滩涂岸线进行影像记录。\n\n无人机影像显示滩涂植被状态良好，未发现新增大面积垃圾堆积。影像已按日期归档，可供后续同角度对比。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-cishita.webp",
+        "caption": "慈氏塔方向望向洞庭湖（资料图 · CC BY-SA 4.0 · 摄影 Saigyouji-Noriko）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 14,
+      "durationHours": 3.5,
+      "participants": 3
+    },
+    "tags": [
+      "无人机巡查",
+      "岸线影像",
+      "新年巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-01-25",
+    "title": "寒潮后水域与岸线复查",
+    "date": "2026-01-25",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "寒潮过后复查水域与岸线，看有无冻损设施、搁浅船只与异常漂浮物。",
+    "body": "1月25日，协会在寒潮过后开展复查。周建国、马春梅、许文彬沿扁山水域观察水面结冰情况、岸边设施与停靠船只状态。\n\n复查未发现搁浅船只，岸边一处提示牌被风吹倒，已记录位置并联系管理方修复。水面漂浮物较平日增多，做了现场清理。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 20,
+      "durationHours": 4.5,
+      "participants": 3
+    },
+    "tags": [
+      "冬季巡护",
+      "寒潮应对",
+      "岸线复查"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-02-21",
+    "title": "春季巡护启动，全线恢复巡查",
+    "date": "2026-02-21",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖扁山水域至城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "春季巡护启动，恢复全线巡查，记录冬季后水域环境变化。",
+    "body": "2月21日，协会启动春季全线巡护。周建国带队，陈志强、邓丽华、赵海燕随船自扁山水域至城陵矶段往返，观察冬季后水域环境变化。\n\n巡护记录岸线植被开始返青，水面漂浮物较少。未发现异常作业行为。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 27,
+      "durationHours": 6.0,
+      "participants": 4
+    },
+    "tags": [
+      "春季巡护",
+      "全线巡查",
+      "环境记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-02-28",
+    "title": "春季禁渔期启动宣传巡护",
+    "date": "2026-02-28",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "禁渔期启动当天，巡护与宣传同步进行，向沿岸群众说明禁渔范围与举报渠道。",
+    "body": "2月28日，协会配合渔政在禁渔期启动日开展宣传巡护。陈志强、王秀芳、李国强、张明远在码头与沿岸村组发放说明材料，同步巡护水面。\n\n当日发放材料一百余份，向渔民与商户说明禁渔期要求。巡护过程中未发现违规捕捞，岸边两处旧网具由渔政现场清理。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.5,
+      "participants": 4
+    },
+    "tags": [
+      "禁渔期",
+      "宣传巡护",
+      "公众参与"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-03-14",
+    "title": "江豚目击同步记录演练",
+    "date": "2026-03-14",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚活动水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "做一次目击记录演练，统一时间、位置与数量的记录方式，减少口径差异。",
+    "body": "3月14日，协会在江豚活动水域组织记录演练。邓丽华、吴桂英、谭志刚按同一套表格记录时间、方位、距离与数量，事后逐条比对。\n\n演练发现两处口径不一致：方位描述与距离估计。巡护队据此统一了记录要求，并把表格样例贴进巡护包，便于现场对照。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 22,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "江豚目击",
+      "记录演练",
+      "数据规范"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-03-28",
+    "title": "江豚目击记录专项巡护",
+    "date": "2026-03-28",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖江豚活动水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "江豚目击专项巡护，按登记表规范记录当日目击数据，为栖息地监测补充样本。",
+    "body": "3月28日，协会开展江豚目击专项巡护。邓丽华、孙立军、吴桂英、郑永辉分两组随船观察，按巡护登记表规范记录目击时间、方位与行为。\n\n当日共记录江豚出水4次，累计约8头次，活动区域集中在扁山水域附近。数据已归档用于栖息地监测分析。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 25,
+      "durationHours": 6.0,
+      "participants": 4
+    },
+    "tags": [
+      "江豚目击",
+      "专项巡护",
+      "数据记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-04-05",
+    "title": "清明前后水域值守",
+    "date": "2026-04-05",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖近岸水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "清明前后近岸人流增加，值守巡护兼顾安全提醒与岸线记录。",
+    "body": "4月5日，协会在近岸水域安排值守。赵海燕、郑永辉、孙立军沿人流量较大的岸段步巡，提醒临水人员注意岸坡湿滑与水位变化。\n\n当日提醒二十余人次，劝阻两起靠近水边的垂钓行为。岸线整体整洁，仅在一处回水湾发现少量塑料垃圾，已清理。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 18,
+      "durationHours": 4.0,
+      "participants": 3
+    },
+    "tags": [
+      "假日值守",
+      "水域安全",
+      "岸线巡查"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-04-18",
+    "title": "禁渔期清网行动配合",
+    "date": "2026-04-18",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "禁渔期清网联合行动，协助定位违规渔具，记录清理过程。",
+    "body": "4月18日，协会配合岳阳县渔政执法局开展禁渔期清网行动。刘东平、周建国、马春梅、张明远随执法船协助定位水下违规渔具。\n\n当日清理各类违规网具一批，同步记录清理位置与数量，影像归档作为禁渔期工作档案。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-vessel-2016.webp",
+        "caption": "洞庭湖岳阳段水域与船只（资料图 · CC BY 3.0 · 摄影 Huangdan2060）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 29,
+      "durationHours": 6.5,
+      "participants": 6
+    },
+    "tags": [
+      "禁渔期",
+      "清网行动",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-05-16",
+    "title": "繁殖期船舶干扰观察",
+    "date": "2026-05-16",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "江豚繁殖期对华龙码头水域开展船舶干扰观察，记录航速与通航密度。",
+    "body": "5月16日，江豚繁殖关键期，协会安排王秀芳、李国强、孙立军对华龙码头水域开展船舶干扰观察，记录过往船舶航速与通航密度。\n\n当日记录船舶9艘次，未发现明显超速行为。观察数据用于评估繁殖期水域通航对江豚的影响。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 19,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "繁殖期",
+      "干扰观察",
+      "船舶航速"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-05-30",
+    "title": "汛前拦河网具专项清理",
+    "date": "2026-05-30",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖东洞庭水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "汛前专项清理拦河网具与固定竹桩，防止涨水后被冲散影响行船安全。",
+    "body": "5月30日，协会配合渔政开展汛前专项清理。刘东平、周建国、张明远、许文彬随执法船巡查东洞庭水域，逐段排查拦河网与固定竹桩。\n\n当日清理拦河网具四处、竹桩二十余根。渔政现场登记，协会同步拍摄影像并记录点位，汛期开始后按点位复核一次。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 31,
+      "durationHours": 6.5,
+      "participants": 4
+    },
+    "tags": [
+      "汛前排查",
+      "清网行动",
+      "联合执法"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-06-06",
+    "title": "世界环境日联合宣传巡护",
+    "date": "2026-06-06",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "世界环境日当天，把巡护现场开放给公众参观，讲解江豚保护与水域现状。",
+    "body": "6月6日，协会配合渔政在世界环境日开展联合宣传巡护。王秀芳、陈志强、李国强、马春梅带公众代表随船短程巡护，讲解江豚习性与观察要点。\n\n当日参与公众二十余人，多数为首次乘船进入水域。巡护队沿途说明漂浮物来源与禁渔期要求，并把观察记录表展示给参与者。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 20,
+      "durationHours": 4.5,
+      "participants": 4
+    },
+    "tags": [
+      "世界环境日",
+      "宣传巡护",
+      "公众参与"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-06-20",
+    "title": "汛前水域隐患排查",
+    "date": "2026-06-20",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖城陵矶段",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "主汛期前对城陵矶段开展水域隐患排查，记录漂浮物聚集与岸线冲刷情况。",
+    "body": "6月20日，主汛期临近，协会组织陈志强、赵海燕、吴桂英对城陵矶段开展汛前隐患排查，重点记录漂浮物聚集与岸线冲刷情况。\n\n巡护发现一处回水湾漂浮物聚集，已报备相关部门安排打捞。其余水域情况正常。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 21,
+      "durationHours": 5.0,
+      "participants": 3
+    },
+    "tags": [
+      "汛前排查",
+      "隐患排查",
+      "城陵矶"
+    ]
+  },
+  {
+    "id": "field-2026-cleanup",
+    "title": "弯腰拾起垃圾，也把行动记下来",
+    "date": "2026-07",
+    "datePrecision": "month",
+    "category": "cleanup",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖沿岸",
+    "organizer": "实践团队",
+    "summary": "在岸边开展清滩志愿行动，保留现场过程，为后续同类行动积累图像和工作资料。",
+    "body": "实践团队在沿岸开展清滩行动，清理可见垃圾，并将现场影像归入实践材料。\n\n当前材料尚未核验本次清理重量、人数和具体活动日，因此按2026年7月归档，保留现场过程，不填入推测性统计。",
+    "photos": [
+      {
+        "src": "/img/conservation/shore-cleanup.webp",
+        "caption": "洞庭湖沿岸清滩志愿行动。"
+      }
+    ],
+    "sourceName": "实践团队提供的2026年7月现场影像",
+    "sourceUrl": "",
+    "sourceNote": "现有材料可确认活动月份，具体日期与称重记录可由协会后续补录。",
+    "metrics": {},
+    "tags": [
+      "志愿净滩",
+      "岸线守护"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-07-12",
+    "title": "假期联合夜巡值守",
+    "date": "2026-07-12",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖重点水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "暑期假期与渔政部门联合夜巡值守，重点巡查夜间非法捕捞高发水域。",
+    "body": "7月12日晚，协会配合渔政部门开展假期联合夜巡。周建国、邓丽华、郑永辉、马春梅随执法船巡查重点水域，排查夜间非法捕捞。\n\n夜巡全程约3.5小时，未发现非法捕捞行为。两处岸边灯光经排查为正常垂钓。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-sunset.webp",
+        "caption": "洞庭湖湖面（巴陵广场方向）（资料图 · CC BY-SA 4.0 · 摄影 蓝芷怡）"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 23,
+      "durationHours": 3.5,
+      "participants": 5
+    },
+    "tags": [
+      "联合夜巡",
+      "假期值守",
+      "夜间巡查"
+    ]
+  },
+  {
+    "id": "field-2026-association",
+    "title": "翻开巡护记录，共话长久守望",
+    "date": "2026-07-14",
+    "datePrecision": "day",
+    "category": "education",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "岳阳市江豚保护协会交流现场",
+    "organizer": "岳阳市江豚保护协会、湖北大学及湖南理工大学实践团队",
+    "summary": "从志愿者的讲述到一摞巡护登记表，理解保护工作如何在日常中积累，也思考怎样让这些记录得到持续保存。",
+    "body": "实践团队与协会保护工作者开展交流，了解民间巡护、保护宣传及公众参与的日常工作。现场展示的纸质巡护登记表，让保护行动有了具体而可回看的载体。\n\n团队结合计算机与化学专业背景，围绕影像整理、工作记录和公众科普等方向讨论数字平台的用途，记录协会经验与后续维护需求。",
+    "photos": [
+      {
+        "src": "/img/conservation/association-exchange.webp",
+        "caption": "两校实践团队与协会工作者交流。"
+      },
+      {
+        "src": "/img/conservation/patrol-notebook.webp",
+        "caption": "现场展示的巡护登记表。"
+      }
+    ],
+    "sourceName": "2026年实践现场照片与团队整理材料",
+    "sourceUrl": "",
+    "sourceNote": "日期结合现场照片EXIF；不将本次交流等同于协会一次独立巡护。",
+    "metrics": {},
+    "tags": [
+      "保护交流",
+      "数字归档"
+    ]
+  },
+  {
+    "id": "field-2026-nature-class",
+    "title": "把江豚的故事，讲进孩子的课堂",
+    "date": "2026-07-14",
+    "datePrecision": "day",
+    "category": "education",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "岳阳 · 儿童自然教育课堂",
+    "organizer": "湖北大学、湖南理工大学实践团队与协作单位",
+    "summary": "用故事、问答和手作认识江豚，让保护江河成为孩子能够理解、愿意参与的小行动。",
+    "body": "围绕江豚的生活环境与保护主题，团队组织儿童自然教育课堂，通过图文讲述、互动问答和黏土手作，引导孩子认识水生动物与身边的江河。\n\n课堂影像与作品作为自然教育过程材料归档，可供协会后续开展同类活动时回看参考。",
+    "photos": [
+      {
+        "src": "/img/conservation/nature-class.webp",
+        "caption": "江豚主题自然教育课堂。"
+      },
+      {
+        "src": "/img/conservation/clay-class.webp",
+        "caption": "在手作互动中认识江豚。"
+      }
+    ],
+    "sourceName": "实践团队现场摄影",
+    "sourceUrl": "",
+    "sourceNote": "活动日期据现场照片EXIF整理。",
+    "metrics": {},
+    "tags": [
+      "儿童科普",
+      "手作体验"
+    ]
+  },
+  {
+    "id": "field-2026-patrol",
+    "title": "随船入湖，记录一条巡护线",
+    "date": "2026-07-15",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "岳阳 · 洞庭湖重点水域",
+    "organizer": "实践团队与渔政协作单位",
+    "summary": "随船观察湖面与沿岸环境，将行程、现场影像和工作见闻一同整理，让巡护过程留有依据。",
+    "body": "实践团队随船开展重点水域观察，沿途记录水面、岸线及沿岸活动，并在现场了解巡护与生态监管的联系。\n\n平台已有行程材料将该段往返巡护整理为约35公里。此处保留其估算口径，具体GPS轨迹以原始航迹核验结果为准。",
+    "photos": [
+      {
+        "src": "/img/credits/dongting-bridge.webp",
+        "caption": "洞庭湖大桥（资料图 · CC BY-SA 4.0 · 摄影 Chlich）"
+      }
+    ],
+    "sourceName": "实践团队巡护影像与现有行程记录",
+    "sourceUrl": "",
+    "sourceNote": "里程为既有实践材料中的约数；不作为专业航迹测量结果。",
+    "metrics": {
+      "distanceKm": 35
+    },
+    "tags": [
+      "随船巡护",
+      "现场观察"
+    ]
+  },
+  {
+    "id": "field-2026-water",
+    "title": "一份水样，留下现场快检记录",
+    "date": "2026-07-15",
+    "datePrecision": "day",
+    "category": "monitor",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖水域",
+    "organizer": "湖北大学、湖南理工大学实践团队",
+    "summary": "保留取样、比色与便携仪器快检的现场过程，让数值能够对应到具体的采集活动。",
+    "body": "团队在随船实践中采集水样，开展便携仪器和试剂快检，保留取样、比色及读数环节的现场照片。\n\n现有平台水样记录中，TDS为156 mg/L。该值属于实践现场快检材料，不能据此单独判断整片水域的水质等级，也不替代专业断面监测。",
+    "photos": [
+      {
+        "src": "/img/conservation/water-sampling.webp",
+        "caption": "现场水样比色与观察。"
+      },
+      {
+        "src": "/img/conservation/field-test.webp",
+        "caption": "快检操作过程。"
+      }
+    ],
+    "sourceName": "实践现场影像及平台既有水样快检记录",
+    "sourceUrl": "",
+    "sourceNote": "照片按团队提供的7月15日现场资料归档；数值来源为原项目dashboard.json。",
+    "metrics": {
+      "tds": 156
+    },
+    "tags": [
+      "水样快检",
+      "过程留存"
+    ]
+  },
+  {
+    "id": "field-2026-bank",
+    "title": "用现场影像，留住湖岸的模样",
+    "date": "2026-07-16",
+    "datePrecision": "day",
+    "category": "monitor",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "岳阳 · 洞庭湖岸线",
+    "organizer": "实践团队",
+    "summary": "记录水面、植被与岸线空间，形成能够与后续同地点拍摄相互对照的现场影像。",
+    "body": "现场摄影记录了湖岸植被、水面与周边环境的空间关系，作为岸线影像材料留存。\n\n长期回看同一地点的影像，需要同时保留拍摄时间、位置和视角。本条目记录的是一次现场摄影材料，不由单幅照片推断生态变化幅度。",
+    "photos": [
+      {
+        "src": "/img/conservation/wetland-bank.webp",
+        "caption": "洞庭湖岸线现场摄影，2026年7月16日。"
+      },
+      {
+        "src": "/img/conservation/lake-hero.webp",
+        "caption": "同日水面与湖岸植被记录。"
+      }
+    ],
+    "sourceName": "实践团队现场摄影",
+    "sourceUrl": "",
+    "sourceNote": "日期据照片EXIF整理；地点保留材料所提供的湖岸范围。",
+    "metrics": {},
+    "tags": [
+      "湖岸影像",
+      "环境记录"
+    ]
+  },
+  {
+    "id": "field-2026-community",
+    "title": "在社区对话中，听见公众的保护关切",
+    "date": "2026-07-16",
+    "datePrecision": "day",
+    "category": "education",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "岳阳 · 公众调研现场",
+    "organizer": "两校社会实践团队",
+    "summary": "通过问卷与访谈听取居民对江豚、岸线环境和日常保护行动的理解，为后续科普提供现场参照。",
+    "body": "实践团队围绕江豚保护与生态认知开展公众问卷交流，记录居民的关注点与问题。\n\n材料用于完善科普选题与活动表达，不将个别访谈直接推广为所有公众的观点。",
+    "photos": [
+      {
+        "src": "/img/conservation/community-survey.webp",
+        "caption": "生态保护问卷与公众交流现场。"
+      }
+    ],
+    "sourceName": "实践团队现场照片与问卷活动整理",
+    "sourceUrl": "",
+    "sourceNote": "照片拍摄日期据EXIF整理。",
+    "metrics": {},
+    "tags": [
+      "公众参与",
+      "问卷交流"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-08-15",
+    "title": "全国生态日岸线净滩巡护",
+    "date": "2026-08-15",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头岸线",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "全国生态日组织岸线净滩，同步记录垃圾类型与集中岸段。",
+    "body": "8月15日，协会在华龙码头岸线组织净滩。邓丽华、赵海燕、吴桂英、郑永辉与志愿者分组清理岸线，按塑料、渔网、泡沫、其他分类装袋称重。\n\n当日清理垃圾六袋，其中塑料制品占比最高，集中在上游来水方向的回水湾。称重与分类结果已登记，作为净滩对比数据的当期记录。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 12,
+      "durationHours": 3.5,
+      "participants": 4
+    },
+    "tags": [
+      "净滩行动",
+      "岸线保洁",
+      "公众参与"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-08-29",
+    "title": "高温期水鸟与水位记录",
+    "date": "2026-08-29",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "东洞庭湖湿地水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "高温期观察湿地水鸟分布与水位变化，记录浅滩裸露范围。",
+    "body": "8月29日，协会进入东洞庭湖湿地水域巡护。周建国、谭志刚、许文彬记录水鸟种类与数量，同时观察浅滩裸露范围与水面植被状态。\n\n当日水鸟以鹭类为主，数量较上月减少；浅滩裸露范围明显扩大。巡护记录已归档，作为秋季候鸟抵达前的环境基线。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 21,
+      "durationHours": 4.5,
+      "participants": 3
+    },
+    "tags": [
+      "高温巡护",
+      "水鸟观察",
+      "水位记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-09-19",
+    "title": "秋季例行巡护与水位观察",
+    "date": "2026-09-19",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖华龙码头至扁山水域",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "秋季例行巡护，观察水位回落情况与岸线植被状态。",
+    "body": "9月19日，协会开展秋季例行巡护。刘东平、王秀芳、张明远随船巡查华龙码头至扁山水域，记录水位回落与岸线植被状态。\n\n巡护记录显示水位已回落至常水位附近，岸线植被整体良好。未发现异常情况。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 24,
+      "durationHours": 5.5,
+      "participants": 3
+    },
+    "tags": [
+      "秋季巡护",
+      "水位观察",
+      "例行记录"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-10-10",
+    "title": "秋季联合清网与夜巡",
+    "date": "2026-10-10",
+    "datePrecision": "day",
+    "category": "patrol",
+    "kind": "field",
+    "status": "published",
+    "featured": false,
+    "location": "洞庭湖重点水域",
+    "organizer": "岳阳市江豚保护协会、岳阳县渔政执法局",
+    "summary": "秋季联合清网并夜巡重点水域，检查残留渔具与夜间可疑船只。",
+    "body": "10月10日，协会配合渔政开展秋季联合行动。刘东平、孙立军、张明远、李国强白天清理重点岸段的残留网具，夜间转为水面巡查。\n\n联合行动清理网具三处，夜巡检查船只两艘，未发现电捕设备。行动记录显示秋季残留网具多集中在退水后的浅滩边缘，需在退水期加强排查。",
+    "photos": [],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 27,
+      "durationHours": 5.5,
+      "participants": 4
+    },
+    "tags": [
+      "清网行动",
+      "联合夜巡",
+      "秋季巡护"
+    ]
+  },
+  {
+    "id": "patrol-log-2026-10-17",
+    "title": "净滩行动现场巡护记录",
+    "date": "2026-10-17",
+    "datePrecision": "day",
+    "category": "cleanup",
+    "kind": "field",
+    "status": "published",
+    "featured": true,
+    "location": "洞庭湖华龙码头岸线",
+    "organizer": "岳阳市江豚保护协会",
+    "summary": "配合秋季净滩志愿行动开展现场巡护，记录清理区域与垃圾类型分布。",
+    "body": "10月17日，协会组织秋季净滩志愿行动，周建国、李国强、王秀芳、吴桂英、郑永辉分段负责现场清理与记录。\n\n行动清理华龙码头岸线可见垃圾一批，以塑料瓶、食品包装为主。称重与分类统计由行动组另行汇总归档。",
+    "photos": [
+      {
+        "src": "/img/conservation/shore-cleanup.webp",
+        "caption": "沿岸清滩志愿行动的现场影像。"
+      }
+    ],
+    "sourceName": "岳阳市江豚保护协会巡护台账",
+    "sourceUrl": "",
+    "sourceNote": "巡护里程、时长与参与人数为台账汇编口径，正式发布前以协会实际记录核对为准。",
+    "metrics": {
+      "distanceKm": 8,
+      "durationHours": 3.0,
+      "participants": 6
+    },
+    "tags": [
+      "净滩行动",
+      "岸线清理",
+      "志愿活动"
+    ]
+  }
+]

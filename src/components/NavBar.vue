@@ -8,10 +8,13 @@
       
       <nav class="nav-links" :class="{ 'nav-open': mobileMenuOpen }">
         <router-link to="/" @click="closeMenu">首页</router-link>
+        <router-link to="/records" @click="closeMenu">护江档案</router-link>
         <router-link to="/oral-history" @click="closeMenu">护江者说</router-link>
         <router-link to="/shoreline" @click="closeMenu">岸线寻访</router-link>
         <router-link to="/dashboard" @click="closeMenu">数据看板</router-link>
         <router-link to="/education" @click="closeMenu">童护长江</router-link>
+        <router-link to="/association" @click="closeMenu">认识协会</router-link>
+        <router-link to="/resources" @click="closeMenu">资料工具</router-link>
         <router-link to="/about" @click="closeMenu">关于</router-link>
       </nav>
 

@@ -82,6 +82,21 @@
       </div>
     </section>
 
+    <!-- 护江档案入口 -->
+    <section class="archive-entry-section">
+      <div class="page-container archive-entry-inner">
+        <div>
+          <p class="archive-entry-eyebrow">新增 · 保护工作记录</p>
+          <h2 class="section-title archive-entry-title">护江档案</h2>
+          <p class="archive-entry-copy">把巡护、监测、净滩与自然教育的现场资料整理成可回看的记录，照片和来源一并保留。</p>
+        </div>
+        <router-link class="archive-entry-link" to="/records">
+          <strong>{{ conservation.published.length }}</strong>
+          <span>份记录<br />查看完整档案 →</span>
+        </router-link>
+      </div>
+    </section>
+
     <!-- 实践影像轮播 -->
     <section class="gallery-section">
       <div class="page-container">
@@ -123,8 +138,10 @@
 <script setup>
 import { ref } from 'vue'
 import { ArrowDown, PictureFilled } from '@element-plus/icons-vue'
+import { useConservationStore } from '../stores/conservation'
 
 const modulesSection = ref(null)
+const conservation = useConservationStore()
 
 function scrollToModules() {
   const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -154,6 +171,16 @@ const timeline = [
 </script>
 
 <style scoped>
+/* ===== 护江档案入口 ===== */
+.archive-entry-section { background: #eaf3f7; padding: 42px 0; }
+.archive-entry-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.archive-entry-eyebrow { color: var(--primary); font-size: 12px; letter-spacing: 1px; margin-bottom: 6px; }
+.archive-entry-title { text-align: left; margin-bottom: 6px; }
+.archive-entry-copy { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
+.archive-entry-link { display: flex; align-items: center; gap: 16px; color: var(--primary-dark); border-left: 1px solid #bdd5df; padding-left: 28px; white-space: nowrap; }
+.archive-entry-link strong { font: 600 34px Georgia, serif; color: var(--primary); }
+.archive-entry-link span { font-size: 13px; line-height: 1.8; }
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -431,6 +458,8 @@ const timeline = [
 
 /* ===== 响应式 ===== */
 @media (max-width: 768px) {
+  .archive-entry-inner { align-items: flex-start; flex-direction: column; }
+  .archive-entry-link { border-left: 0; border-top: 1px solid #bdd5df; padding: 14px 0 0; width: 100%; }
   .hero-title { font-size: 30px; }
   .hero-stats { gap: 24px; flex-wrap: wrap; }
   .stat-num { font-size: 24px; }
