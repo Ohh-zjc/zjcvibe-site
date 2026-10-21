@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <!-- Hero Section -->
-    <section class="hero">
+    <section v-ripple class="hero">
       <div class="hero-bg"></div>
       <div class="hero-content">
         <h1 class="hero-title">
@@ -10,9 +10,9 @@
         </h1>
         <p class="hero-subtitle">湖北大学计算机学院、湖南理工大学化学化工学院2026年暑期社会实践数据平台</p>
         <p class="hero-desc">
-          2026年7月，湖北大学计算机学院「智护碧水」小分队赴岳阳洞庭湖流域，
-          开展为期7天的社会实践调研。我们采集卫星遥感数据、无人机航拍影像、
-          口述历史档案与水质反演数据，以数字技术守护一江碧水。
+          2026年7月，湖北大学计算机学院“数智护江·绿美长江”实践团队赴岳阳洞庭湖流域，
+          开展水上巡护、水质检测、问卷访谈、自然教育与清滩护岸等活动。
+          平台整理现场影像、工作记录和公开资料，供保护协会持续记录与科普展示。
         </p>
         <div class="hero-stats">
           <div class="stat-item">
@@ -20,17 +20,24 @@
             <span class="stat-label">天实地调研</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">5+</span>
+            <span class="stat-num">{{ dataStore.interviews.length }}</span>
             <span class="stat-label">位口述史人物</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">3</span>
+            <span class="stat-num">{{ dataStore.geo.points.length }}</span>
             <span class="stat-label">个岸线点位</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">10</span>
-            <span class="stat-label">年水质数据</span>
+            <span class="stat-num">{{ conservation.published.length }}</span>
+            <span class="stat-label">份护江记录</span>
           </div>
+        </div>
+        <div class="hero-actions">
+          <router-link class="hero-cta primary" to="/dashboard">
+            进入数据看板
+            <el-icon><ArrowRight /></el-icon>
+          </router-link>
+          <router-link class="hero-cta ghost" to="/records">翻阅护江档案</router-link>
         </div>
       </div>
       <button
@@ -44,120 +51,24 @@
       </button>
     </section>
 
-    <!-- 模块入口卡片 -->
-    <section ref="modulesSection" class="modules-section">
-      <div class="page-container">
-        <h2 class="section-title">探索数据平台</h2>
-        <p class="section-subtitle">四个模块，从口述史到卫星遥感，全方位展现洞庭湖生态</p>
-        
-        <div class="module-cards">
-          <router-link to="/oral-history" class="module-card">
-            <div class="module-icon">🎙️</div>
-            <h3>护江者说</h3>
-            <p>聆听退捕渔民、湿地巡护员、社区居民与渔政执法人员的故事，感受人与江河的生命交织。</p>
-            <span class="module-arrow">进入 →</span>
-          </router-link>
-          
-          <router-link to="/shoreline" class="module-card">
-            <div class="module-icon">🗺️</div>
-            <h3>岸线寻访</h3>
-            <p>交互地图 + 卫星对比 + NDVI趋势，用遥感数据丈量洞庭湖岸线的十年变迁。</p>
-            <span class="module-arrow">进入 →</span>
-          </router-link>
-          
-          <router-link to="/dashboard" class="module-card">
-            <div class="module-icon">📊</div>
-            <h3>数据看板</h3>
-            <p>水质、植被、清滩、巡护——全流程数据汇总，为长江大保护提供量化依据。</p>
-            <span class="module-arrow">进入 →</span>
-          </router-link>
-          
-          <router-link to="/education" class="module-card">
-            <div class="module-icon">📖</div>
-            <h3>童护长江</h3>
-            <p>江豚小课堂 + 豚豚挑战 + 守护约定，让孩子认识“微笑天使”，一起守护长江。</p>
-            <span class="module-arrow">进入 →</span>
-          </router-link>
-        </div>
-      </div>
-    </section>
-
-    <!-- 护江档案入口 -->
-    <section class="archive-entry-section">
-      <div class="page-container archive-entry-inner">
-        <div>
-          <p class="archive-entry-eyebrow">新增 · 保护工作记录</p>
-          <h2 class="section-title archive-entry-title">护江档案</h2>
-          <p class="archive-entry-copy">把巡护、监测、净滩与自然教育的现场资料整理成可回看的记录，照片和来源一并保留。</p>
-        </div>
-        <router-link class="archive-entry-link" to="/records">
-          <strong>{{ conservation.published.length }}</strong>
-          <span>份记录<br />查看完整档案 →</span>
-        </router-link>
-      </div>
-    </section>
-
-    <!-- 实践影像轮播 -->
-    <section class="gallery-section">
-      <div class="page-container">
-        <h2 class="section-title">实践影像</h2>
-        
-        <div class="gallery-grid">
-          <div class="gallery-item" v-for="(item, i) in galleryItems" :key="i">
-            <img v-if="item.image" class="gallery-photo" :src="item.image" :alt="item.caption" />
-            <div v-else class="gallery-img placeholder-img">
-              <el-icon :size="36"><PictureFilled /></el-icon>
-              <span>{{ item.label }}</span>
-            </div>
-            <p class="gallery-caption">{{ item.caption }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 实践路线 -->
-    <section class="timeline-section">
-      <div class="page-container">
-        <h2 class="section-title">实践路线</h2>
-        <p class="section-subtitle">周一 — 周日，岳阳洞庭湖流域</p>
-        
-        <div class="practice-timeline">
-          <div class="tl-item" v-for="(day, i) in timeline" :key="i">
-            <div class="tl-marker"><span>{{ day.day }}</span><small>{{ day.weekday }}</small></div>
-            <div class="tl-content">
-              <h4>{{ day.title }}</h4>
-              <p>{{ day.desc }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HomeLower ref="homeLower" :timeline="timeline" />
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue'
-import { ArrowDown, PictureFilled } from '@element-plus/icons-vue'
+import { useDataStore } from '../stores/data'
 import { useConservationStore } from '../stores/conservation'
 
-const modulesSection = ref(null)
+const dataStore = useDataStore()
 const conservation = useConservationStore()
+import { ArrowDown, ArrowRight } from '@element-plus/icons-vue'
+import HomeLower from '../components/HomeLower.vue'
+
+const homeLower = ref(null)
 
 function scrollToModules() {
-  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-  modulesSection.value?.scrollIntoView({
-    behavior: reducedMotion ? 'auto' : 'smooth',
-    block: 'start',
-  })
+  homeLower.value?.scrollToStart()
 }
-
-const galleryItems = [
-  { label: '座谈会', caption: '渔政综合行政执法局——禁渔护渔现场座谈', image: `${import.meta.env.BASE_URL}img/gallery/fishery-forum.webp` },
-  { label: '江豚保护', caption: '江豚保护协会——共话守护行动', image: `${import.meta.env.BASE_URL}img/gallery/porpoise-association.webp` },
-  { label: '江豚湾航拍', caption: '华龙码头（江豚湾）——湖岸湿地航拍', image: `${import.meta.env.BASE_URL}img/field/hualong/gallery-lakeshore.webp` },
-  { label: '采访', caption: '口述史采访现场', image: `${import.meta.env.BASE_URL}img/gallery/oral-history-interview.webp` },
-  { label: '课堂', caption: '社区儿童生态课堂', image: `${import.meta.env.BASE_URL}img/education/community-children-classroom.webp` },
-]
 
 const timeline = [
   { day: 'Day 1', weekday: '周一', title: '实践对接与调研任务协调', desc: '与渔政、保护协会、社区及合作实践团队负责人逐一对接，确认走访时间、人员分工、船只安排和资料采集边界，完成七天调研计划与安全提示的统一。' },
@@ -171,15 +82,28 @@ const timeline = [
 </script>
 
 <style scoped>
-/* ===== 护江档案入口 ===== */
-.archive-entry-section { background: #eaf3f7; padding: 42px 0; }
-.archive-entry-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.archive-entry-eyebrow { color: var(--primary); font-size: 12px; letter-spacing: 1px; margin-bottom: 6px; }
-.archive-entry-title { text-align: left; margin-bottom: 6px; }
-.archive-entry-copy { color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
-.archive-entry-link { display: flex; align-items: center; gap: 16px; color: var(--primary-dark); border-left: 1px solid #bdd5df; padding-left: 28px; white-space: nowrap; }
-.archive-entry-link strong { font: 600 34px Georgia, serif; color: var(--primary); }
-.archive-entry-link span { font-size: 13px; line-height: 1.8; }
+
+/* Original homepage composition and colours, isolated from content-page styling. */
+.home-page {
+  --primary: #2E86AB;
+  --primary-light: #4DA8C9;
+  --primary-dark: #1B5E7A;
+  --accent-light: #F4A83D;
+  --bg-light: #F0F7FA;
+  --text-primary: #2C3E50;
+  --text-secondary: #5A6C7D;
+  --border: #DDE8ED;
+  --radius: 12px;
+  --font-editorial: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+}
+.home-page .hero > :deep(.water-feedback-ring) { color: #e2f8ff; z-index: 2; }
+.home-page .module-card > :deep(.water-feedback-ring) { color: #5babc9; }
+.home-page .gallery-item { border-radius: var(--radius); }
+@media(max-width:500px) {
+  .home-page .hero-stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 28px; max-width:310px; margin-inline:auto; }
+  .home-page .hero-subtitle { font-size:15px; }
+  .home-page .hero-desc { font-size:14px; }
+}
 
 /* ===== Hero ===== */
 .hero {
@@ -197,6 +121,16 @@ const timeline = [
   background: linear-gradient(135deg, var(--primary-dark) 0%, #0D3B4F 40%, var(--primary) 100%);
 }
 
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(25deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 62px);
+  opacity: 0.85;
+}
+
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -211,7 +145,7 @@ const timeline = [
   z-index: 1;
   text-align: center;
   color: #fff;
-  max-width: 800px;
+  max-width: 860px;
   padding: 20px;
 }
 
@@ -231,35 +165,101 @@ const timeline = [
 }
 
 .hero-desc {
-  font-size: 16px;
-  opacity: 0.7;
-  line-height: 1.8;
-  max-width: 640px;
-  margin: 0 auto 40px;
+  font-size: 15px;
+  opacity: 0.74;
+  line-height: 1.85;
+  max-width: 600px;
+  margin: 0 auto 36px;
 }
 
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 48px;
+  gap: 0;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 0 4px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .stat-item {
+  position: relative;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 16px;
+}
+
+.stat-item + .stat-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: rgba(255,255,255,0.22);
 }
 
 .stat-num {
-  font-size: 32px;
+  font-size: 50px;
+  line-height: 1.05;
   font-weight: 800;
   color: var(--accent-light);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 8px 26px rgba(0,0,0,0.28);
 }
 
 .stat-label {
-  font-size: 13px;
-  opacity: 0.7;
-  margin-top: 4px;
+  margin-top: 9px;
+  font-size: 13.5px;
+  letter-spacing: 0.6px;
+  opacity: 0.88;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.hero-cta .el-icon { font-size: 15px; }
+
+.hero-cta.primary {
+  background: #fff;
+  color: #14536c;
+  box-shadow: 0 12px 28px rgba(3,26,38,0.28);
+}
+
+.hero-cta.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(3,26,38,0.34);
+}
+
+.hero-cta.ghost {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.55);
+}
+
+.hero-cta.ghost:hover {
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.8);
 }
 
 .hero-scroll {
@@ -296,175 +296,17 @@ const timeline = [
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-/* ===== 模块卡片 ===== */
-.modules-section {
-  background: var(--bg-white);
-  padding: 60px 0;
-  scroll-margin-top: 64px;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll { animation: none; }
 }
-
-.module-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.module-card {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 24px;
-  text-decoration: none;
-  color: var(--text-primary);
-  transition: all 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-
-.module-card:hover {
-  border-color: var(--primary);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.module-icon {
-  font-size: 40px;
-  margin-bottom: 16px;
-}
-
-.module-card h3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  color: var(--primary-dark);
-}
-
-.module-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  flex: 1;
-}
-
-.module-arrow {
-  margin-top: 16px;
-  font-size: 14px;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-/* ===== Gallery ===== */
-.gallery-section {
-  background: var(--bg-light);
-  padding: 60px 0;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.gallery-item {
-  text-align: center;
-}
-
-.placeholder-img {
-  aspect-ratio: 4/3;
-  background: var(--bg-white);
-  border: 2px dashed var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-size: 13px;
-  transition: border-color 0.2s;
-}
-
-.placeholder-img:hover {
-  border-color: var(--primary-light);
-}
-
-.gallery-caption {
-  margin-top: 10px;
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-/* ===== Timeline ===== */
-.timeline-section {
-  background: var(--bg-white);
-  padding: 60px 0;
-}
-
-.practice-timeline {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.tl-item {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-
-.tl-marker {
-  flex-shrink: 0;
-  width: 72px;
-  height: 46px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.gallery-photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.tl-marker small { margin-top: 1px; font-size: 10px; font-weight: 500; opacity: 0.85; }
-
-.tl-content {
-  padding-top: 4px;
-}
-
-.tl-content h4 {
-  font-size: 17px;
-  margin-bottom: 4px;
-  color: var(--text-primary);
-}
-
-.tl-content p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* ===== 响应式 ===== */
 @media (max-width: 768px) {
-  .archive-entry-inner { align-items: flex-start; flex-direction: column; }
-  .archive-entry-link { border-left: 0; border-top: 1px solid #bdd5df; padding: 14px 0 0; width: 100%; }
   .hero-title { font-size: 30px; }
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .stat-num { font-size: 24px; }
-  .module-cards { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .tl-marker { width: 56px; font-size: 11px; }
+  .hero-stats { flex-wrap: wrap; gap: 20px 0; padding: 16px 0 2px; }
+  .stat-item { flex: 0 0 50%; padding: 0 8px; }
+  .stat-item:nth-child(3)::before { display: none; }
+  .stat-num { font-size: 34px; }
+  .stat-label { font-size: 12px; margin-top: 5px; }
+  .hero-actions { margin-top: 28px; gap: 10px; }
+  .hero-cta { padding: 12px 22px; font-size: 14px; }
 }
 </style>
